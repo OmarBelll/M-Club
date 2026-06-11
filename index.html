@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000"> <!-- Better mobile theming -->
     <title>M Club Sfax | Fitness & Bien-être</title>
-    <!-- External CSS: Main stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome 6: Icons library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Library: Scroll animation library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- ========== DARK MODE TOGGLE BUTTON ========== -->
     <!-- Fixed position button that switches between light/dark themes -->
-    <button id="dark-mode-toggle" class="dark-mode-toggle">
-        <i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
     </button>
 
     <!-- ========== BACK TO TOP BUTTON ========== -->
     <!-- Appears after scrolling, smooth scrolls to top -->
-    <button id="back-to-top" class="back-to-top">
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -30,10 +28,10 @@
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3><i class="fas fa-shopping-cart"></i> Mon panier</h3>
-            <span class="close-cart">&times;</span> <!-- Close button -->
+            <span class="close-cart" aria-label="Close cart">&times;</span>
         </div>
         <div class="cart-items" id="cart-items">
-            <p data-key="cart_empty">Votre panier est vide</p> <!-- Empty cart message -->
+            <p data-key="cart_empty">Votre panier est vide</p>
         </div>
         <div class="cart-total">
             <strong data-key="cart_total">Total</strong>: <span id="cart-total">0 DT</span>
@@ -43,9 +41,9 @@
 
     <!-- ========== CART ICON (FLOATING) ========== -->
     <!-- Fixed position cart button that opens the sidebar -->
-    <div id="cart-icon" class="cart-icon">
+    <div id="cart-icon" class="cart-icon" aria-label="Shopping cart">
         <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count">0</span> <!-- Item count badge -->
+        <span id="cart-count">0</span>
     </div>
 
     <!-- ========== HEADER / NAVIGATION BAR ========== -->
@@ -76,15 +74,15 @@
             <div class="header-right">
                 <!-- Language Switcher: French, English, Arabic -->
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="fr">
+                    <button class="lang-btn active" data-lang="fr" aria-label="French">
                         <img src="fr.png" alt="Français" class="flag-icon">
                         <span class="lang-code">FR</span>
                     </button>
-                    <button class="lang-btn" data-lang="en">
+                    <button class="lang-btn" data-lang="en" aria-label="English">
                         <img src="en.png" alt="English" class="flag-icon">
                         <span class="lang-code">EN</span>
                     </button>
-                    <button class="lang-btn" data-lang="ar">
+                    <button class="lang-btn" data-lang="ar" aria-label="Arabic">
                         <img src="ar.png" alt="العربية" class="flag-icon">
                         <span class="lang-code">AR</span>
                     </button>
@@ -92,7 +90,7 @@
                 
                 <!-- User Menu: Shows profile dropdown when logged in -->
                 <div class="user-menu">
-                    <div id="user-icon" class="user-icon">
+                    <div id="user-icon" class="user-icon" aria-label="User menu">
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div id="user-dropdown" class="user-dropdown">
@@ -103,7 +101,7 @@
                 </div>
                 
                 <!-- Mobile Menu Toggle (hamburger icon) -->
-                <div class="mobile-menu-toggle">
+                <div class="mobile-menu-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
@@ -114,7 +112,7 @@
     <!-- Popup for login and registration -->
     <div id="auth-modal" class="auth-modal">
         <div class="auth-modal-content">
-            <span class="close-auth">&times;</span> <!-- Close button -->
+            <span class="close-auth" aria-label="Close">&times;</span>
             
             <!-- Tab buttons for Login/Register -->
             <div class="auth-tabs">
@@ -164,7 +162,7 @@
     <!-- Popup for editing user profile information -->
     <div id="profile-modal" class="profile-modal">
         <div class="profile-modal-content">
-            <span class="close-profile">&times;</span>
+            <span class="close-profile" aria-label="Close">&times;</span>
             <h2 data-key="profile_title">Mon Profil</h2>
             <form id="profile-form">
                 <!-- Avatar section with upload -->
@@ -182,7 +180,7 @@
                     </div>
                     <div class="input-group">
                         <label data-key="email_label">Email</label>
-                        <input type="email" id="profile-email" readonly> <!-- Read-only email -->
+                        <input type="email" id="profile-email" readonly>
                     </div>
                     <div class="input-group">
                         <label data-key="age_label">Âge</label>
@@ -214,7 +212,7 @@
     <!-- ========== HERO SECTION ========== -->
     <!-- Main banner with call-to-action -->
     <section id="accueil" class="hero">
-        <div class="hero-overlay"></div> <!-- Dark overlay for text readability -->
+        <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1 data-key="hero_title">PLUS D'EXCUSES.<br>REMAÎTRE VOTRE CORPS.</h1>
             <p data-key="hero_desc">Que vous soyez à Sfax ou ailleurs, M Club vous offre un coaching personnalisé pour atteindre vos objectifs, où que vous soyez.</p>
@@ -371,8 +369,8 @@
                     <h3>Karim Ben Ali</h3>
                     <p>Coach musculation & CrossFit</p>
                     <div class="coach-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="coach-card">
@@ -380,8 +378,8 @@
                     <h3>Sonia Makhlouf</h3>
                     <p>Coach Yoga & Bien-être</p>
                     <div class="coach-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="coach-card">
@@ -389,8 +387,8 @@
                     <h3>Mehdi Trabelsi</h3>
                     <p>Coach Boxe & Cardio</p>
                     <div class="coach-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
@@ -507,7 +505,6 @@
         <div class="container">
             <h2 data-key="gallery_title" data-aos="fade-up">NOTRE SALLE EN IMAGES</h2>
             <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- Gallery items - each opens in lightbox when clicked -->
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Salle de musculation">
                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
@@ -576,7 +573,6 @@
         <div class="container">
             <h2 data-key="faq_title" data-aos="fade-up">FOIRE AUX QUESTIONS</h2>
             <div class="faq-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- FAQ Item 1 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         <span data-key="faq1_q">Comment puis-je m'inscrire ?</span>
@@ -586,7 +582,6 @@
                         <p data-key="faq1_a">Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.</p>
                     </div>
                 </div>
-                <!-- FAQ Item 2 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         <span data-key="faq2_q">Y a-t-il un engagement ?</span>
@@ -596,7 +591,6 @@
                         <p data-key="faq2_a">Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.</p>
                     </div>
                 </div>
-                <!-- FAQ Item 3 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         <span data-key="faq3_q">Proposez-vous des cours pour débutants ?</span>
@@ -614,7 +608,6 @@
     <!-- Opening hours and Google Maps location -->
     <section class="hours-map-section">
         <div class="container hours-map-grid">
-            <!-- Opening hours card -->
             <div class="hours-card" data-aos="fade-right">
                 <h3><i class="far fa-clock"></i> <span data-key="hours_title">HORAIRES D'OUVERTURE</span></h3>
                 <table class="hours-table">
@@ -633,20 +626,20 @@
                 </table>
             </div>
             
-            <!-- Location map card -->
             <div class="map-card" data-aos="fade-left">
                 <h3><i class="fas fa-map-marker-alt"></i> <span data-key="map_title">NOUS TROUVER</span></h3>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.123456789!2d10.736!3d34.736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTArDQ0JzA5LjYiTiAxMsKwNDQnMDkuNiJF!5e0!3m2!1sfr!2stn!4v1700000000000!5m2!1sfr!2stn" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Maps location of M Club Sfax">
                 </iframe>
                 <p data-key="address_full">Rte Lafrane, Sfax, Tunisie</p>
                 <div class="google-rating">
                     <div class="stars-display">★★★★☆</div>
                     <p><strong>4.0</strong> / 5 - Basé sur 128 avis Google</p>
-                    <a href="https://maps.app.goo.gl/VhHG5vqFSL8Q3Eqv6" target="_blank" class="map-link" data-key="open_maps">Voir tous les avis →</a>
+                    <a href="https://maps.app.goo.gl/VhHG5vqFSL8Q3Eqv6" target="_blank" rel="noopener noreferrer" class="map-link" data-key="open_maps">Voir tous les avis →</a>
                 </div>
             </div>
         </div>
@@ -657,12 +650,10 @@
     <section class="training-newsletter">
         <div class="container">
             <div class="training-grid">
-                <!-- Left side: Training text -->
                 <div class="training-text" data-aos="fade-right">
                     <h3 data-key="training_title">SÉANCES DE COACHING PERSONNALISÉ.</h3>
                     <p data-key="training_desc">N'IMPORTE OÙ VOUS VOULEZ.</p>
                 </div>
-                <!-- Right side: Newsletter form -->
                 <div class="newsletter" data-aos="fade-left">
                     <h3 data-key="news_title">Abonnez-vous aujourd'hui</h3>
                     <p data-key="news_desc">Recevez nos offres et conseils fitness directement dans votre boîte mail.</p>
@@ -685,12 +676,11 @@
                 <p><i class="fas fa-map-marker-alt"></i> <span data-key="address">Rte Lafrane, Sfax, Tunisie</span></p>
                 <p><i class="fas fa-phone-alt"></i> +216 74 217 600</p>
                 <p><i class="fas fa-envelope"></i> contact@mclub.tn</p>
-                <!-- Social media buttons -->
                 <div class="social-buttons">
-                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" class="social-btn facebook">
+                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
                         <i class="fab fa-facebook-f"></i> Facebook
                     </a>
-                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" class="social-btn instagram">
+                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
@@ -704,12 +694,12 @@
     <!-- ========== LIGHTBOX MODAL FOR GALLERY ========== -->
     <!-- Full-screen image viewer for gallery -->
     <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-img" id="lightbox-img">
+        <span class="close-lightbox" aria-label="Close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" alt="Enlarged gallery image">
     </div>
 
     <!-- External Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- AOS animation library -->
-    <script src="script.js"></script> <!-- Main JavaScript file -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
