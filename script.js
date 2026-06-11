@@ -60,7 +60,6 @@ const translations = {
         stat_coaches: "Coach diplômés",
         stat_classes: "Cours par semaine",
         stat_days: "Jours d'ouverture",
-        // Removed: popup_title, popup_desc, popup_btn
         imc_title: "CALCULEZ VOTRE IMC",
         imc_weight: "Poids (kg)",
         imc_height: "Taille (cm)",
@@ -162,7 +161,6 @@ const translations = {
         stat_coaches: "Certified Coaches",
         stat_classes: "Weekly Classes",
         stat_days: "Open Days",
-        // Removed: popup_title, popup_desc, popup_btn
         imc_title: "CALCULATE YOUR BMI",
         imc_weight: "Weight (kg)",
         imc_height: "Height (cm)",
@@ -264,7 +262,6 @@ const translations = {
         stat_coaches: "مدربون معتمدون",
         stat_classes: "حصص أسبوعية",
         stat_days: "أيام العمل",
-        // Removed: popup_title, popup_desc, popup_btn
         imc_title: "احسب مؤشر كتلة الجسم",
         imc_weight: "الوزن (كجم)",
         imc_height: "الطول (سم)",
@@ -310,18 +307,17 @@ const translations = {
 };
 
 // ========== GLOBAL VARIABLES ==========
-let currentLang = 'fr';        // Current language (fr, en, ar)
-let cart = [];                  // Shopping cart array
-let currentUser = null;        // Currently logged-in user
+let currentLang = 'fr';
+let cart = [];
+let currentUser = null;
 
 // ========== INITIALIZE AOS (SCROLL ANIMATIONS) ==========
 AOS.init({ duration: 800, once: true, offset: 100 });
 
 // ========== COUNTER ANIMATION FOR STATS ==========
-// Animates numbers when they come into view
 function animateCounter(element, target) {
     let current = 0;
-    const increment = target / 50;  // Divide animation into 50 steps
+    const increment = target / 50;
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -333,7 +329,6 @@ function animateCounter(element, target) {
     }, 30);
 }
 
-// Intersection Observer to trigger counter animation when stats section is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -342,7 +337,7 @@ const observer = new IntersectionObserver((entries) => {
                 const target = parseInt(counter.getAttribute('data-target'));
                 animateCounter(counter, target);
             });
-            observer.unobserve(entry.target);  // Only animate once
+            observer.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
@@ -352,7 +347,6 @@ document.querySelectorAll('.stats-section').forEach(section => {
 });
 
 // ========== STICKY HEADER ON SCROLL ==========
-// Adds 'scrolled' class to header when page is scrolled past 50px
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
@@ -381,8 +375,14 @@ const nav = document.querySelector('nav');
 if (mobileToggle) {
     mobileToggle.addEventListener('click', () => {
         nav.classList.toggle('active');
-        // Change icon between hamburger and close (X)
-        mobileToggle.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        // Prevent body scroll when menu is open (mobile UX improvement)
+        if (nav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+            document.body.style.overflow = '';
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
     });
 }
 
@@ -390,6 +390,7 @@ if (mobileToggle) {
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
+        document.body.style.overflow = '';
         if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
     });
 });
@@ -402,14 +403,23 @@ darkModeToggle.addEventListener('click', () => {
     if (document.body.classList.contains('dark-mode')) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
     } else {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
+        localStorage.setItem('darkMode', 'disabled');
     }
 });
 
+// Load dark mode preference
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    const icon = darkModeToggle.querySelector('i');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+}
+
 // ========== LIGHTBOX GALLERY ==========
-// Opens full-screen image viewer when gallery image is clicked
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 document.querySelectorAll('.gallery-item').forEach(item => {
@@ -417,17 +427,21 @@ document.querySelectorAll('.gallery-item').forEach(item => {
         const img = item.querySelector('img');
         lightboxImg.src = img.src;
         lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scroll when lightbox is open
     });
 });
 document.querySelector('.close-lightbox').addEventListener('click', () => {
     lightbox.style.display = 'none';
+    document.body.style.overflow = '';
 });
 lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) lightbox.style.display = 'none';
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
 });
 
 // ========== FAQ ACCORDION ==========
-// Toggles FAQ answer visibility when question is clicked
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const faqItem = question.parentElement;
@@ -440,20 +454,18 @@ function calculateIMC() {
     const weight = parseFloat(document.getElementById('weight')?.value);
     const heightCm = parseFloat(document.getElementById('height')?.value);
     
-    // Validation
     if (!weight || !heightCm || isNaN(weight) || isNaN(heightCm) || weight <= 0 || heightCm <= 0) {
         document.getElementById('imc-value').textContent = '--';
         document.getElementById('imc-status').textContent = 'Veuillez entrer des valeurs valides';
         return;
     }
     
-    const heightM = heightCm / 100;  // Convert cm to meters
+    const heightM = heightCm / 100;
     const imc = weight / (heightM * heightM);
     const imcValue = imc.toFixed(1);
     
     document.getElementById('imc-value').textContent = imcValue;
     
-    // Determine BMI category based on current language
     let status = '';
     let color = '';
     
@@ -479,7 +491,6 @@ function calculateIMC() {
 const calculateBtn = document.getElementById('calculate-imc');
 if (calculateBtn) {
     calculateBtn.addEventListener('click', calculateIMC);
-    // Allow Enter key to trigger calculation
     const weightInput = document.getElementById('weight');
     const heightInput = document.getElementById('height');
     if (weightInput) weightInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') calculateIMC(); });
@@ -487,7 +498,6 @@ if (calculateBtn) {
 }
 
 // ========== SHOPPING CART SYSTEM ==========
-// Load cart from localStorage on page load
 function loadCart() {
     const savedCart = localStorage.getItem('mclub_cart');
     if (savedCart) {
@@ -496,12 +506,10 @@ function loadCart() {
     updateCartDisplay();
 }
 
-// Save cart to localStorage
 function saveCart() {
     localStorage.setItem('mclub_cart', JSON.stringify(cart));
 }
 
-// Add product to cart
 function addToCart(productName, price) {
     const existingItem = cart.find(item => item.name === productName);
     if (existingItem) {
@@ -514,14 +522,12 @@ function addToCart(productName, price) {
     showNotification(`${productName} ajouté au panier !`);
 }
 
-// Remove item from cart by index
 function removeFromCart(index) {
     cart.splice(index, 1);
     saveCart();
     updateCartDisplay();
 }
 
-// Update cart UI (count, total, items list)
 function updateCartDisplay() {
     const cartContainer = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
@@ -552,7 +558,7 @@ function updateCartDisplay() {
                 <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-price">${item.price} DT x ${item.quantity}</div>
             </div>
-            <button class="remove-item" data-index="${index}">
+            <button class="remove-item" data-index="${index}" aria-label="Remove item">
                 <i class="fas fa-trash"></i>
             </button>
         `;
@@ -562,7 +568,6 @@ function updateCartDisplay() {
     if (cartCount) cartCount.textContent = itemCount;
     if (cartTotal) cartTotal.textContent = `${total} DT`;
     
-    // Attach remove event listeners to new remove buttons
     document.querySelectorAll('.remove-item').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const index = parseInt(btn.getAttribute('data-index'));
@@ -571,7 +576,6 @@ function updateCartDisplay() {
     });
 }
 
-// Show temporary notification message
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'cart-notification';
@@ -593,7 +597,6 @@ function showNotification(message) {
     setTimeout(() => { notification.remove(); }, 3000);
 }
 
-// Add to cart button event listeners
 document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.addEventListener('click', () => {
         const productName = btn.getAttribute('data-product');
@@ -602,7 +605,6 @@ document.querySelectorAll('.add-to-cart').forEach(btn => {
     });
 });
 
-// Cart sidebar open/close
 const cartIcon = document.getElementById('cart-icon');
 const cartSidebar = document.getElementById('cart-sidebar');
 const closeCart = document.querySelector('.close-cart');
@@ -610,16 +612,27 @@ const closeCart = document.querySelector('.close-cart');
 if (cartIcon) {
     cartIcon.addEventListener('click', () => {
         cartSidebar.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevent scroll when cart is open
     });
 }
 
 if (closeCart) {
     closeCart.addEventListener('click', () => {
         cartSidebar.classList.remove('open');
+        document.body.style.overflow = '';
     });
 }
 
-// Checkout button handler
+// Close cart when clicking outside (mobile improvement)
+document.addEventListener('click', (e) => {
+    if (cartSidebar && cartSidebar.classList.contains('open')) {
+        if (!cartSidebar.contains(e.target) && !cartIcon.contains(e.target)) {
+            cartSidebar.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
 const checkoutBtn = document.getElementById('checkout-btn');
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
@@ -633,30 +646,27 @@ if (checkoutBtn) {
         saveCart();
         updateCartDisplay();
         cartSidebar.classList.remove('open');
+        document.body.style.overflow = '';
     });
 }
 
 loadCart();
 
 // ========== USER AUTHENTICATION SYSTEM ==========
-// Get all registered users from localStorage
 function loadUsers() {
     const users = localStorage.getItem('mclub_users');
     return users ? JSON.parse(users) : [];
 }
 
-// Save users array to localStorage
 function saveUsers(users) {
     localStorage.setItem('mclub_users', JSON.stringify(users));
 }
 
-// Save current logged-in user
 function saveCurrentUser(user) {
     localStorage.setItem('mclub_current_user', JSON.stringify(user));
     currentUser = user;
 }
 
-// Load current user from localStorage on page load
 function loadCurrentUser() {
     const user = localStorage.getItem('mclub_current_user');
     if (user) {
@@ -665,7 +675,6 @@ function loadCurrentUser() {
     }
 }
 
-// Update UI based on login status (avatar, name display)
 function updateUserUI() {
     const userNameDisplay = document.getElementById('user-name-display');
     const userIconDiv = document.getElementById('user-icon');
@@ -674,7 +683,7 @@ function updateUserUI() {
         if (userNameDisplay) userNameDisplay.textContent = currentUser.name;
         if (userIconDiv) {
             if (currentUser.avatar) {
-                userIconDiv.innerHTML = `<img src="${currentUser.avatar}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;">`;
+                userIconDiv.innerHTML = `<img src="${currentUser.avatar}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;" alt="User avatar">`;
             } else {
                 userIconDiv.innerHTML = `<i class="fas fa-user-circle"></i>`;
             }
@@ -685,7 +694,6 @@ function updateUserUI() {
     }
 }
 
-// Register new user
 function registerUser(name, email, password) {
     const users = loadUsers();
     if (users.find(u => u.email === email)) {
@@ -712,7 +720,6 @@ function registerUser(name, email, password) {
     return { success: true };
 }
 
-// Login existing user
 function loginUser(email, password) {
     const users = loadUsers();
     const user = users.find(u => u.email === email && u.password === password);
@@ -724,14 +731,12 @@ function loginUser(email, password) {
     return { success: false, message: "Email ou mot de passe incorrect" };
 }
 
-// Logout current user
 function logoutUser() {
     localStorage.removeItem('mclub_current_user');
     currentUser = null;
     updateUserUI();
 }
 
-// Update user profile information
 function updateUserProfile(updates) {
     if (!currentUser) return;
     const users = loadUsers();
@@ -744,7 +749,6 @@ function updateUserProfile(updates) {
     }
 }
 
-// Auth Modal Elements
 const authModal = document.getElementById('auth-modal');
 const profileModal = document.getElementById('profile-modal');
 const userIconElement = document.getElementById('user-icon');
@@ -752,7 +756,6 @@ const userDropdown = document.getElementById('user-dropdown');
 const profileBtn = document.getElementById('profile-btn');
 const logoutBtn = document.getElementById('logout-btn');
 
-// Handle user icon click (show dropdown if logged in, else show auth modal)
 if (userIconElement) {
     userIconElement.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -760,16 +763,15 @@ if (userIconElement) {
             userDropdown.classList.toggle('show');
         } else {
             authModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
     });
 }
 
-// Close dropdown when clicking outside
 document.addEventListener('click', () => {
     if (userDropdown) userDropdown.classList.remove('show');
 });
 
-// Profile button click handler
 if (profileBtn) {
     profileBtn.addEventListener('click', () => {
         userDropdown.classList.remove('show');
@@ -777,7 +779,6 @@ if (profileBtn) {
     });
 }
 
-// Logout button click handler
 if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
         logoutUser();
@@ -786,7 +787,6 @@ if (logoutBtn) {
     });
 }
 
-// Auth tab switching (Login/Register)
 document.querySelectorAll('.auth-tab').forEach(tab => {
     tab.addEventListener('click', () => {
         document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
@@ -797,7 +797,6 @@ document.querySelectorAll('.auth-tab').forEach(tab => {
     });
 });
 
-// Login form submission
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -807,6 +806,7 @@ if (loginForm) {
         const result = loginUser(email, password);
         if (result.success) {
             authModal.style.display = 'none';
+            document.body.style.overflow = '';
             document.getElementById('login-form').reset();
             showNotification('Connexion réussie ! Bienvenue ' + currentUser.name);
         } else {
@@ -815,7 +815,6 @@ if (loginForm) {
     });
 }
 
-// Registration form submission
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -833,6 +832,7 @@ if (registerForm) {
         const result = registerUser(name, email, password);
         if (result.success) {
             authModal.style.display = 'none';
+            document.body.style.overflow = '';
             document.getElementById('register-form').reset();
             showNotification('Inscription réussie ! Bienvenue ' + name);
         } else {
@@ -841,21 +841,21 @@ if (registerForm) {
     });
 }
 
-// Close auth and profile modals
 const closeAuth = document.querySelector('.close-auth');
 const closeProfile = document.querySelector('.close-profile');
 if (closeAuth) {
     closeAuth.addEventListener('click', () => {
         authModal.style.display = 'none';
+        document.body.style.overflow = '';
     });
 }
 if (closeProfile) {
     closeProfile.addEventListener('click', () => {
         profileModal.style.display = 'none';
+        document.body.style.overflow = '';
     });
 }
 
-// Open profile modal and populate with current user data
 function openProfileModal() {
     if (!currentUser) return;
     document.getElementById('profile-name').value = currentUser.name || '';
@@ -868,9 +868,9 @@ function openProfileModal() {
         document.getElementById('profile-avatar-img').src = currentUser.avatar;
     }
     profileModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
-// Profile form submission (save changes)
 const profileForm = document.getElementById('profile-form');
 if (profileForm) {
     profileForm.addEventListener('submit', (e) => {
@@ -884,11 +884,11 @@ if (profileForm) {
         };
         updateUserProfile(updates);
         profileModal.style.display = 'none';
+        document.body.style.overflow = '';
         showNotification('Profil mis à jour !');
     });
 }
 
-// Avatar upload functionality
 const changeAvatarBtn = document.getElementById('change-avatar-btn');
 const avatarUpload = document.getElementById('avatar-upload');
 if (changeAvatarBtn && avatarUpload) {
@@ -909,10 +909,9 @@ if (changeAvatarBtn && avatarUpload) {
     });
 }
 
-// Load current user on page load
 loadCurrentUser();
 
-// ========== NEWSLETTER FORM (Main footer form) ==========
+// ========== NEWSLETTER FORM ==========
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
@@ -931,13 +930,10 @@ if (newsletterForm) {
 }
 
 // ========== LANGUAGE MANAGEMENT ==========
-// Update all text on page when language changes
 function updateLanguage(lang) {
-    // Update all elements with data-key attribute
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[lang][key]) {
-            // Handle HTML content for titles that contain <br> tags
             if (element.innerHTML && element.innerHTML.includes('<br>') && (key === 'hero_title' || key === 'health_title')) {
                 element.innerHTML = translations[lang][key];
             } else {
@@ -946,7 +942,6 @@ function updateLanguage(lang) {
         }
     });
     
-    // Set RTL for Arabic
     if (lang === 'ar') {
         document.documentElement.setAttribute('dir', 'rtl');
         document.documentElement.style.textAlign = 'right';
@@ -955,7 +950,6 @@ function updateLanguage(lang) {
         document.documentElement.style.textAlign = 'left';
     }
     
-    // Update active language button styling
     document.querySelectorAll('.lang-btn').forEach(btn => {
         if (btn.getAttribute('data-lang') === lang) {
             btn.classList.add('active');
@@ -965,7 +959,6 @@ function updateLanguage(lang) {
     });
 }
 
-// Language button click handlers
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         currentLang = btn.getAttribute('data-lang');
@@ -973,7 +966,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-// ========== SMOOTH SCROLLING FOR ANCHOR LINKS ==========
+// ========== SMOOTH SCROLLING ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -981,16 +974,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
         }
-        // Close mobile menu if open
         if (nav && nav.classList.contains('active')) {
             nav.classList.remove('active');
+            document.body.style.overflow = '';
             if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
 });
 
 // ========== ACTIVE NAV LINK ON SCROLL ==========
-// Highlights current section in navigation while scrolling
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -1014,3 +1006,6 @@ window.addEventListener('scroll', () => {
 
 // ========== INITIALIZE DEFAULT LANGUAGE ==========
 updateLanguage('fr');
+
+// ========== PREVENT IOS ZOOM ON INPUT FOCUS ==========
+// This is handled by CSS (font-size: 16px on inputs)
