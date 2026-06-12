@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Nos Coachs | M Club Sfax</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Additional styles for coaches page */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .coaches-full-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 992px) {
+            .coaches-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 100px 0 40px;
+                margin-top: 60px;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .coaches-full-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Dark mode toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mon panier</h3>
+            <span class="close-cart" aria-label="Close cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p>Votre panier est vide</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total</strong>: <span id="cart-total">0 DT</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-primary">Commander</button>
+    </div>
+
+    <!-- Cart Icon -->
+    <div id="cart-icon" class="cart-icon" aria-label="Shopping cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="M Club Logo" class="logo-img">
+                <span class="logo-text">M CLUB SFAX</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="coachs.html" class="active">Coachs</a></li>
+                    <li><a href="index.html#pricing">Tarifs</a></li>
+                    <li><a href="index.html#shop">Boutique</a></li>
+                    <li><a href="index.html#gallery">Galerie</a></li>
+                    <li><a href="index.html#nutrition">Nutrition</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="fr">
+                        <img src="fr.png" alt="Français" class="flag-icon">
+                        <span class="lang-code">FR</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <img src="en.png" alt="English" class="flag-icon">
+                        <span class="lang-code">EN</span>
+                    </button>
+                    <button class="lang-btn" data-lang="ar">
+                        <img src="ar.png" alt="العربية" class="flag-icon">
+                        <span class="lang-code">AR</span>
+                    </button>
+                </div>
+                <div class="user-menu">
+                    <div id="user-icon" class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div id="user-dropdown" class="user-dropdown">
+                        <span id="user-name-display"></span>
+                        <button id="profile-btn">Mon Profil</button>
+                        <button id="orders-btn">Mes commandes</button>
+                        <button id="logout-btn">Déconnexion</button>
+                    </div>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos Coachs Experts</h1>
+            <p>Des professionnels passionnés à votre service pour vous aider à atteindre vos objectifs</p>
+        </div>
+    </section>
+
+    <!-- All Coaches Section -->
+    <section class="coaches-section">
+        <div class="container">
+            <div class="coaches-full-grid">
+                <!-- Coach 1 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Karim" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=K'">
+                    <h3>Karim Ben Ali</h3>
+                    <p>Coach musculation & CrossFit</p>
+                    <div class="coach-bio">Spécialiste en prise de masse et force fonctionnelle. Plus de 8 ans d'expérience.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 2 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Coach Sonia" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=S'">
+                    <h3>Sonia Makhlouf</h3>
+                    <p>Coach Yoga & Bien-être</p>
+                    <div class="coach-bio">Experte en relaxation, stretching et bien-être mental. Certifiée en yoga thérapeutique.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 3 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Coach Mehdi" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=M'">
+                    <h3>Mehdi Trabelsi</h3>
+                    <p>Coach Boxe & Cardio</p>
+                    <div class="coach-bio">Ancien boxeur professionnel, spécialiste en cardio-training et sports de combat.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 4 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="250">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Coach Leila" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=L'">
+                    <h3>Leila Ben Mansour</h3>
+                    <p>Coach Fitness & Zumba</p>
+                    <div class="coach-bio">Spécialiste en cours collectifs et remise en forme. Ambiance et motivation garanties !</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 5 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Coach Nabil" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=N'">
+                    <h3>Nabil Chaabane</h3>
+                    <p>Coach Nutrition & Bodybuilding</p>
+                    <div class="coach-bio">Diplômé en nutrition sportive, il vous aidera à atteindre vos objectifs poids et muscle.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 6 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="350">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Coach Amira" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=A'">
+                    <h3>Amira Kallel</h3>
+                    <p>Coach Pilates & Récupération</p>
+                    <div class="coach-bio">Spécialiste en Pilates et récupération active. Idéal pour prévenir les blessures.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 7 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Coach Sami" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=Sa'">
+                    <h3>Sami Bouaziz</h3>
+                    <p>Coach CrossFit & HIIT</p>
+                    <div class="coach-bio">Expert en entraînement fractionné et CrossFit. Préparez-vous à repousser vos limites !</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 8 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Coach Ines" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=I'">
+                    <h3>Ines Hammami</h3>
+                    <p>Coach Aquagym & Piscine</p>
+                    <div class="coach-bio">Spécialiste des activités aquatiques. Douce et efficace pour tous les âges.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>NOUS CONTACTER</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Rte Lafrane, Sfax, Tunisie</p>
+                <p><i class="fas fa-phone-alt"></i> +216 74 217 600</p>
+                <p><i class="fas fa-envelope"></i> contact@mclub.tn</p>
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 M Club Sfax. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        // Dark mode persistence
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            const toggle = document.getElementById('dark-mode-toggle');
+            if (toggle) {
+                const icon = toggle.querySelector('i');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+        
+        // Dark mode toggle
+        const darkToggle = document.getElementById('dark-mode-toggle');
+        if (darkToggle) {
+            darkToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const icon = darkToggle.querySelector('i');
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+        }
+        
+        // Back to top
+        const backTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backTop.style.display = 'block';
+            } else {
+                backTop.style.display = 'none';
+            }
+        });
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
