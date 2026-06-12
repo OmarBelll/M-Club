@@ -56,6 +56,7 @@
                     <li><a href="#pricing" data-key="nav_pricing">Tarifs</a></li>
                     <li><a href="#shop" data-key="nav_shop">Boutique</a></li>
                     <li><a href="#gallery" data-key="nav_gallery">Galerie</a></li>
+                    <li><a href="#nutrition" data-key="nav_nutrition">Nutrition</a></li>
                     <li><a href="#faq" data-key="nav_faq">FAQ</a></li>
                     <li><a href="#contact" data-key="nav_contact">Contact</a></li>
                 </ul>
@@ -101,6 +102,7 @@
                 <button class="auth-tab active" data-tab="login" data-key="login_tab">Connexion</button>
                 <button class="auth-tab" data-tab="register" data-key="register_tab">Inscription</button>
             </div>
+            
             <form id="login-form" class="auth-form active">
                 <div class="input-group">
                     <label data-key="email_label">Email</label>
@@ -110,9 +112,18 @@
                     <label data-key="password_label">Mot de passe</label>
                     <input type="password" id="login-password" required aria-label="Password">
                 </div>
+                
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me"> <span data-key="remember_me">Se souvenir de moi</span>
+                    </label>
+                    <a href="#" id="forgot-password-link" class="forgot-password" data-key="forgot_password">Mot de passe oublié ?</a>
+                </div>
+                
                 <button type="submit" class="btn btn-primary" data-key="login_btn">Se connecter</button>
                 <p class="auth-error" id="login-error"></p>
             </form>
+            
             <form id="register-form" class="auth-form">
                 <div class="input-group">
                     <label data-key="name_label">Nom complet</label>
@@ -132,6 +143,23 @@
                 </div>
                 <button type="submit" class="btn btn-primary" data-key="register_btn">S'inscrire</button>
                 <p class="auth-error" id="register-error"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="forgot-password-modal">
+        <div class="forgot-password-modal-content">
+            <span class="close-forgot" aria-label="Close">&times;</span>
+            <h2 data-key="reset_title">Réinitialiser le mot de passe</h2>
+            <p data-key="reset_desc">Entrez votre email et nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
+            <form id="forgot-password-form">
+                <div class="input-group">
+                    <label data-key="email_label">Email</label>
+                    <input type="email" id="reset-email" required aria-label="Email">
+                </div>
+                <button type="submit" class="btn btn-primary" data-key="reset_btn">Envoyer le lien</button>
+                <p id="reset-message" class="reset-message"></p>
             </form>
         </div>
     </div>
@@ -194,17 +222,6 @@
             <div id="orders-list" class="orders-list">
                 <p data-key="no_orders">Aucune commande pour le moment</p>
             </div>
-        </div>
-    </div>
-
-    <!-- Receipt Modal -->
-    <div id="receipt-modal" class="receipt-modal">
-        <div class="receipt-modal-content">
-            <span class="close-receipt" aria-label="Close">&times;</span>
-            <div id="receipt-content" class="receipt-content">
-                <!-- Receipt content will be inserted here -->
-            </div>
-            <button id="print-receipt-btn" class="btn btn-primary" data-key="print_receipt">🖨️ Imprimer le reçu</button>
         </div>
     </div>
 
@@ -466,6 +483,58 @@
         </div>
     </section>
 
+    <!-- NUTRITION SECTION (NEW) -->
+    <section id="nutrition" class="nutrition-section">
+        <div class="container">
+            <h2 data-key="nutrition_title" data-aos="fade-up">CONSEILS NUTRITION</h2>
+            <p class="nutrition-subtitle" data-key="nutrition_subtitle" data-aos="fade-up">80% de vos résultats viennent de l'assiette. Découvrez nos conseils pour une alimentation saine et adaptée à vos objectifs.</p>
+            
+            <div class="nutrition-grid" data-aos="fade-up" data-aos-delay="200">
+                <!-- Tip 1 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3 data-key="nutrition_tip1_title">Mangez des protéines à chaque repas</h3>
+                    <p data-key="nutrition_tip1_desc">Les protéines sont essentielles pour la construction musculaire et la satiété. Œufs, poulet, poisson, légumineuses, fromage blanc... variez les sources !</p>
+                </div>
+                
+                <!-- Tip 2 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-tint"></i></div>
+                    <h3 data-key="nutrition_tip2_title">Hydratez-vous correctement</h3>
+                    <p data-key="nutrition_tip2_desc">Buvez au moins 1.5 à 2L d'eau par jour. L'hydratation est cruciale pour les performances et la récupération musculaire.</p>
+                </div>
+                
+                <!-- Tip 3 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-carrot"></i></div>
+                    <h3 data-key="nutrition_tip3_title">Priorisez les légumes</h3>
+                    <p data-key="nutrition_tip3_desc">Riches en vitamines, minéraux et fibres, les légumes doivent remplir la moitié de votre assiette à chaque repas.</p>
+                </div>
+                
+                <!-- Tip 4 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-utensils"></i></div>
+                    <h3 data-key="nutrition_tip4_title">Ne sautez pas de repas</h3>
+                    <p data-key="nutrition_tip4_desc">3 repas équilibrés par jour + une collation si nécessaire. Sauter des repas ralentit votre métabolisme.</p>
+                </div>
+                
+                <!-- Tip 5 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 data-key="nutrition_tip5_title">Écoutez votre corps</h3>
+                    <p data-key="nutrition_tip5_desc">Apprenez à reconnaître la faim et la satiété. Mangez lentement et savourez vos repas sans distraction.</p>
+                </div>
+                
+                <!-- Tip 6 -->
+                <div class="nutrition-card">
+                    <div class="nutrition-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3 data-key="nutrition_tip6_title">Préparez vos repas à l'avance</h3>
+                    <p data-key="nutrition_tip6_desc">Le meal prep vous aide à éviter les mauvaises tentations et à rester sur la bonne voie toute la semaine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
@@ -474,6 +543,8 @@
                 <div class="faq-item"><div class="faq-question"><span data-key="faq1_q">Comment puis-je m'inscrire ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq1_a">Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.</p></div></div>
                 <div class="faq-item"><div class="faq-question"><span data-key="faq2_q">Y a-t-il un engagement ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq2_a">Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.</p></div></div>
                 <div class="faq-item"><div class="faq-question"><span data-key="faq3_q">Proposez-vous des cours pour débutants ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq3_a">Oui, tous nos cours sont adaptés aux débutants. Nos coachs vous accompagnent pas à pas.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span data-key="faq4_q">Proposez-vous des consultations nutrition ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq4_a">Oui ! Nos coachs sont formés pour vous donner des conseils nutritionnels de base. Pour un suivi personnalisé, nous pouvons vous orienter vers nos partenaires nutritionnistes.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span data-key="faq5_q">Puis-je annuler mon abonnement à tout moment ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq5_a">Oui, avec un préavis de 15 jours. Aucun frais de résiliation.</p></div></div>
             </div>
         </div>
     </section>
