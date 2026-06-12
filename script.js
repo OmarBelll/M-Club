@@ -1,3 +1,4 @@
+// script.js
 // Language translations
 const translations = {
     fr: {
@@ -52,14 +53,9 @@ const translations = {
         choose_btn: "Choisir",
         training_title: "SÉANCES DE COACHING PERSONNALISÉ.",
         training_desc: "N'IMPORTE OÙ VOUS VOULEZ.",
-        news_title: "Abonnez-vous aujourd'hui",
-        news_desc: "Recevez nos offres et conseils fitness directement dans votre boîte mail.",
-        news_btn: "S'ABONNER",
         contact_title: "NOUS CONTACTER",
         address: "Rte Lafrane, Sfax, Tunisie",
         copyright: "Tous droits réservés.",
-        subscribe_success: "Merci ! Votre inscription a été reçue.",
-        subscribe_error: "Une erreur s'est produite. Veuillez réessayer.",
         stat_members: "Membres actifs",
         stat_coaches: "Coach diplômés",
         stat_classes: "Cours par semaine",
@@ -184,14 +180,9 @@ const translations = {
         choose_btn: "Choose",
         training_title: "PERSONAL TRAINING SESSIONS.",
         training_desc: "ANYWHERE YOU WANT.",
-        news_title: "Subscribe Today",
-        news_desc: "Receive our offers and fitness tips directly in your inbox.",
-        news_btn: "SUBSCRIBE",
         contact_title: "GET IN TOUCH",
         address: "Rte Lafrane, Sfax, Tunisia",
         copyright: "All rights reserved.",
-        subscribe_success: "Thank you! Your submission has been received.",
-        subscribe_error: "Oops! Something went wrong. Please try again.",
         stat_members: "Active Members",
         stat_coaches: "Certified Coaches",
         stat_classes: "Weekly Classes",
@@ -316,14 +307,9 @@ const translations = {
         choose_btn: "اختر",
         training_title: "جلسات تدريب شخصي.",
         training_desc: "أينما تريد.",
-        news_title: "اشترك اليوم",
-        news_desc: "احصل على عروضنا ونصائح اللياقة البدنية مباشرة في بريدك الوارد.",
-        news_btn: "اشترك",
         contact_title: "تواصل معنا",
         address: "طريق لافران، صفاقس، تونس",
         copyright: "جميع الحقوق محفوظة.",
-        subscribe_success: "شكراً! تم استلام اشتراكك.",
-        subscribe_error: "عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.",
         stat_members: "أعضاء نشطون",
         stat_coaches: "مدربون معتمدون",
         stat_classes: "حصص أسبوعية",
@@ -447,16 +433,18 @@ window.addEventListener('scroll', () => {
 
 // ========== BACK TO TOP BUTTON ==========
 const backToTop = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // ========== MOBILE MENU ==========
 const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -479,34 +467,51 @@ document.querySelectorAll('nav ul li a').forEach(link => {
 
 // ========== DARK MODE TOGGLE ==========
 const darkModeToggle = document.getElementById('dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const icon = darkModeToggle.querySelector('i');
-    if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+if (darkModeToggle) {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        const icon = darkModeToggle.querySelector('i');
+        if (icon) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
     }
-});
+    
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = darkModeToggle.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+}
 
 // ========== LIGHTBOX GALLERY ==========
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
+if (lightbox && lightboxImg) {
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            }
+        });
     });
-});
-document.querySelector('.close-lightbox').addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) lightbox.style.display = 'none';
-});
+    document.querySelector('.close-lightbox')?.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+}
 
 // ========== FAQ ACCORDION ==========
 document.querySelectorAll('.faq-question').forEach(question => {
@@ -522,8 +527,10 @@ function calculateIMC() {
     const heightCm = parseFloat(document.getElementById('height')?.value);
     
     if (!weight || !heightCm || isNaN(weight) || isNaN(heightCm) || weight <= 0 || heightCm <= 0) {
-        document.getElementById('imc-value').textContent = '--';
-        document.getElementById('imc-status').textContent = 'Veuillez entrer des valeurs valides';
+        const imcValueEl = document.getElementById('imc-value');
+        const imcStatusEl = document.getElementById('imc-status');
+        if (imcValueEl) imcValueEl.textContent = '--';
+        if (imcStatusEl) imcStatusEl.textContent = 'Veuillez entrer des valeurs valides';
         return;
     }
     
@@ -531,7 +538,8 @@ function calculateIMC() {
     const imc = weight / (heightM * heightM);
     const imcValue = imc.toFixed(1);
     
-    document.getElementById('imc-value').textContent = imcValue;
+    const imcValueEl = document.getElementById('imc-value');
+    if (imcValueEl) imcValueEl.textContent = imcValue;
     
     let status = '';
     let color = '';
@@ -551,8 +559,10 @@ function calculateIMC() {
     }
     
     const statusEl = document.getElementById('imc-status');
-    statusEl.textContent = status;
-    statusEl.style.color = color;
+    if (statusEl) {
+        statusEl.textContent = status;
+        statusEl.style.color = color;
+    }
 }
 
 const calculateBtn = document.getElementById('calculate-imc');
@@ -567,29 +577,33 @@ if (calculateBtn) {
 // ========== PROFILE VALIDATION ==========
 function validateProfileForm() {
     let isValid = true;
-    const age = document.getElementById('profile-age').value;
-    const weight = document.getElementById('profile-weight').value;
-    const height = document.getElementById('profile-height').value;
+    const age = document.getElementById('profile-age')?.value;
+    const weight = document.getElementById('profile-weight')?.value;
+    const height = document.getElementById('profile-height')?.value;
+    
+    const ageValidation = document.getElementById('age-validation');
+    const weightValidation = document.getElementById('weight-validation');
+    const heightValidation = document.getElementById('height-validation');
     
     if (age && (age < 12 || age > 120)) {
-        document.getElementById('age-validation').textContent = translations[currentLang].age_error;
+        if (ageValidation) ageValidation.textContent = translations[currentLang].age_error;
         isValid = false;
     } else {
-        document.getElementById('age-validation').textContent = '';
+        if (ageValidation) ageValidation.textContent = '';
     }
     
     if (weight && (weight < 20 || weight > 300)) {
-        document.getElementById('weight-validation').textContent = translations[currentLang].weight_error;
+        if (weightValidation) weightValidation.textContent = translations[currentLang].weight_error;
         isValid = false;
     } else {
-        document.getElementById('weight-validation').textContent = '';
+        if (weightValidation) weightValidation.textContent = '';
     }
     
     if (height && (height < 50 || height > 250)) {
-        document.getElementById('height-validation').textContent = translations[currentLang].height_error;
+        if (heightValidation) heightValidation.textContent = translations[currentLang].height_error;
         isValid = false;
     } else {
-        document.getElementById('height-validation').textContent = '';
+        if (heightValidation) heightValidation.textContent = '';
     }
     
     return isValid;
@@ -737,7 +751,7 @@ const cartIcon = document.getElementById('cart-icon');
 const cartSidebar = document.getElementById('cart-sidebar');
 const closeCart = document.querySelector('.close-cart');
 
-if (cartIcon) {
+if (cartIcon && cartSidebar) {
     cartIcon.addEventListener('click', () => {
         cartSidebar.classList.add('open');
     });
@@ -745,7 +759,7 @@ if (cartIcon) {
 
 if (closeCart) {
     closeCart.addEventListener('click', () => {
-        cartSidebar.classList.remove('open');
+        if (cartSidebar) cartSidebar.classList.remove('open');
     });
 }
 
@@ -799,7 +813,7 @@ if (checkoutBtn) {
         cart = [];
         saveCart();
         updateCartDisplay();
-        cartSidebar.classList.remove('open');
+        if (cartSidebar) cartSidebar.classList.remove('open');
         
         checkoutBtn.innerHTML = originalText;
         checkoutBtn.disabled = false;
@@ -833,7 +847,7 @@ function showOrders() {
         `).join('');
     }
     
-    ordersModal.style.display = 'flex';
+    if (ordersModal) ordersModal.style.display = 'flex';
 }
 
 if (ordersBtn) {
@@ -844,15 +858,17 @@ if (ordersBtn) {
 
 if (closeOrders) {
     closeOrders.addEventListener('click', () => {
-        ordersModal.style.display = 'none';
+        if (ordersModal) ordersModal.style.display = 'none';
     });
 }
 
-ordersModal.addEventListener('click', (e) => {
-    if (e.target === ordersModal) {
-        ordersModal.style.display = 'none';
-    }
-});
+if (ordersModal) {
+    ordersModal.addEventListener('click', (e) => {
+        if (e.target === ordersModal) {
+            ordersModal.style.display = 'none';
+        }
+    });
+}
 
 // ========== REMEMBER ME FUNCTIONALITY ==========
 function saveRememberedUser(email, password) {
@@ -1096,9 +1112,9 @@ if (userIconElement) {
     userIconElement.addEventListener('click', (e) => {
         e.stopPropagation();
         if (currentUser) {
-            userDropdown.classList.toggle('show');
+            if (userDropdown) userDropdown.classList.toggle('show');
         } else {
-            authModal.style.display = 'flex';
+            if (authModal) authModal.style.display = 'flex';
         }
     });
 }
@@ -1109,7 +1125,7 @@ document.addEventListener('click', () => {
 
 if (profileBtn) {
     profileBtn.addEventListener('click', () => {
-        userDropdown.classList.remove('show');
+        if (userDropdown) userDropdown.classList.remove('show');
         openProfileModal();
     });
 }
@@ -1117,7 +1133,7 @@ if (profileBtn) {
 if (logoutButton) {
     logoutButton.addEventListener('click', () => {
         logoutUser();
-        userDropdown.classList.remove('show');
+        if (userDropdown) userDropdown.classList.remove('show');
         showNotification('Vous avez été déconnecté');
     });
 }
@@ -1140,7 +1156,7 @@ if (loginForm) {
         const password = document.getElementById('login-password').value;
         const result = loginUser(email, password);
         if (result.success) {
-            authModal.style.display = 'none';
+            if (authModal) authModal.style.display = 'none';
             document.getElementById('login-form').reset();
             showNotification('Connexion réussie ! Bienvenue ' + currentUser.name);
         } else {
@@ -1165,7 +1181,7 @@ if (registerForm) {
         
         const result = registerUser(name, email, password);
         if (result.success) {
-            authModal.style.display = 'none';
+            if (authModal) authModal.style.display = 'none';
             document.getElementById('register-form').reset();
             showNotification('Inscription réussie ! Bienvenue ' + name);
         } else {
@@ -1178,27 +1194,35 @@ const closeAuth = document.querySelector('.close-auth');
 const closeProfileModal = document.querySelector('.close-profile');
 if (closeAuth) {
     closeAuth.addEventListener('click', () => {
-        authModal.style.display = 'none';
+        if (authModal) authModal.style.display = 'none';
     });
 }
 if (closeProfileModal) {
     closeProfileModal.addEventListener('click', () => {
-        profileModal.style.display = 'none';
+        if (profileModal) profileModal.style.display = 'none';
     });
 }
 
 function openProfileModal() {
     if (!currentUser) return;
-    document.getElementById('profile-name').value = currentUser.name || '';
-    document.getElementById('profile-email').value = currentUser.email || '';
-    document.getElementById('profile-age').value = currentUser.age || '';
-    document.getElementById('profile-weight').value = currentUser.weight || '';
-    document.getElementById('profile-height').value = currentUser.height || '';
-    document.getElementById('profile-goal').value = currentUser.goal || 'health';
-    if (currentUser.avatar) {
-        document.getElementById('profile-avatar-img').src = currentUser.avatar;
+    const profileName = document.getElementById('profile-name');
+    const profileEmail = document.getElementById('profile-email');
+    const profileAge = document.getElementById('profile-age');
+    const profileWeight = document.getElementById('profile-weight');
+    const profileHeight = document.getElementById('profile-height');
+    const profileGoal = document.getElementById('profile-goal');
+    const profileAvatarImg = document.getElementById('profile-avatar-img');
+    
+    if (profileName) profileName.value = currentUser.name || '';
+    if (profileEmail) profileEmail.value = currentUser.email || '';
+    if (profileAge) profileAge.value = currentUser.age || '';
+    if (profileWeight) profileWeight.value = currentUser.weight || '';
+    if (profileHeight) profileHeight.value = currentUser.height || '';
+    if (profileGoal) profileGoal.value = currentUser.goal || 'health';
+    if (profileAvatarImg && currentUser.avatar) {
+        profileAvatarImg.src = currentUser.avatar;
     }
-    profileModal.style.display = 'flex';
+    if (profileModal) profileModal.style.display = 'flex';
 }
 
 const profileFormElement = document.getElementById('profile-form');
@@ -1219,7 +1243,7 @@ if (profileFormElement) {
             goal: document.getElementById('profile-goal').value
         };
         updateUserProfile(updates);
-        profileModal.style.display = 'none';
+        if (profileModal) profileModal.style.display = 'none';
         showNotification('Profil mis à jour !');
     });
 }
@@ -1237,7 +1261,8 @@ if (changeAvatarBtn && avatarUpload) {
             reader.onload = function(event) {
                 const avatarUrl = event.target.result;
                 updateUserProfile({ avatar: avatarUrl });
-                document.getElementById('profile-avatar-img').src = avatarUrl;
+                const profileAvatarImg = document.getElementById('profile-avatar-img');
+                if (profileAvatarImg) profileAvatarImg.src = avatarUrl;
             };
             reader.readAsDataURL(file);
         }
@@ -1248,23 +1273,6 @@ loadCurrentUser();
 loadCart();
 loadOrders();
 loadRememberedUser();
-
-const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email').value.trim();
-        const messageDiv = document.getElementById('form-message');
-        if (email && email.includes('@') && email.includes('.')) {
-            messageDiv.innerHTML = `<span style="color: green;">${translations[currentLang].subscribe_success}</span>`;
-            document.getElementById('email').value = '';
-            setTimeout(() => messageDiv.innerHTML = '', 5000);
-        } else {
-            messageDiv.innerHTML = `<span style="color: red;">${translations[currentLang].subscribe_error}</span>`;
-            setTimeout(() => messageDiv.innerHTML = '', 5000);
-        }
-    });
-}
 
 function updateLanguage(lang) {
     document.querySelectorAll('[data-key]').forEach(element => {
