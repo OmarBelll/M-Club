@@ -1,35 +1,397 @@
 // Language translations
 const translations = {
     fr: {
-        // ... (keep all your existing translations)
-        // Add these new translations:
+        brand: "M CLUB SFAX",
+        nav_home: "Accueil",
+        nav_services: "Services",
+        nav_coaches: "Coachs",
+        nav_pricing: "Tarifs",
+        nav_shop: "Boutique",
+        nav_gallery: "Galerie",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        nav_nutrition: "Nutrition",
+        hero_title: "PLUS D'EXCUSES.<br>REMAÎTRE VOTRE CORPS.",
+        hero_desc: "Que vous soyez à Sfax ou ailleurs, M Club vous offre un coaching personnalisé pour atteindre vos objectifs, où que vous soyez.",
+        hero_btn: "COMMENCER MAINTENANT",
+        health_title: "PLACEZ VOTRE<br>SANTÉ EN PREMIER",
+        health_desc: "Faites de votre santé une priorité avec un entraînement adapté. Améliorez votre condition physique ou sculptez le corps de vos rêves grâce à des séances guidées qui vous conviennent, quand vous voulez, où vous voulez.",
+        health_btn: "COMMENCER",
+        card1_title: "GAGNER DU MUSCLE",
+        card1_desc: "Définissez votre silhouette dès maintenant.",
+        card2_title: "PERDRE DU POIDS",
+        card2_desc: "Réduisez la graisse et voyez votre poids baisser.",
+        card3_title: "AMÉLIORER L'ENDURANCE",
+        card3_desc: "Augmentez votre résistance et votre stamina.",
+        classes_title: "COURS COLLECTIFS",
+        coaches_title: "NOS COACHS",
+        pricing_title: "NOS ABONNEMENTS",
+        gallery_title: "NOTRE SALLE EN IMAGES",
+        testimonials_title: "CE QUE NOS MEMBRES DISENT",
+        faq_title: "FOIRE AUX QUESTIONS",
+        faq1_q: "Comment puis-je m'inscrire ?",
+        faq1_a: "Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.",
+        faq2_q: "Y a-t-il un engagement ?",
+        faq2_a: "Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.",
+        faq3_q: "Proposez-vous des cours pour débutants ?",
+        faq3_a: "Oui, tous nos cours sont adaptés aux débutants. Nos coachs vous accompagnent pas à pas.",
+        faq4_q: "Proposez-vous des consultations nutrition ?",
+        faq4_a: "Oui ! Nos coachs sont formés pour vous donner des conseils nutritionnels de base. Pour un suivi personnalisé, nous pouvons vous orienter vers nos partenaires nutritionnistes.",
+        faq5_q: "Puis-je annuler mon abonnement à tout moment ?",
+        faq5_a: "Oui, avec un préavis de 15 jours. Aucun frais de résiliation.",
+        hours_title: "HORAIRES D'OUVERTURE",
+        map_title: "NOUS TROUVER",
+        address_full: "Rte Lafrane, Sfax, Tunisie",
+        open_maps: "Voir tous les avis →",
+        mon_fri: "Lundi - Vendredi",
+        sat_sun: "Samedi - Dimanche",
+        holidays: "Jours fériés",
+        plan_basic: "Basic",
+        plan_premium: "Premium",
+        plan_annual: "Annuel",
+        choose_btn: "Choisir",
+        training_title: "SÉANCES DE COACHING PERSONNALISÉ.",
+        training_desc: "N'IMPORTE OÙ VOUS VOULEZ.",
+        news_title: "Abonnez-vous aujourd'hui",
+        news_desc: "Recevez nos offres et conseils fitness directement dans votre boîte mail.",
+        news_btn: "S'ABONNER",
+        contact_title: "NOUS CONTACTER",
+        address: "Rte Lafrane, Sfax, Tunisie",
+        copyright: "Tous droits réservés.",
+        subscribe_success: "Merci ! Votre inscription a été reçue.",
+        subscribe_error: "Une erreur s'est produite. Veuillez réessayer.",
+        stat_members: "Membres actifs",
+        stat_coaches: "Coach diplômés",
+        stat_classes: "Cours par semaine",
+        stat_days: "Jours d'ouverture",
+        imc_title: "CALCULEZ VOTRE IMC",
+        imc_weight: "Poids (kg)",
+        imc_height: "Taille (cm)",
+        imc_btn: "Calculer",
+        imc_underweight: "Insuffisance pondérale",
+        imc_normal: "Poids normal",
+        imc_overweight: "Surpoids",
+        imc_obesity: "Obésité",
+        shop_title: "BOUTIQUE M CLUB",
+        shop_subtitle: "Équipez-vous avec nos produits exclusifs",
+        product1_name: "T-shirt M Club",
+        product1_desc: "Coton bio, imprimé logo, coupe sport",
+        product2_name: "Bouteille isotherme",
+        product2_desc: "Acier inoxydable, 750ml, noir/or",
+        product3_name: "Bandeau anti-transpirant",
+        product3_desc: "Microfibre respirante, absorbant",
+        add_to_cart: "Ajouter au panier",
+        cart_empty: "Votre panier est vide",
+        cart_total: "Total",
+        checkout: "Commander",
+        login_tab: "Connexion",
+        register_tab: "Inscription",
+        email_label: "Email",
+        password_label: "Mot de passe",
+        name_label: "Nom complet",
+        confirm_label: "Confirmer mot de passe",
+        login_btn: "Se connecter",
+        register_btn: "S'inscrire",
+        profile_btn: "Mon Profil",
+        logout_btn: "Déconnexion",
+        profile_title: "Mon Profil",
+        change_avatar: "Changer la photo",
+        age_label: "Âge",
+        weight_label: "Poids (kg)",
+        height_label: "Taille (cm)",
+        goal_label: "Objectif",
+        goal_muscle: "Gagner du muscle",
+        goal_weight: "Perdre du poids",
+        goal_stamina: "Améliorer l'endurance",
+        goal_health: "Bien-être général",
+        save_btn: "Enregistrer",
+        age_error: "Âge doit être entre 12 et 120 ans",
+        weight_error: "Poids doit être entre 20 et 300 kg",
+        height_error: "Taille doit être entre 50 et 250 cm",
         orders_btn: "Mes commandes",
         orders_title: "Mes commandes",
         no_orders: "Aucune commande pour le moment",
-        print_receipt: "Imprimer le reçu",
-        receipt_title: "REÇU D'ACHAT",
-        receipt_thanks: "Merci pour votre confiance !",
-        receipt_footer: "M Club Sfax - Rte Lafrane, Sfax, Tunisie\nTél: +216 74 217 600"
+        remember_me: "Se souvenir de moi",
+        forgot_password: "Mot de passe oublié ?",
+        reset_title: "Réinitialiser le mot de passe",
+        reset_desc: "Entrez votre email et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+        reset_btn: "Envoyer le lien",
+        nutrition_title: "CONSEILS NUTRITION",
+        nutrition_subtitle: "80% de vos résultats viennent de l'assiette. Découvrez nos conseils pour une alimentation saine et adaptée à vos objectifs.",
+        nutrition_tip1_title: "Mangez des protéines à chaque repas",
+        nutrition_tip1_desc: "Les protéines sont essentielles pour la construction musculaire et la satiété. Œufs, poulet, poisson, légumineuses, fromage blanc... variez les sources !",
+        nutrition_tip2_title: "Hydratez-vous correctement",
+        nutrition_tip2_desc: "Buvez au moins 1.5 à 2L d'eau par jour. L'hydratation est cruciale pour les performances et la récupération musculaire.",
+        nutrition_tip3_title: "Priorisez les légumes",
+        nutrition_tip3_desc: "Riches en vitamines, minéraux et fibres, les légumes doivent remplir la moitié de votre assiette à chaque repas.",
+        nutrition_tip4_title: "Ne sautez pas de repas",
+        nutrition_tip4_desc: "3 repas équilibrés par jour + une collation si nécessaire. Sauter des repas ralentit votre métabolisme.",
+        nutrition_tip5_title: "Écoutez votre corps",
+        nutrition_tip5_desc: "Apprenez à reconnaître la faim et la satiété. Mangez lentement et savourez vos repas sans distraction.",
+        nutrition_tip6_title: "Préparez vos repas à l'avance",
+        nutrition_tip6_desc: "Le meal prep vous aide à éviter les mauvaises tentations et à rester sur la bonne voie toute la semaine."
     },
     en: {
-        // ... (keep all your existing translations)
+        brand: "M CLUB SFAX",
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_coaches: "Coaches",
+        nav_pricing: "Pricing",
+        nav_shop: "Shop",
+        nav_gallery: "Gallery",
+        nav_faq: "FAQ",
+        nav_contact: "Contact",
+        nav_nutrition: "Nutrition",
+        hero_title: "NO MORE EXCUSES.<br>GET FIT ANYWHERE.",
+        hero_desc: "Whether you're in Sfax or elsewhere, M Club offers personalized coaching to help you reach your goals, wherever you are.",
+        hero_btn: "START NOW",
+        health_title: "PUT YOUR<br>HEALTH FIRST",
+        health_desc: "Make your health a priority with tailored training. Improve your fitness or sculpt your dream body with guided sessions that work for you, when you want, where you want.",
+        health_btn: "GET STARTED",
+        card1_title: "GAIN MUSCLES",
+        card1_desc: "Start seeing muscle definition now.",
+        card2_title: "LOSE WEIGHT",
+        card2_desc: "Trim fat and see your weight drop.",
+        card3_title: "BUILD STAMINA",
+        card3_desc: "Build endurance and increase your stamina.",
+        classes_title: "GROUP CLASSES",
+        coaches_title: "OUR COACHES",
+        pricing_title: "OUR MEMBERSHIPS",
+        gallery_title: "OUR GYM IN PICTURES",
+        testimonials_title: "WHAT OUR MEMBERS SAY",
+        faq_title: "FREQUENTLY ASKED QUESTIONS",
+        faq1_q: "How can I register?",
+        faq1_a: "You can register online via our contact form or visit us at the gym on Route Lafrane.",
+        faq2_q: "Is there a commitment?",
+        faq2_a: "Our memberships are commitment-free. You can cancel at any time with 15 days notice.",
+        faq3_q: "Do you offer beginner classes?",
+        faq3_a: "Yes, all our classes are beginner-friendly. Our coaches will guide you step by step.",
+        faq4_q: "Do you offer nutrition consultations?",
+        faq4_a: "Yes! Our coaches are trained to give basic nutritional advice. For personalized follow-up, we can refer you to our nutritionist partners.",
+        faq5_q: "Can I cancel my subscription at any time?",
+        faq5_a: "Yes, with 15 days notice. No cancellation fees.",
+        hours_title: "OPENING HOURS",
+        map_title: "FIND US",
+        address_full: "Rte Lafrane, Sfax, Tunisia",
+        open_maps: "View all reviews →",
+        mon_fri: "Monday - Friday",
+        sat_sun: "Saturday - Sunday",
+        holidays: "Public Holidays",
+        plan_basic: "Basic",
+        plan_premium: "Premium",
+        plan_annual: "Annual",
+        choose_btn: "Choose",
+        training_title: "PERSONAL TRAINING SESSIONS.",
+        training_desc: "ANYWHERE YOU WANT.",
+        news_title: "Subscribe Today",
+        news_desc: "Receive our offers and fitness tips directly in your inbox.",
+        news_btn: "SUBSCRIBE",
+        contact_title: "GET IN TOUCH",
+        address: "Rte Lafrane, Sfax, Tunisia",
+        copyright: "All rights reserved.",
+        subscribe_success: "Thank you! Your submission has been received.",
+        subscribe_error: "Oops! Something went wrong. Please try again.",
+        stat_members: "Active Members",
+        stat_coaches: "Certified Coaches",
+        stat_classes: "Weekly Classes",
+        stat_days: "Open Days",
+        imc_title: "CALCULATE YOUR BMI",
+        imc_weight: "Weight (kg)",
+        imc_height: "Height (cm)",
+        imc_btn: "Calculate",
+        imc_underweight: "Underweight",
+        imc_normal: "Normal weight",
+        imc_overweight: "Overweight",
+        imc_obesity: "Obesity",
+        shop_title: "M CLUB SHOP",
+        shop_subtitle: "Gear up with our exclusive products",
+        product1_name: "M Club T-shirt",
+        product1_desc: "Organic cotton, logo print, sporty fit",
+        product2_name: "Insulated Bottle",
+        product2_desc: "Stainless steel, 750ml, black/gold",
+        product3_name: "Sweatband",
+        product3_desc: "Breathable microfiber, absorbent",
+        add_to_cart: "Add to cart",
+        cart_empty: "Your cart is empty",
+        cart_total: "Total",
+        checkout: "Checkout",
+        login_tab: "Login",
+        register_tab: "Register",
+        email_label: "Email",
+        password_label: "Password",
+        name_label: "Full name",
+        confirm_label: "Confirm password",
+        login_btn: "Login",
+        register_btn: "Register",
+        profile_btn: "My Profile",
+        logout_btn: "Logout",
+        profile_title: "My Profile",
+        change_avatar: "Change photo",
+        age_label: "Age",
+        weight_label: "Weight (kg)",
+        height_label: "Height (cm)",
+        goal_label: "Goal",
+        goal_muscle: "Build muscle",
+        goal_weight: "Lose weight",
+        goal_stamina: "Improve stamina",
+        goal_health: "General wellness",
+        save_btn: "Save",
+        age_error: "Age must be between 12 and 120",
+        weight_error: "Weight must be between 20 and 300 kg",
+        height_error: "Height must be between 50 and 250 cm",
         orders_btn: "My Orders",
         orders_title: "My Orders",
         no_orders: "No orders yet",
-        print_receipt: "Print Receipt",
-        receipt_title: "PURCHASE RECEIPT",
-        receipt_thanks: "Thank you for your trust!",
-        receipt_footer: "M Club Sfax - Rte Lafrane, Sfax, Tunisia\nTel: +216 74 217 600"
+        remember_me: "Remember me",
+        forgot_password: "Forgot password?",
+        reset_title: "Reset Password",
+        reset_desc: "Enter your email and we'll send you a link to reset your password.",
+        reset_btn: "Send reset link",
+        nutrition_title: "NUTRITION TIPS",
+        nutrition_subtitle: "80% of your results come from your plate. Discover our tips for healthy eating adapted to your goals.",
+        nutrition_tip1_title: "Eat protein at every meal",
+        nutrition_tip1_desc: "Proteins are essential for muscle building and satiety. Eggs, chicken, fish, legumes, cottage cheese... vary your sources!",
+        nutrition_tip2_title: "Stay hydrated",
+        nutrition_tip2_desc: "Drink at least 1.5 to 2L of water per day. Hydration is crucial for performance and muscle recovery.",
+        nutrition_tip3_title: "Prioritize vegetables",
+        nutrition_tip3_desc: "Rich in vitamins, minerals and fiber, vegetables should fill half your plate at every meal.",
+        nutrition_tip4_title: "Don't skip meals",
+        nutrition_tip4_desc: "3 balanced meals per day + a snack if needed. Skipping meals slows down your metabolism.",
+        nutrition_tip5_title: "Listen to your body",
+        nutrition_tip5_desc: "Learn to recognize hunger and fullness. Eat slowly and enjoy your meals without distraction.",
+        nutrition_tip6_title: "Prepare your meals in advance",
+        nutrition_tip6_desc: "Meal prep helps you avoid bad temptations and stay on track all week."
     },
     ar: {
-        // ... (keep all your existing translations)
+        brand: "إم كلوب صفاقس",
+        nav_home: "الرئيسية",
+        nav_services: "الخدمات",
+        nav_coaches: "المدربون",
+        nav_pricing: "الأسعار",
+        nav_shop: "المتجر",
+        nav_gallery: "المعرض",
+        nav_faq: "الأسئلة الشائعة",
+        nav_contact: "اتصل بنا",
+        nav_nutrition: "تغذية",
+        hero_title: "لا مزيد من الأعذار.<br>احصل على لياقتك في أي مكان.",
+        hero_desc: "سواء كنت في صفاقس أو في أي مكان آخر، يقدم لك إم كلوب تدريبًا شخصيًا لتحقيق أهدافك أينما كنت.",
+        hero_btn: "ابدأ الآن",
+        health_title: "ضع صحتك<br>في المقام الأول",
+        health_desc: "اجعل صحتك أولوية مع تدريب مخصص. حسّن لياقتك أو اصنع جسم أحلامك من خلال جلسات إرشادية تناسبك، متى شئت، أينما شئت.",
+        health_btn: "ابدأ",
+        card1_title: "بناء العضلات",
+        card1_desc: "ابدأ في رؤية تحديد العضلات الآن.",
+        card2_title: "إنقاص الوزن",
+        card2_desc: "تخلص من الدهون وشاهد وزنك ينخفض.",
+        card3_title: "تحسين التحمل",
+        card3_desc: "ابنِ قدرتك على التحمل وزد نشاطك.",
+        classes_title: "الدروس الجماعية",
+        coaches_title: "مدربونا",
+        pricing_title: "اشتراكاتنا",
+        gallery_title: "صالة الألعاب الرياضية في صور",
+        testimonials_title: "ماذا يقول أعضاؤنا",
+        faq_title: "الأسئلة الشائعة",
+        faq1_q: "كيف يمكنني التسجيل؟",
+        faq1_a: "يمكنك التسجيل عبر الإنترنت من خلال نموذج الاتصال الخاص بنا أو زيارتنا في الصالة على طريق لافران.",
+        faq2_q: "هل هناك التزام؟",
+        faq2_a: "اشتراكاتنا بدون التزام. يمكنك الإلغاء في أي وقت مع إشعار لمدة 15 يومًا.",
+        faq3_q: "هل تقدمون دروسًا للمبتدئين؟",
+        faq3_a: "نعم، جميع دروسنا مناسبة للمبتدئين. مدربونا سيرشدونك خطوة بخطوة.",
+        faq4_q: "هل تقدمون استشارات تغذية؟",
+        faq4_a: "نعم! مدربونا مدربون لتقديم نصائح غذائية أساسية. للمتابعة الشخصية، يمكننا إحالتك إلى شركائنا من أخصائيي التغذية.",
+        faq5_q: "هل يمكنني إلغاء اشتراكي في أي وقت؟",
+        faq5_a: "نعم، مع إشعار لمدة 15 يومًا. لا توجد رسوم إلغاء.",
+        hours_title: "ساعات العمل",
+        map_title: "اعثر علينا",
+        address_full: "طريق لافران، صفاقس، تونس",
+        open_maps: "عرض جميع التقييمات ←",
+        mon_fri: "الإثنين - الجمعة",
+        sat_sun: "السبت - الأحد",
+        holidays: "العطل الرسمية",
+        plan_basic: "أساسي",
+        plan_premium: "بريميوم",
+        plan_annual: "سنوي",
+        choose_btn: "اختر",
+        training_title: "جلسات تدريب شخصي.",
+        training_desc: "أينما تريد.",
+        news_title: "اشترك اليوم",
+        news_desc: "احصل على عروضنا ونصائح اللياقة البدنية مباشرة في بريدك الوارد.",
+        news_btn: "اشترك",
+        contact_title: "تواصل معنا",
+        address: "طريق لافران، صفاقس، تونس",
+        copyright: "جميع الحقوق محفوظة.",
+        subscribe_success: "شكراً! تم استلام اشتراكك.",
+        subscribe_error: "عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+        stat_members: "أعضاء نشطون",
+        stat_coaches: "مدربون معتمدون",
+        stat_classes: "حصص أسبوعية",
+        stat_days: "أيام العمل",
+        imc_title: "احسب مؤشر كتلة الجسم",
+        imc_weight: "الوزن (كجم)",
+        imc_height: "الطول (سم)",
+        imc_btn: "احسب",
+        imc_underweight: "نقص الوزن",
+        imc_normal: "وزن طبيعي",
+        imc_overweight: "زيادة الوزن",
+        imc_obesity: "سمنة",
+        shop_title: "متجر إم كلوب",
+        shop_subtitle: "تجهز بمنتجاتنا الحصرية",
+        product1_name: "تي شيرت إم كلوب",
+        product1_desc: "قطن عضوي، طباعة الشعار، مقاس رياضي",
+        product2_name: "زجاجة معزولة",
+        product2_desc: "ستانلس ستيل، 750 مل، أسود/ذهبي",
+        product3_name: "عصابة رأس",
+        product3_desc: "ألياف دقيقة قابلة للتنفس، ماصة",
+        add_to_cart: "أضف إلى السلة",
+        cart_empty: "سلة التسوق فارغة",
+        cart_total: "المجموع",
+        checkout: "إتمام الشراء",
+        login_tab: "تسجيل الدخول",
+        register_tab: "إنشاء حساب",
+        email_label: "البريد الإلكتروني",
+        password_label: "كلمة المرور",
+        name_label: "الاسم الكامل",
+        confirm_label: "تأكيد كلمة المرور",
+        login_btn: "تسجيل الدخول",
+        register_btn: "إنشاء حساب",
+        profile_btn: "ملفي الشخصي",
+        logout_btn: "تسجيل الخروج",
+        profile_title: "ملفي الشخصي",
+        change_avatar: "تغيير الصورة",
+        age_label: "العمر",
+        weight_label: "الوزن (كجم)",
+        height_label: "الطول (سم)",
+        goal_label: "الهدف",
+        goal_muscle: "بناء العضلات",
+        goal_weight: "إنقاص الوزن",
+        goal_stamina: "تحسين التحمل",
+        goal_health: "العافية العامة",
+        save_btn: "حفظ",
+        age_error: "العمر يجب أن يكون بين 12 و 120 سنة",
+        weight_error: "الوزن يجب أن يكون بين 20 و 300 كجم",
+        height_error: "الطول يجب أن يكون بين 50 و 250 سم",
         orders_btn: "طلباتي",
         orders_title: "طلباتي",
         no_orders: "لا توجد طلبات بعد",
-        print_receipt: "طباعة الإيصال",
-        receipt_title: "إيصال الشراء",
-        receipt_thanks: "شكرا لثقتكم!",
-        receipt_footer: "إم كلوب صفاقس - طريق لافران، صفاقس، تونس\nهاتف: +216 74 217 600"
+        remember_me: "تذكرني",
+        forgot_password: "نسيت كلمة المرور؟",
+        reset_title: "إعادة تعيين كلمة المرور",
+        reset_desc: "أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور الخاصة بك.",
+        reset_btn: "إرسال رابط إعادة التعيين",
+        nutrition_title: "نصائح غذائية",
+        nutrition_subtitle: "80% من نتائجك تأتي من طبقك. اكتشف نصائحنا للأكل الصحي المناسب لأهدافك.",
+        nutrition_tip1_title: "تناول البروتين في كل وجبة",
+        nutrition_tip1_desc: "البروتينات ضرورية لبناء العضلات والشعور بالشبع. البيض والدجاج والسمك والبقوليات والجبن القريش... تنويع المصادر!",
+        nutrition_tip2_title: "اشرب كمية كافية من الماء",
+        nutrition_tip2_desc: "اشرب ما لا يقل عن 1.5 إلى 2 لتر من الماء يوميًا. الترطيب ضروري للأداء واستشفاء العضلات.",
+        nutrition_tip3_title: "أعط الأولوية للخضروات",
+        nutrition_tip3_desc: "الغنية بالفيتامينات والمعادن والألياف، يجب أن تملأ الخضروات نصف طبقك في كل وجبة.",
+        nutrition_tip4_title: "لا تتخطى الوجبات",
+        nutrition_tip4_desc: "3 وجبات متوازنة في اليوم + وجبة خفيفة إذا لزم الأمر. تخطي الوجبات يبطئ عملية التمثيل الغذائي.",
+        nutrition_tip5_title: "استمع إلى جسدك",
+        nutrition_tip5_desc: "تعلم التعرف على الجوع والشبع. تناول الطعام ببطء واستمتع بوجباتك دون تشتيت.",
+        nutrition_tip6_title: "حضر وجباتك مسبقًا",
+        nutrition_tip6_desc: "يساعدك تحضير الوجبات مسبقًا على تجنب الإغراءات والبقاء على المسار الصحيح طوال الأسبوع."
     }
 };
 
@@ -327,7 +689,6 @@ function updateCartDisplay() {
     if (cartCount) cartCount.textContent = itemCount;
     if (cartTotal) cartTotal.textContent = `${total} DT`;
     
-    // Add event listeners for quantity buttons
     document.querySelectorAll('.dec-qty').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const index = parseInt(btn.getAttribute('data-index'));
@@ -400,11 +761,11 @@ function saveOrders() {
 }
 
 function addOrder(order) {
-    orders.unshift(order); // Add to beginning (newest first)
+    orders.unshift(order);
     saveOrders();
 }
 
-// ========== CHECKOUT WITH ORDER SAVING AND RECEIPT ==========
+// ========== CHECKOUT WITH ORDER SAVING ==========
 const checkoutBtn = document.getElementById('checkout-btn');
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', async () => {
@@ -413,17 +774,14 @@ if (checkoutBtn) {
             return;
         }
         
-        // Show loading state
         const originalText = checkoutBtn.innerHTML;
         checkoutBtn.innerHTML = '<span class="loading-spinner"></span> Traitement...';
         checkoutBtn.disabled = true;
         
-        // Simulate async operation
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         
-        // Create order object
         const order = {
             id: Date.now(),
             date: new Date().toISOString(),
@@ -433,82 +791,19 @@ if (checkoutBtn) {
             userName: currentUser ? currentUser.name : 'Invité'
         };
         
-        // Save order
         addOrder(order);
         
-        // Show receipt
-        showReceipt(order);
-        
-        // Clear cart
         cart = [];
         saveCart();
         updateCartDisplay();
         cartSidebar.classList.remove('open');
         
-        // Reset button
         checkoutBtn.innerHTML = originalText;
         checkoutBtn.disabled = false;
         
         showNotification(`Merci ! Votre commande de ${total} DT a été enregistrée.`);
     });
 }
-
-// ========== RECEIPT FUNCTIONALITY ==========
-const receiptModal = document.getElementById('receipt-modal');
-const receiptContent = document.getElementById('receipt-content');
-const closeReceipt = document.querySelector('.close-receipt');
-const printReceiptBtn = document.getElementById('print-receipt-btn');
-
-function showReceipt(order) {
-    const date = new Date(order.date).toLocaleString();
-    const itemsHtml = order.items.map(item => `
-        <div class="receipt-item">
-            <span>${item.name} x ${item.quantity}</span>
-            <span>${item.price * item.quantity} DT</span>
-        </div>
-    `).join('');
-    
-    receiptContent.innerHTML = `
-        <div class="receipt-header">
-            <h3>${translations[currentLang].receipt_title}</h3>
-            <p>${translations[currentLang].brand}</p>
-            <p>${date}</p>
-            <p>Commande #${order.id}</p>
-        </div>
-        <div class="receipt-items">
-            ${itemsHtml}
-        </div>
-        <div class="receipt-total">
-            <span>${translations[currentLang].cart_total}</span>
-            <span>${order.total} DT</span>
-        </div>
-        <div class="receipt-footer">
-            <p>${translations[currentLang].receipt_thanks}</p>
-            <p>${translations[currentLang].receipt_footer}</p>
-        </div>
-    `;
-    
-    receiptModal.style.display = 'flex';
-}
-
-if (closeReceipt) {
-    closeReceipt.addEventListener('click', () => {
-        receiptModal.style.display = 'none';
-    });
-}
-
-if (printReceiptBtn) {
-    printReceiptBtn.addEventListener('click', () => {
-        window.print();
-    });
-}
-
-// Close receipt when clicking outside
-receiptModal.addEventListener('click', (e) => {
-    if (e.target === receiptModal) {
-        receiptModal.style.display = 'none';
-    }
-});
 
 // ========== ORDERS MODAL ==========
 const ordersModal = document.getElementById('orders-modal');
@@ -523,7 +818,7 @@ function showOrders() {
         ordersList.innerHTML = `<p>${translations[currentLang].no_orders}</p>`;
     } else {
         ordersList.innerHTML = orders.map(order => `
-            <div class="order-item" data-order-id="${order.id}">
+            <div class="order-item">
                 <div class="order-header">
                     <span class="order-date">${new Date(order.date).toLocaleDateString()}</span>
                     <span class="order-total">${order.total} DT</span>
@@ -533,18 +828,6 @@ function showOrders() {
                 </div>
             </div>
         `).join('');
-        
-        // Add click event to view receipt
-        document.querySelectorAll('.order-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const orderId = parseInt(item.getAttribute('data-order-id'));
-                const order = orders.find(o => o.id === orderId);
-                if (order) {
-                    ordersModal.style.display = 'none';
-                    showReceipt(order);
-                }
-            });
-        });
     }
     
     ordersModal.style.display = 'flex';
@@ -567,6 +850,134 @@ ordersModal.addEventListener('click', (e) => {
         ordersModal.style.display = 'none';
     }
 });
+
+// ========== REMEMBER ME FUNCTIONALITY ==========
+function saveRememberedUser(email, password) {
+    const rememberCheckbox = document.getElementById('remember-me');
+    if (rememberCheckbox && rememberCheckbox.checked) {
+        localStorage.setItem('remembered_email', email);
+        localStorage.setItem('remembered_password', btoa(password));
+        localStorage.setItem('remember_me', 'true');
+    } else {
+        localStorage.removeItem('remembered_email');
+        localStorage.removeItem('remembered_password');
+        localStorage.setItem('remember_me', 'false');
+    }
+}
+
+function loadRememberedUser() {
+    const rememberMe = localStorage.getItem('remember_me');
+    if (rememberMe === 'true') {
+        const email = localStorage.getItem('remembered_email');
+        const encodedPassword = localStorage.getItem('remembered_password');
+        if (email && encodedPassword) {
+            const password = atob(encodedPassword);
+            const emailInput = document.getElementById('login-email');
+            const passwordInput = document.getElementById('login-password');
+            const rememberCheckbox = document.getElementById('remember-me');
+            if (emailInput) emailInput.value = email;
+            if (passwordInput) passwordInput.value = password;
+            if (rememberCheckbox) rememberCheckbox.checked = true;
+            
+            setTimeout(() => {
+                const result = loginUser(email, password);
+                if (result.success && authModal) {
+                    authModal.style.display = 'none';
+                    showNotification('Connexion automatique réussie ! Bienvenue ' + currentUser.name);
+                }
+            }, 100);
+        }
+    }
+}
+
+// ========== FORGOT PASSWORD FUNCTIONALITY ==========
+const forgotPasswordModal = document.getElementById('forgot-password-modal');
+const forgotPasswordLink = document.getElementById('forgot-password-link');
+const closeForgot = document.querySelector('.close-forgot');
+const forgotPasswordForm = document.getElementById('forgot-password-form');
+const resetMessage = document.getElementById('reset-message');
+
+if (forgotPasswordLink) {
+    forgotPasswordLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (authModal) authModal.style.display = 'none';
+        if (forgotPasswordModal) forgotPasswordModal.style.display = 'flex';
+    });
+}
+
+if (closeForgot) {
+    closeForgot.addEventListener('click', () => {
+        if (forgotPasswordModal) forgotPasswordModal.style.display = 'none';
+    });
+}
+
+if (forgotPasswordForm) {
+    forgotPasswordForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('reset-email').value;
+        const users = loadUsers();
+        const user = users.find(u => u.email === email);
+        
+        if (user) {
+            const resetToken = Math.random().toString(36).substring(2, 15);
+            
+            if (resetMessage) {
+                resetMessage.innerHTML = `Un lien de réinitialisation a été envoyé à ${email}.<br><small>(Demo: <a href="#" onclick="simulateReset('${email}')">Cliquez ici pour simuler</a>)</small>`;
+                resetMessage.className = 'reset-message success';
+            }
+            
+            localStorage.setItem('reset_token_' + email, resetToken);
+            document.getElementById('reset-email').value = '';
+        } else {
+            if (resetMessage) {
+                resetMessage.innerHTML = 'Aucun compte trouvé avec cet email.';
+                resetMessage.className = 'reset-message error';
+            }
+        }
+        
+        setTimeout(() => {
+            if (resetMessage && resetMessage.innerHTML) {
+                setTimeout(() => {
+                    resetMessage.innerHTML = '';
+                }, 5000);
+            }
+        }, 5000);
+    });
+}
+
+window.simulateReset = function(email) {
+    const tempPassword = Math.random().toString(36).substring(2, 10);
+    const users = loadUsers();
+    const userIndex = users.findIndex(u => u.email === email);
+    
+    if (userIndex !== -1) {
+        users[userIndex].password = tempPassword;
+        saveUsers(users);
+        if (resetMessage) {
+            resetMessage.innerHTML = `Un nouveau mot de passe temporaire a été créé: <strong>${tempPassword}</strong><br>Veuillez vous connecter avec ce mot de passe puis changer votre mot de passe dans votre profil.`;
+            resetMessage.className = 'reset-message success';
+        }
+        
+        const emailInput = document.getElementById('login-email');
+        const passwordInput = document.getElementById('login-password');
+        if (emailInput) emailInput.value = email;
+        if (passwordInput) passwordInput.value = tempPassword;
+        
+        setTimeout(() => {
+            if (forgotPasswordModal) forgotPasswordModal.style.display = 'none';
+            if (authModal) authModal.style.display = 'flex';
+            showNotification('Mot de passe temporaire généré ! Veuillez vous connecter.');
+        }, 3000);
+    }
+};
+
+if (forgotPasswordModal) {
+    forgotPasswordModal.addEventListener('click', (e) => {
+        if (e.target === forgotPasswordModal) {
+            forgotPasswordModal.style.display = 'none';
+        }
+    });
+}
 
 // ========== AUTHENTIFICATION SYSTEM ==========
 let currentUser = null;
@@ -644,6 +1055,10 @@ function loginUser(email, password) {
     if (user) {
         saveCurrentUser(user);
         updateUserUI();
+        const rememberCheckbox = document.getElementById('remember-me');
+        if (rememberCheckbox) {
+            saveRememberedUser(email, password);
+        }
         return { success: true };
     }
     return { success: false, message: "Email ou mot de passe incorrect" };
@@ -667,7 +1082,6 @@ function updateUserProfile(updates) {
     }
 }
 
-// Auth Modal Elements
 const authModal = document.getElementById('auth-modal');
 const profileModal = document.getElementById('profile-modal');
 const userIconElement = document.getElementById('user-icon');
@@ -705,7 +1119,6 @@ if (logoutButton) {
     });
 }
 
-// Auth tabs
 document.querySelectorAll('.auth-tab').forEach(tab => {
     tab.addEventListener('click', () => {
         document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
@@ -716,7 +1129,6 @@ document.querySelectorAll('.auth-tab').forEach(tab => {
     });
 });
 
-// Login form
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -734,7 +1146,6 @@ if (loginForm) {
     });
 }
 
-// Register form
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -760,7 +1171,6 @@ if (registerForm) {
     });
 }
 
-// Close modals
 const closeAuth = document.querySelector('.close-auth');
 const closeProfileModal = document.querySelector('.close-profile');
 if (closeAuth) {
@@ -831,12 +1241,11 @@ if (changeAvatarBtn && avatarUpload) {
     });
 }
 
-// Load data on startup
 loadCurrentUser();
 loadCart();
 loadOrders();
+loadRememberedUser();
 
-// ========== NEWSLETTER FORM ==========
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
@@ -854,7 +1263,6 @@ if (newsletterForm) {
     });
 }
 
-// ========== LANGUAGE MANAGEMENT ==========
 function updateLanguage(lang) {
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
@@ -893,7 +1301,6 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-// ========== SMOOTH SCROLLING ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -909,7 +1316,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== ACTIVE NAV LINK ON SCROLL ==========
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -931,8 +1337,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Initialize language
 updateLanguage('fr');
 
-// Console warning
 console.log('%c🔐 Note: This demo stores data in localStorage. For production, use a proper backend!', 'color: #f0b90b; font-size: 12px;');
