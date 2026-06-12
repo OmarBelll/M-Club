@@ -2,8 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#000000"> <!-- Better mobile theming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>M Club Sfax | Fitness & Bien-être</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,20 +10,17 @@
 </head>
 <body>
 
-    <!-- ========== DARK MODE TOGGLE BUTTON ========== -->
-    <!-- Fixed position button that switches between light/dark themes -->
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Dark mode toggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- ========== BACK TO TOP BUTTON ========== -->
-    <!-- Appears after scrolling, smooth scrolls to top -->
+    <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- ========== SHOPPING CART SIDEBAR ========== -->
-    <!-- Slide-out panel showing cart items -->
+    <!-- Cart Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3><i class="fas fa-shopping-cart"></i> Mon panier</h3>
@@ -39,24 +35,19 @@
         <button id="checkout-btn" class="btn btn-primary" data-key="checkout">Commander</button>
     </div>
 
-    <!-- ========== CART ICON (FLOATING) ========== -->
-    <!-- Fixed position cart button that opens the sidebar -->
+    <!-- Cart Icon -->
     <div id="cart-icon" class="cart-icon" aria-label="Shopping cart">
         <i class="fas fa-shopping-cart"></i>
         <span id="cart-count">0</span>
     </div>
 
-    <!-- ========== HEADER / NAVIGATION BAR ========== -->
-    <!-- Fixed top navigation with logo and menu -->
+    <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <!-- Logo Section -->
             <div class="logo">
                 <img src="logo.png" alt="M Club Logo" class="logo-img">
                 <span class="logo-text" data-key="brand">M CLUB SFAX</span>
             </div>
-            
-            <!-- Main Navigation Menu -->
             <nav>
                 <ul>
                     <li><a href="#accueil" data-key="nav_home">Accueil</a></li>
@@ -69,10 +60,7 @@
                     <li><a href="#contact" data-key="nav_contact">Contact</a></li>
                 </ul>
             </nav>
-            
-            <!-- Right side header elements -->
             <div class="header-right">
-                <!-- Language Switcher: French, English, Arabic -->
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="fr" aria-label="French">
                         <img src="fr.png" alt="Français" class="flag-icon">
@@ -87,8 +75,6 @@
                         <span class="lang-code">AR</span>
                     </button>
                 </div>
-                
-                <!-- User Menu: Shows profile dropdown when logged in -->
                 <div class="user-menu">
                     <div id="user-icon" class="user-icon" aria-label="User menu">
                         <i class="fas fa-user-circle"></i>
@@ -96,11 +82,10 @@
                     <div id="user-dropdown" class="user-dropdown">
                         <span id="user-name-display"></span>
                         <button id="profile-btn" data-key="profile_btn">Mon Profil</button>
+                        <button id="orders-btn" data-key="orders_btn">Mes commandes</button>
                         <button id="logout-btn" data-key="logout_btn">Déconnexion</button>
                     </div>
                 </div>
-                
-                <!-- Mobile Menu Toggle (hamburger icon) -->
                 <div class="mobile-menu-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -108,49 +93,42 @@
         </div>
     </header>
 
-    <!-- ========== AUTHENTICATION MODAL ========== -->
-    <!-- Popup for login and registration -->
+    <!-- Auth Modal -->
     <div id="auth-modal" class="auth-modal">
         <div class="auth-modal-content">
             <span class="close-auth" aria-label="Close">&times;</span>
-            
-            <!-- Tab buttons for Login/Register -->
             <div class="auth-tabs">
                 <button class="auth-tab active" data-tab="login" data-key="login_tab">Connexion</button>
                 <button class="auth-tab" data-tab="register" data-key="register_tab">Inscription</button>
             </div>
-            
-            <!-- Login Form -->
             <form id="login-form" class="auth-form active">
                 <div class="input-group">
                     <label data-key="email_label">Email</label>
-                    <input type="email" id="login-email" required>
+                    <input type="email" id="login-email" required aria-label="Email">
                 </div>
                 <div class="input-group">
                     <label data-key="password_label">Mot de passe</label>
-                    <input type="password" id="login-password" required>
+                    <input type="password" id="login-password" required aria-label="Password">
                 </div>
                 <button type="submit" class="btn btn-primary" data-key="login_btn">Se connecter</button>
                 <p class="auth-error" id="login-error"></p>
             </form>
-            
-            <!-- Registration Form -->
             <form id="register-form" class="auth-form">
                 <div class="input-group">
                     <label data-key="name_label">Nom complet</label>
-                    <input type="text" id="register-name" required>
+                    <input type="text" id="register-name" required aria-label="Full name">
                 </div>
                 <div class="input-group">
                     <label data-key="email_label">Email</label>
-                    <input type="email" id="register-email" required>
+                    <input type="email" id="register-email" required aria-label="Email">
                 </div>
                 <div class="input-group">
                     <label data-key="password_label">Mot de passe</label>
-                    <input type="password" id="register-password" required>
+                    <input type="password" id="register-password" required aria-label="Password">
                 </div>
                 <div class="input-group">
                     <label data-key="confirm_label">Confirmer mot de passe</label>
-                    <input type="password" id="register-confirm" required>
+                    <input type="password" id="register-confirm" required aria-label="Confirm password">
                 </div>
                 <button type="submit" class="btn btn-primary" data-key="register_btn">S'inscrire</button>
                 <p class="auth-error" id="register-error"></p>
@@ -158,45 +136,44 @@
         </div>
     </div>
 
-    <!-- ========== PROFILE MODAL ========== -->
-    <!-- Popup for editing user profile information -->
+    <!-- Profile Modal -->
     <div id="profile-modal" class="profile-modal">
         <div class="profile-modal-content">
             <span class="close-profile" aria-label="Close">&times;</span>
             <h2 data-key="profile_title">Mon Profil</h2>
             <form id="profile-form">
-                <!-- Avatar section with upload -->
                 <div class="profile-avatar">
                     <img id="profile-avatar-img" src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Avatar">
                     <button type="button" id="change-avatar-btn" class="btn-small" data-key="change_avatar">Changer la photo</button>
-                    <input type="file" id="avatar-upload" accept="image/*" style="display:none">
+                    <input type="file" id="avatar-upload" accept="image/*" style="display:none" aria-label="Upload avatar">
                 </div>
-                
-                <!-- Profile fields grid -->
                 <div class="profile-grid">
                     <div class="input-group">
                         <label data-key="name_label">Nom complet</label>
-                        <input type="text" id="profile-name">
+                        <input type="text" id="profile-name" aria-label="Full name">
                     </div>
                     <div class="input-group">
                         <label data-key="email_label">Email</label>
-                        <input type="email" id="profile-email" readonly>
+                        <input type="email" id="profile-email" readonly aria-label="Email">
                     </div>
                     <div class="input-group">
                         <label data-key="age_label">Âge</label>
-                        <input type="number" id="profile-age" placeholder="25">
+                        <input type="number" id="profile-age" placeholder="25" min="12" max="120" aria-label="Age">
+                        <small class="validation-message" id="age-validation"></small>
                     </div>
                     <div class="input-group">
                         <label data-key="weight_label">Poids (kg)</label>
-                        <input type="number" id="profile-weight" step="0.5" placeholder="70">
+                        <input type="number" id="profile-weight" step="0.5" placeholder="70" min="20" max="300" aria-label="Weight">
+                        <small class="validation-message" id="weight-validation"></small>
                     </div>
                     <div class="input-group">
                         <label data-key="height_label">Taille (cm)</label>
-                        <input type="number" id="profile-height" placeholder="170">
+                        <input type="number" id="profile-height" placeholder="170" min="50" max="250" aria-label="Height">
+                        <small class="validation-message" id="height-validation"></small>
                     </div>
                     <div class="input-group">
                         <label data-key="goal_label">Objectif</label>
-                        <select id="profile-goal">
+                        <select id="profile-goal" aria-label="Goal">
                             <option value="muscle" data-key="goal_muscle">Gagner du muscle</option>
                             <option value="weight" data-key="goal_weight">Perdre du poids</option>
                             <option value="stamina" data-key="goal_stamina">Améliorer l'endurance</option>
@@ -209,8 +186,29 @@
         </div>
     </div>
 
-    <!-- ========== HERO SECTION ========== -->
-    <!-- Main banner with call-to-action -->
+    <!-- Orders Modal -->
+    <div id="orders-modal" class="orders-modal">
+        <div class="orders-modal-content">
+            <span class="close-orders" aria-label="Close">&times;</span>
+            <h2 data-key="orders_title">Mes commandes</h2>
+            <div id="orders-list" class="orders-list">
+                <p data-key="no_orders">Aucune commande pour le moment</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receipt-modal" class="receipt-modal">
+        <div class="receipt-modal-content">
+            <span class="close-receipt" aria-label="Close">&times;</span>
+            <div id="receipt-content" class="receipt-content">
+                <!-- Receipt content will be inserted here -->
+            </div>
+            <button id="print-receipt-btn" class="btn btn-primary" data-key="print_receipt">🖨️ Imprimer le reçu</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
@@ -220,8 +218,7 @@
         </div>
     </section>
 
-    <!-- ========== STATISTICS SECTION ========== -->
-    <!-- Animated counters showing club metrics -->
+    <!-- Stats Section -->
     <section class="stats-section">
         <div class="container stats-grid">
             <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
@@ -243,25 +240,22 @@
         </div>
     </section>
 
-    <!-- ========== BMI CALCULATOR SECTION ========== -->
-    <!-- Interactive BMI (IMC) calculator -->
+    <!-- IMC Calculator Section -->
     <section class="imc-section">
         <div class="container">
             <h2 data-key="imc_title" data-aos="fade-up">CALCULEZ VOTRE IMC</h2>
             <div class="imc-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- Input form -->
                 <div class="imc-form">
                     <div class="input-group">
                         <label data-key="imc_weight">Poids (kg)</label>
-                        <input type="number" id="weight" placeholder="75" step="0.5">
+                        <input type="number" id="weight" placeholder="75" step="0.5" min="20" max="300" aria-label="Weight">
                     </div>
                     <div class="input-group">
                         <label data-key="imc_height">Taille (cm)</label>
-                        <input type="number" id="height" placeholder="175" step="1">
+                        <input type="number" id="height" placeholder="175" step="1" min="50" max="250" aria-label="Height">
                     </div>
                     <button id="calculate-imc" class="btn btn-primary" data-key="imc_btn">Calculer</button>
                 </div>
-                <!-- Results display -->
                 <div class="imc-result">
                     <div class="imc-value" id="imc-value">--</div>
                     <div class="imc-status" id="imc-status"></div>
@@ -284,19 +278,15 @@
         </div>
     </section>
 
-    <!-- ========== SERVICES / HEALTH SECTION ========== -->
-    <!-- Overview of fitness services offered -->
+    <!-- Services Section -->
     <section id="services" class="health-first">
         <div class="container">
             <div class="health-grid">
-                <!-- Left side: Main text -->
                 <div class="health-text" data-aos="fade-right" data-aos-duration="800">
                     <h2 data-key="health_title">PLACEZ VOTRE<br>SANTÉ EN PREMIER</h2>
                     <p data-key="health_desc">Faites de votre santé une priorité avec un entraînement adapté. Améliorez votre condition physique ou sculptez le corps de vos rêves grâce à des séances guidées qui vous conviennent, quand vous voulez, où vous voulez.</p>
                     <a href="#pricing" class="btn btn-secondary" data-key="health_btn">COMMENCER</a>
                 </div>
-                
-                <!-- Right side: Service cards -->
                 <div class="health-cards" data-aos="fade-left" data-aos-duration="800">
                     <div class="card" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fas fa-dumbbell"></i>
@@ -318,54 +308,28 @@
         </div>
     </section>
 
-    <!-- ========== GROUP CLASSES SECTION ========== -->
-    <!-- Display of different fitness classes -->
+    <!-- Classes Section -->
     <section class="classes-section">
         <div class="container">
             <h2 data-key="classes_title" data-aos="fade-up">COURS COLLECTIFS</h2>
             <div class="classes-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="class-card">
-                    <i class="fas fa-yin-yang"></i>
-                    <h3>Yoga</h3>
-                    <p>Lundi & Jeudi - 18h</p>
-                </div>
-                <div class="class-card">
-                    <i class="fas fa-bicycle"></i>
-                    <h3>Spinning</h3>
-                    <p>Mardi & Vendredi - 19h</p>
-                </div>
-                <div class="class-card">
-                    <i class="fas fa-fist-raised"></i>
-                    <h3>Boxe</h3>
-                    <p>Mercredi & Samedi - 17h</p>
-                </div>
-                <div class="class-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>CrossFit</h3>
-                    <p>Lundi au Samedi - 20h</p>
-                </div>
-                <div class="class-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Zumba</h3>
-                    <p>Mardi & Jeudi - 17h</p>
-                </div>
-                <div class="class-card">
-                    <i class="fas fa-swimmer"></i>
-                    <h3>Aquagym</h3>
-                    <p>Mercredi & Vendredi - 15h</p>
-                </div>
+                <div class="class-card"><i class="fas fa-yin-yang"></i><h3>Yoga</h3><p>Lundi & Jeudi - 18h</p></div>
+                <div class="class-card"><i class="fas fa-bicycle"></i><h3>Spinning</h3><p>Mardi & Vendredi - 19h</p></div>
+                <div class="class-card"><i class="fas fa-fist-raised"></i><h3>Boxe</h3><p>Mercredi & Samedi - 17h</p></div>
+                <div class="class-card"><i class="fas fa-dumbbell"></i><h3>CrossFit</h3><p>Lundi au Samedi - 20h</p></div>
+                <div class="class-card"><i class="fas fa-music"></i><h3>Zumba</h3><p>Mardi & Jeudi - 17h</p></div>
+                <div class="class-card"><i class="fas fa-swimmer"></i><h3>Aquagym</h3><p>Mercredi & Vendredi - 15h</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== COACHES SECTION ========== -->
-    <!-- Staff/coaches profiles -->
+    <!-- Coaches Section -->
     <section id="coaches" class="coaches-section">
         <div class="container">
             <h2 data-key="coaches_title" data-aos="fade-up">NOS COACHS</h2>
             <div class="coaches-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Karim">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Karim Ben Ali" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=K'">
                     <h3>Karim Ben Ali</h3>
                     <p>Coach musculation & CrossFit</p>
                     <div class="coach-social">
@@ -374,7 +338,7 @@
                     </div>
                 </div>
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Coach Sonia">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Coach Sonia Makhlouf" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=S'">
                     <h3>Sonia Makhlouf</h3>
                     <p>Coach Yoga & Bien-être</p>
                     <div class="coach-social">
@@ -383,7 +347,7 @@
                     </div>
                 </div>
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Coach Mehdi">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Coach Mehdi Trabelsi" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=M'">
                     <h3>Mehdi Trabelsi</h3>
                     <p>Coach Boxe & Cardio</p>
                     <div class="coach-social">
@@ -395,13 +359,11 @@
         </div>
     </section>
 
-    <!-- ========== PRICING / MEMBERSHIPS SECTION ========== -->
-    <!-- Subscription plans with different tiers -->
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
         <div class="container">
             <h2 data-key="pricing_title" data-aos="fade-up">NOS ABONNEMENTS</h2>
             <div class="pricing-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- Basic Plan -->
                 <div class="pricing-card">
                     <h3 data-key="plan_basic">Basic</h3>
                     <div class="price">49 DT<span>/mois</span></div>
@@ -413,8 +375,6 @@
                     </ul>
                     <a href="#contact" class="btn btn-outline" data-key="choose_btn">Choisir</a>
                 </div>
-                
-                <!-- Premium Plan (Featured) -->
                 <div class="pricing-card featured">
                     <div class="popular-badge">Populaire</div>
                     <h3 data-key="plan_premium">Premium</h3>
@@ -427,8 +387,6 @@
                     </ul>
                     <a href="#contact" class="btn btn-primary" data-key="choose_btn">Choisir</a>
                 </div>
-                
-                <!-- Annual Plan -->
                 <div class="pricing-card">
                     <h3 data-key="plan_annual">Annuel</h3>
                     <div class="price">590 DT<span>/an</span></div>
@@ -444,231 +402,104 @@
         </div>
     </section>
 
-    <!-- ========== SHOP / E-COMMERCE SECTION ========== -->
-    <!-- Product display with add-to-cart functionality -->
+    <!-- Shop Section -->
     <section id="shop" class="shop-section">
         <div class="container">
             <h2 data-key="shop_title" data-aos="fade-up">BOUTIQUE M CLUB</h2>
             <p class="shop-subtitle" data-key="shop_subtitle">Équipez-vous avec nos produits exclusifs</p>
             <div class="shop-grid" data-aos="fade-up" data-aos-delay="200">
-                <!-- Product 1: T-shirt -->
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300&h=300&fit=crop" alt="T-shirt M Club">
-                    </div>
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300&h=300&fit=crop" alt="T-shirt M Club" loading="lazy"></div>
                     <div class="product-info">
                         <h3 data-key="product1_name">T-shirt M Club</h3>
                         <p data-key="product1_desc">Coton bio, imprimé logo, coupe sport</p>
                         <div class="product-price">49 DT</div>
-                        <button class="btn btn-outline add-to-cart" data-product="T-shirt M Club" data-price="49">
-                            <i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span>
-                        </button>
+                        <button class="btn btn-outline add-to-cart" data-product="T-shirt M Club" data-price="49"><i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span></button>
                     </div>
                 </div>
-                
-                <!-- Product 2: Water bottle -->
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop" alt="Bouteille M Club">
-                    </div>
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop" alt="Bouteille M Club" loading="lazy"></div>
                     <div class="product-info">
                         <h3 data-key="product2_name">Bouteille isotherme</h3>
                         <p data-key="product2_desc">Acier inoxydable, 750ml, noir/or</p>
                         <div class="product-price">29 DT</div>
-                        <button class="btn btn-outline add-to-cart" data-product="Bouteille isotherme" data-price="29">
-                            <i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span>
-                        </button>
+                        <button class="btn btn-outline add-to-cart" data-product="Bouteille isotherme" data-price="29"><i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span></button>
                     </div>
                 </div>
-                
-                <!-- Product 3: Sweatband -->
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=300&h=300&fit=crop" alt="Bandeau M Club">
-                    </div>
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=300&h=300&fit=crop" alt="Bandeau M Club" loading="lazy"></div>
                     <div class="product-info">
                         <h3 data-key="product3_name">Bandeau anti-transpirant</h3>
                         <p data-key="product3_desc">Microfibre respirante, absorbant</p>
                         <div class="product-price">15 DT</div>
-                        <button class="btn btn-outline add-to-cart" data-product="Bandeau anti-transpirant" data-price="15">
-                            <i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span>
-                        </button>
+                        <button class="btn btn-outline add-to-cart" data-product="Bandeau anti-transpirant" data-price="15"><i class="fas fa-shopping-cart"></i> <span data-key="add_to_cart">Ajouter au panier</span></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== GALLERY SECTION ========== -->
-    <!-- Image gallery of the gym facilities -->
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery-section">
         <div class="container">
             <h2 data-key="gallery_title" data-aos="fade-up">NOTRE SALLE EN IMAGES</h2>
             <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Salle de musculation">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Cours de yoga">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop" alt="Espace cardio">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=400&h=300&fit=crop" alt="Piscine">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=300&fit=crop" alt="Salle de cours">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop" alt="Sauna">
-                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" alt="Salle de musculation" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Cours de yoga" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop" alt="Espace cardio" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=400&h=300&fit=crop" alt="Piscine" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=300&fit=crop" alt="Salle de cours" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop" alt="Sauna" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== TESTIMONIALS SECTION ========== -->
-    <!-- Customer reviews -->
+    <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
             <h2 data-key="testimonials_title" data-aos="fade-up">CE QUE NOS MEMBRES DISENT</h2>
             <div class="testimonials-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"Meilleure salle de Sfax ! Les coachs sont à l'écoute et les équipements sont modernes."</p>
-                    <div class="testimonial-author">
-                        <strong>Ahmed K.</strong>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"J'ai perdu 15kg en 6 mois grâce aux cours collectifs. L'ambiance est incroyable !"</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah M.</strong>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"Le spa et la piscine sont un vrai plus après l'entraînement. Je recommande vivement."</p>
-                    <div class="testimonial-author">
-                        <strong>Mehdi B.</strong>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Meilleure salle de Sfax ! Les coachs sont à l'écoute et les équipements sont modernes."</p><div class="testimonial-author"><strong>Ahmed K.</strong><div class="stars">★★★★★</div></div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"J'ai perdu 15kg en 6 mois grâce aux cours collectifs. L'ambiance est incroyable !"</p><div class="testimonial-author"><strong>Sarah M.</strong><div class="stars">★★★★★</div></div></div>
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Le spa et la piscine sont un vrai plus après l'entraînement. Je recommande vivement."</p><div class="testimonial-author"><strong>Mehdi B.</strong><div class="stars">★★★★★</div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FAQ SECTION ========== -->
-    <!-- Accordion-style frequently asked questions -->
+    <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
             <h2 data-key="faq_title" data-aos="fade-up">FOIRE AUX QUESTIONS</h2>
             <div class="faq-grid" data-aos="fade-up" data-aos-delay="200">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span data-key="faq1_q">Comment puis-je m'inscrire ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-key="faq1_a">Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span data-key="faq2_q">Y a-t-il un engagement ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-key="faq2_a">Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span data-key="faq3_q">Proposez-vous des cours pour débutants ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-key="faq3_a">Oui, tous nos cours sont adaptés aux débutants. Nos coachs vous accompagnent pas à pas.</p>
-                    </div>
-                </div>
+                <div class="faq-item"><div class="faq-question"><span data-key="faq1_q">Comment puis-je m'inscrire ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq1_a">Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span data-key="faq2_q">Y a-t-il un engagement ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq2_a">Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span data-key="faq3_q">Proposez-vous des cours pour débutants ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p data-key="faq3_a">Oui, tous nos cours sont adaptés aux débutants. Nos coachs vous accompagnent pas à pas.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== HOURS & MAP SECTION ========== -->
-    <!-- Opening hours and Google Maps location -->
+    <!-- Hours & Map Section -->
     <section class="hours-map-section">
         <div class="container hours-map-grid">
             <div class="hours-card" data-aos="fade-right">
                 <h3><i class="far fa-clock"></i> <span data-key="hours_title">HORAIRES D'OUVERTURE</span></h3>
                 <table class="hours-table">
-                    <tr>
-                        <td data-key="mon_fri">Lundi - Vendredi</td>
-                        <td><strong>08:30 - 22:00</strong></td>
-                    </tr>
-                    <tr>
-                        <td data-key="sat_sun">Samedi - Dimanche</td>
-                        <td><strong>08:30 - 22:00</strong></td>
-                    </tr>
-                    <tr>
-                        <td data-key="holidays">Jours fériés</td>
-                        <td><strong>09:00 - 17:00</strong></td>
-                    </tr>
+                    <tr><td data-key="mon_fri">Lundi - Vendredi</td><td><strong>08:30 - 22:00</strong></td></tr>
+                    <tr><td data-key="sat_sun">Samedi - Dimanche</td><td><strong>08:30 - 22:00</strong></td></tr>
+                    <tr><td data-key="holidays">Jours fériés</td><td><strong>09:00 - 17:00</strong></td></tr>
                 </table>
             </div>
-            
             <div class="map-card" data-aos="fade-left">
                 <h3><i class="fas fa-map-marker-alt"></i> <span data-key="map_title">NOUS TROUVER</span></h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.123456789!2d10.736!3d34.736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTArDQ0JzA5LjYiTiAxMsKwNDQnMDkuNiJF!5e0!3m2!1sfr!2stn!4v1700000000000!5m2!1sfr!2stn" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Google Maps location of M Club Sfax">
-                </iframe>
-                <p data-key="address_full">Rte Lafrane, Sfax, Tunisie</p>
-                <div class="google-rating">
-                    <div class="stars-display">★★★★☆</div>
-                    <p><strong>4.0</strong> / 5 - Basé sur 128 avis Google</p>
-                    <a href="https://maps.app.goo.gl/VhHG5vqFSL8Q3Eqv6" target="_blank" rel="noopener noreferrer" class="map-link" data-key="open_maps">Voir tous les avis →</a>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1308.543208750843!2d10.7377806!3d34.7362069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8b6b6c1d9e7d%3A0xa7f4b3c2d1e0a9b8!2sM%20club!5e0!3m2!1sfr!2stn!4v1710000000000!5m2!1sfr!2stn" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="M Club Sfax location map"></iframe>
+                <p><strong>QPM4+5R, Sfax, Tunisie</strong></p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=M+club+Sfax&destination_place_id=ChIJ7Z0cbGtriw0RuKkA4LHC86M" target="_blank" class="map-link" style="display: inline-block; margin-top: 10px;"><i class="fas fa-directions"></i> Obtenir l'itinéraire</a>
+                <div class="google-rating"><div class="stars-display">★★★★☆</div><p><strong>4.0</strong> / 5 - Basé sur 128 avis Google</p><a href="https://maps.app.goo.gl/Vs2QPywGVHCwZmrh6" target="_blank" class="map-link" data-key="open_maps">Voir tous les avis →</a></div>
             </div>
         </div>
     </section>
 
-    <!-- ========== NEWSLETTER SECTION ========== -->
-    <!-- Email subscription form for marketing -->
-    <section class="training-newsletter">
-        <div class="container">
-            <div class="training-grid">
-                <div class="training-text" data-aos="fade-right">
-                    <h3 data-key="training_title">SÉANCES DE COACHING PERSONNALISÉ.</h3>
-                    <p data-key="training_desc">N'IMPORTE OÙ VOUS VOULEZ.</p>
-                </div>
-                <div class="newsletter" data-aos="fade-left">
-                    <h3 data-key="news_title">Abonnez-vous aujourd'hui</h3>
-                    <p data-key="news_desc">Recevez nos offres et conseils fitness directement dans votre boîte mail.</p>
-                    <form id="newsletter-form">
-                        <input type="email" id="email" placeholder="Votre email" required>
-                        <button type="submit" class="btn btn-dark" data-key="news_btn">S'ABONNER</button>
-                    </form>
-                    <div id="form-message" class="form-message"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <!-- Contact information and social media links -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="container footer-grid">
             <div class="footer-info" data-aos="fade-up">
@@ -677,12 +508,8 @@
                 <p><i class="fas fa-phone-alt"></i> +216 74 217 600</p>
                 <p><i class="fas fa-envelope"></i> contact@mclub.tn</p>
                 <div class="social-buttons">
-                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
+                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" class="social-btn facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
             <div class="footer-copyright">
@@ -691,14 +518,12 @@
         </div>
     </footer>
 
-    <!-- ========== LIGHTBOX MODAL FOR GALLERY ========== -->
-    <!-- Full-screen image viewer for gallery -->
+    <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox" aria-label="Close">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" alt="Enlarged gallery image">
+        <img class="lightbox-img" id="lightbox-img" alt="Gallery image">
     </div>
 
-    <!-- External Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
