@@ -10,6 +10,8 @@ body {
     color: #333;
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* ========== DARK MODE ========== */
@@ -244,34 +246,6 @@ body.dark-mode .forgot-password-modal-content p {
 
 .back-to-top:hover {
     transform: scale(1.1);
-}
-
-@media (max-width: 480px) {
-    .dark-mode-toggle {
-        bottom: 80px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .back-to-top {
-        bottom: 140px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .cart-icon {
-        bottom: 200px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-    }
-    
-    .cart-icon i {
-        font-size: 1.2rem;
-    }
 }
 
 .btn {
@@ -669,26 +643,6 @@ body.dark-mode .cart-item-controls {
     }
 }
 
-@media (max-width: 768px) {
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-right: 40px;
-    }
-    
-    .cart-item-controls {
-        margin-left: 0;
-        margin-top: 8px;
-    }
-    
-    .remove-item {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-
 /* ========== ORDERS MODAL ========== */
 .orders-modal {
     display: none;
@@ -768,28 +722,6 @@ body.dark-mode .cart-item-controls {
     border-top: 1px solid #eee;
 }
 
-@media (max-width: 768px) {
-    .order-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .orders-modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
-    
-    .login-options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .forgot-password-modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
-}
-
 /* ========== NUTRITION SECTION ========== */
 .nutrition-section {
     padding: 5rem 0;
@@ -860,50 +792,6 @@ body.dark-mode .cart-item-controls {
     font-size: 0.95rem;
 }
 
-@media (max-width: 992px) {
-    .nutrition-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nutrition-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .nutrition-subtitle {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
-    
-    .nutrition-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .nutrition-card {
-        padding: 1.5rem;
-    }
-    
-    .nutrition-icon {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .nutrition-icon i {
-        font-size: 1.6rem;
-    }
-    
-    .nutrition-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .nutrition-card p {
-        font-size: 0.9rem;
-    }
-}
-
 /* ========== COACHES SECTION "VOIR PLUS" BUTTON ========== */
 .coaches-more {
     text-align: center;
@@ -939,6 +827,8 @@ body.dark-mode .cart-item-controls {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ========== HEADER ========== */
@@ -948,6 +838,8 @@ header {
     padding: 1rem 0;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
     transition: all 0.3s ease;
@@ -965,6 +857,7 @@ header.scrolled {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .logo {
@@ -1308,15 +1201,6 @@ nav ul li a:hover {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        height: auto;
-        min-height: 100vh;
-        padding: 100px 0 60px;
-    }
-}
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -1344,21 +1228,6 @@ nav ul li a:hover {
     max-width: 700px;
     margin: 0 auto 2rem;
     animation: fadeInUp 1s ease 0.2s both;
-}
-
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
 }
 
 /* ========== STATS SECTION ========== */
@@ -2102,46 +1971,43 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1200px) {
-    nav ul {
-        gap: 0.8rem;
-    }
-    nav ul li a {
-        font-size: 0.8rem;
+/* ========== RESPONSIVE - COMPLETE MOBILE FIXES ========== */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
     }
 }
 
-@media (max-width: 992px) {
-    .health-grid, .training-grid, .pricing-grid, .testimonials-grid, .hours-map-grid, .imc-grid {
-        grid-template-columns: 1fr;
-    }
-    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Mobile devices */
 @media (max-width: 768px) {
+    /* General */
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Header */
     .mobile-menu-toggle {
         display: block;
     }
     
     nav {
         position: fixed;
-        top: 70px;
+        top: 60px;
         left: -100%;
-        width: 80%;
-        height: calc(100vh - 70px);
+        width: 75%;
+        max-width: 280px;
+        height: calc(100vh - 60px);
         background: #000;
-        transition: left 0.3s;
-        z-index: 999;
+        transition: left 0.3s ease;
+        z-index: 1001;
         overflow-y: auto;
+        padding: 20px 0;
     }
     
     nav.active {
@@ -2150,93 +2016,14 @@ footer {
     
     nav ul {
         flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
+        padding: 0 20px;
+        gap: 15px;
     }
     
     nav ul li a {
         font-size: 1rem;
-    }
-    
-    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .language-switcher {
-        margin-left: auto;
-        margin-right: 0.5rem;
-        padding: 0.2rem;
-        gap: 0.2rem;
-    }
-    
-    .lang-btn {
-        padding: 0.3rem 0.6rem;
-    }
-    
-    .lang-btn .lang-code {
-        display: none;
-    }
-    
-    .lang-btn .flag-icon {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .cart-sidebar {
-        width: 100%;
-        right: -100%;
-    }
-    
-    .header-right {
-        gap: 0.5rem;
-    }
-    
-    .user-icon {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .gallery-item img {
-        height: 180px;
-    }
-    
-    .hours-table td {
         display: block;
-        text-align: center;
-    }
-    
-    .hours-table tr {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0;
-    }
-    
-    .coaches-more {
-        margin-top: 2rem;
-    }
-    
-    .see-more-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
+        padding: 8px 0;
     }
     
     .logo-text {
@@ -2244,27 +2031,338 @@ footer {
     }
     
     .logo-img {
-        height: 30px;
+        height: 32px;
     }
     
-    .btn {
-        padding: 0.6rem 1.5rem;
+    /* Language switcher on mobile */
+    .language-switcher {
+        gap: 3px;
+        padding: 3px;
+    }
+    
+    .lang-btn {
+        padding: 5px 8px;
+    }
+    
+    .lang-btn .lang-code {
+        display: none;
+    }
+    
+    .lang-btn .flag-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    /* User icon */
+    .user-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .user-icon i {
+        font-size: 1.1rem;
+    }
+    
+    /* Hero section */
+    .hero {
+        background-attachment: scroll;
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    /* Stats section */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* All grid layouts - stack vertically */
+    .health-grid,
+    .health-cards,
+    .classes-grid,
+    .coaches-grid,
+    .pricing-grid,
+    .shop-grid,
+    .gallery-grid,
+    .testimonials-grid,
+    .hours-map-grid,
+    .imc-grid,
+    .training-grid,
+    .nutrition-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    /* Cards full width */
+    .card, .class-card, .coach-card, .pricing-card, 
+    .product-card, .testimonial-card, .hours-card, .map-card,
+    .nutrition-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    /* Featured pricing card on mobile */
+    .pricing-card.featured {
+        transform: scale(1);
+        margin: 0;
+    }
+    
+    /* Gallery images */
+    .gallery-item img {
+        height: 200px;
+    }
+    
+    /* Buttons */
+    .btn, .see-more-btn {
+        padding: 10px 20px;
         font-size: 0.9rem;
     }
     
-    .auth-modal-content,
-    .profile-modal-content,
-    .orders-modal-content,
-    .forgot-password-modal-content {
-        margin: 0 20px;
-        padding: 1.5rem;
+    /* Cart sidebar */
+    .cart-sidebar {
+        width: 85%;
+        max-width: 320px;
     }
     
+    /* Cart item */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 35px;
+    }
+    
+    .cart-item-controls {
+        margin-top: 8px;
+    }
+    
+    .remove-item {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Modals */
+    .auth-modal-content, 
+    .profile-modal-content, 
+    .orders-modal-content,
+    .forgot-password-modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    /* Profile grid */
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Hours table */
+    .hours-table tr {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .hours-table td {
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+    }
+    
+    /* Map */
+    .map-card iframe {
+        height: 200px;
+    }
+    
+    /* Footer social buttons */
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .social-btn {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    /* Fixed buttons position */
+    .dark-mode-toggle {
+        bottom: 80px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+    
+    .back-to-top {
+        bottom: 140px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .cart-icon {
+        bottom: 200px;
+        right: 15px;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .cart-icon i {
+        font-size: 1.2rem;
+    }
+    
+    /* Section padding */
+    section {
+        padding: 60px 0 !important;
+    }
+    
+    section h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* IMC calculator */
     .imc-value {
         font-size: 2.5rem;
     }
+    
+    /* Nutrition section */
+    .nutrition-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .nutrition-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .nutrition-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Coaches more button */
+    .coaches-more {
+        margin-top: 25px;
+    }
 }
 
+/* Small phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.4rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    section h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .logo-text {
+        font-size: 0.85rem;
+    }
+    
+    .logo-img {
+        height: 28px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .pricing-card .price {
+        font-size: 1.8rem;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .auth-modal-content,
+    .profile-modal-content {
+        padding: 15px;
+    }
+    
+    .popup-content {
+        padding: 20px;
+    }
+    
+    .cart-notification {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        width: 90%;
+        text-align: center;
+        white-space: normal;
+    }
+}
+
+/* Fix for iOS input zoom */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Fix for RTL language on mobile */
+@media (max-width: 768px) {
+    html[dir="rtl"] nav {
+        left: auto;
+        right: -100%;
+    }
+    
+    html[dir="rtl"] nav.active {
+        left: auto;
+        right: 0;
+    }
+    
+    html[dir="rtl"] .remove-item {
+        right: auto;
+        left: 10px;
+    }
+    
+    html[dir="rtl"] .cart-item {
+        padding-right: 0;
+        padding-left: 35px;
+    }
+}
+
+/* General focus and accessibility */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #f0b90b !important;
