@@ -1,1011 +1,2258 @@
-// ========== MULTILINGUAL TRANSLATIONS ==========
-// Complete translation system for French, English, and Arabic
-const translations = {
-    fr: {
-        brand: "M CLUB SFAX",
-        nav_home: "Accueil",
-        nav_services: "Services",
-        nav_coaches: "Coachs",
-        nav_pricing: "Tarifs",
-        nav_shop: "Boutique",
-        nav_gallery: "Galerie",
-        nav_faq: "FAQ",
-        nav_contact: "Contact",
-        hero_title: "PLUS D'EXCUSES.<br>REMAÎTRE VOTRE CORPS.",
-        hero_desc: "Que vous soyez à Sfax ou ailleurs, M Club vous offre un coaching personnalisé pour atteindre vos objectifs, où que vous soyez.",
-        hero_btn: "COMMENCER MAINTENANT",
-        health_title: "PLACEZ VOTRE<br>SANTÉ EN PREMIER",
-        health_desc: "Faites de votre santé une priorité avec un entraînement adapté. Améliorez votre condition physique ou sculptez le corps de vos rêves grâce à des séances guidées qui vous conviennent, quand vous voulez, où vous voulez.",
-        health_btn: "COMMENCER",
-        card1_title: "GAGNER DU MUSCLE",
-        card1_desc: "Définissez votre silhouette dès maintenant.",
-        card2_title: "PERDRE DU POIDS",
-        card2_desc: "Réduisez la graisse et voyez votre poids baisser.",
-        card3_title: "AMÉLIORER L'ENDURANCE",
-        card3_desc: "Augmentez votre résistance et votre stamina.",
-        classes_title: "COURS COLLECTIFS",
-        coaches_title: "NOS COACHS",
-        pricing_title: "NOS ABONNEMENTS",
-        gallery_title: "NOTRE SALLE EN IMAGES",
-        testimonials_title: "CE QUE NOS MEMBRES DISENT",
-        faq_title: "FOIRE AUX QUESTIONS",
-        faq1_q: "Comment puis-je m'inscrire ?",
-        faq1_a: "Vous pouvez vous inscrire directement en ligne via notre formulaire de contact ou venir nous rendre visite à la salle sur Route Lafrane.",
-        faq2_q: "Y a-t-il un engagement ?",
-        faq2_a: "Nos abonnements sont sans engagement. Vous pouvez résilier à tout moment avec un préavis de 15 jours.",
-        faq3_q: "Proposez-vous des cours pour débutants ?",
-        faq3_a: "Oui, tous nos cours sont adaptés aux débutants. Nos coachs vous accompagnent pas à pas.",
-        hours_title: "HORAIRES D'OUVERTURE",
-        map_title: "NOUS TROUVER",
-        address_full: "Rte Lafrane, Sfax, Tunisie",
-        open_maps: "Voir tous les avis →",
-        mon_fri: "Lundi - Vendredi",
-        sat_sun: "Samedi - Dimanche",
-        holidays: "Jours fériés",
-        plan_basic: "Basic",
-        plan_premium: "Premium",
-        plan_annual: "Annuel",
-        choose_btn: "Choisir",
-        training_title: "SÉANCES DE COACHING PERSONNALISÉ.",
-        training_desc: "N'IMPORTE OÙ VOUS VOULEZ.",
-        news_title: "Abonnez-vous aujourd'hui",
-        news_desc: "Recevez nos offres et conseils fitness directement dans votre boîte mail.",
-        news_btn: "S'ABONNER",
-        contact_title: "NOUS CONTACTER",
-        address: "Rte Lafrane, Sfax, Tunisie",
-        copyright: "Tous droits réservés.",
-        subscribe_success: "Merci ! Votre inscription a été reçue.",
-        subscribe_error: "Une erreur s'est produite. Veuillez réessayer.",
-        stat_members: "Membres actifs",
-        stat_coaches: "Coach diplômés",
-        stat_classes: "Cours par semaine",
-        stat_days: "Jours d'ouverture",
-        imc_title: "CALCULEZ VOTRE IMC",
-        imc_weight: "Poids (kg)",
-        imc_height: "Taille (cm)",
-        imc_btn: "Calculer",
-        imc_underweight: "Insuffisance pondérale",
-        imc_normal: "Poids normal",
-        imc_overweight: "Surpoids",
-        imc_obesity: "Obésité",
-        shop_title: "BOUTIQUE M CLUB",
-        shop_subtitle: "Équipez-vous avec nos produits exclusifs",
-        product1_name: "T-shirt M Club",
-        product1_desc: "Coton bio, imprimé logo, coupe sport",
-        product2_name: "Bouteille isotherme",
-        product2_desc: "Acier inoxydable, 750ml, noir/or",
-        product3_name: "Bandeau anti-transpirant",
-        product3_desc: "Microfibre respirante, absorbant",
-        add_to_cart: "Ajouter au panier",
-        cart_empty: "Votre panier est vide",
-        cart_total: "Total",
-        checkout: "Commander",
-        login_tab: "Connexion",
-        register_tab: "Inscription",
-        email_label: "Email",
-        password_label: "Mot de passe",
-        name_label: "Nom complet",
-        confirm_label: "Confirmer mot de passe",
-        login_btn: "Se connecter",
-        register_btn: "S'inscrire",
-        profile_btn: "Mon Profil",
-        logout_btn: "Déconnexion",
-        profile_title: "Mon Profil",
-        change_avatar: "Changer la photo",
-        age_label: "Âge",
-        weight_label: "Poids (kg)",
-        height_label: "Taille (cm)",
-        goal_label: "Objectif",
-        goal_muscle: "Gagner du muscle",
-        goal_weight: "Perdre du poids",
-        goal_stamina: "Améliorer l'endurance",
-        goal_health: "Bien-être général",
-        save_btn: "Enregistrer"
-    },
-    en: {
-        brand: "M CLUB SFAX",
-        nav_home: "Home",
-        nav_services: "Services",
-        nav_coaches: "Coaches",
-        nav_pricing: "Pricing",
-        nav_shop: "Shop",
-        nav_gallery: "Gallery",
-        nav_faq: "FAQ",
-        nav_contact: "Contact",
-        hero_title: "NO MORE EXCUSES.<br>GET FIT ANYWHERE.",
-        hero_desc: "Whether you're in Sfax or elsewhere, M Club offers personalized coaching to help you reach your goals, wherever you are.",
-        hero_btn: "START NOW",
-        health_title: "PUT YOUR<br>HEALTH FIRST",
-        health_desc: "Make your health a priority with tailored training. Improve your fitness or sculpt your dream body with guided sessions that work for you, when you want, where you want.",
-        health_btn: "GET STARTED",
-        card1_title: "GAIN MUSCLES",
-        card1_desc: "Start seeing muscle definition now.",
-        card2_title: "LOSE WEIGHT",
-        card2_desc: "Trim fat and see your weight drop.",
-        card3_title: "BUILD STAMINA",
-        card3_desc: "Build endurance and increase your stamina.",
-        classes_title: "GROUP CLASSES",
-        coaches_title: "OUR COACHES",
-        pricing_title: "OUR MEMBERSHIPS",
-        gallery_title: "OUR GYM IN PICTURES",
-        testimonials_title: "WHAT OUR MEMBERS SAY",
-        faq_title: "FREQUENTLY ASKED QUESTIONS",
-        faq1_q: "How can I register?",
-        faq1_a: "You can register online via our contact form or visit us at the gym on Route Lafrane.",
-        faq2_q: "Is there a commitment?",
-        faq2_a: "Our memberships are commitment-free. You can cancel at any time with 15 days notice.",
-        faq3_q: "Do you offer beginner classes?",
-        faq3_a: "Yes, all our classes are beginner-friendly. Our coaches will guide you step by step.",
-        hours_title: "OPENING HOURS",
-        map_title: "FIND US",
-        address_full: "Rte Lafrane, Sfax, Tunisia",
-        open_maps: "View all reviews →",
-        mon_fri: "Monday - Friday",
-        sat_sun: "Saturday - Sunday",
-        holidays: "Public Holidays",
-        plan_basic: "Basic",
-        plan_premium: "Premium",
-        plan_annual: "Annual",
-        choose_btn: "Choose",
-        training_title: "PERSONAL TRAINING SESSIONS.",
-        training_desc: "ANYWHERE YOU WANT.",
-        news_title: "Subscribe Today",
-        news_desc: "Receive our offers and fitness tips directly in your inbox.",
-        news_btn: "SUBSCRIBE",
-        contact_title: "GET IN TOUCH",
-        address: "Rte Lafrane, Sfax, Tunisia",
-        copyright: "All rights reserved.",
-        subscribe_success: "Thank you! Your submission has been received.",
-        subscribe_error: "Oops! Something went wrong. Please try again.",
-        stat_members: "Active Members",
-        stat_coaches: "Certified Coaches",
-        stat_classes: "Weekly Classes",
-        stat_days: "Open Days",
-        imc_title: "CALCULATE YOUR BMI",
-        imc_weight: "Weight (kg)",
-        imc_height: "Height (cm)",
-        imc_btn: "Calculate",
-        imc_underweight: "Underweight",
-        imc_normal: "Normal weight",
-        imc_overweight: "Overweight",
-        imc_obesity: "Obesity",
-        shop_title: "M CLUB SHOP",
-        shop_subtitle: "Gear up with our exclusive products",
-        product1_name: "M Club T-shirt",
-        product1_desc: "Organic cotton, logo print, sporty fit",
-        product2_name: "Insulated Bottle",
-        product2_desc: "Stainless steel, 750ml, black/gold",
-        product3_name: "Sweatband",
-        product3_desc: "Breathable microfiber, absorbent",
-        add_to_cart: "Add to cart",
-        cart_empty: "Your cart is empty",
-        cart_total: "Total",
-        checkout: "Checkout",
-        login_tab: "Login",
-        register_tab: "Register",
-        email_label: "Email",
-        password_label: "Password",
-        name_label: "Full name",
-        confirm_label: "Confirm password",
-        login_btn: "Login",
-        register_btn: "Register",
-        profile_btn: "My Profile",
-        logout_btn: "Logout",
-        profile_title: "My Profile",
-        change_avatar: "Change photo",
-        age_label: "Age",
-        weight_label: "Weight (kg)",
-        height_label: "Height (cm)",
-        goal_label: "Goal",
-        goal_muscle: "Build muscle",
-        goal_weight: "Lose weight",
-        goal_stamina: "Improve stamina",
-        goal_health: "General wellness",
-        save_btn: "Save"
-    },
-    ar: {
-        brand: "إم كلوب صفاقس",
-        nav_home: "الرئيسية",
-        nav_services: "الخدمات",
-        nav_coaches: "المدربون",
-        nav_pricing: "الأسعار",
-        nav_shop: "المتجر",
-        nav_gallery: "المعرض",
-        nav_faq: "الأسئلة الشائعة",
-        nav_contact: "اتصل بنا",
-        hero_title: "لا مزيد من الأعذار.<br>احصل على لياقتك في أي مكان.",
-        hero_desc: "سواء كنت في صفاقس أو في أي مكان آخر، يقدم لك إم كلوب تدريبًا شخصيًا لتحقيق أهدافك أينما كنت.",
-        hero_btn: "ابدأ الآن",
-        health_title: "ضع صحتك<br>في المقام الأول",
-        health_desc: "اجعل صحتك أولوية مع تدريب مخصص. حسّن لياقتك أو اصنع جسم أحلامك من خلال جلسات إرشادية تناسبك، متى شئت، أينما شئت.",
-        health_btn: "ابدأ",
-        card1_title: "بناء العضلات",
-        card1_desc: "ابدأ في رؤية تحديد العضلات الآن.",
-        card2_title: "إنقاص الوزن",
-        card2_desc: "تخلص من الدهون وشاهد وزنك ينخفض.",
-        card3_title: "تحسين التحمل",
-        card3_desc: "ابنِ قدرتك على التحمل وزد نشاطك.",
-        classes_title: "الدروس الجماعية",
-        coaches_title: "مدربونا",
-        pricing_title: "اشتراكاتنا",
-        gallery_title: "صالة الألعاب الرياضية في صور",
-        testimonials_title: "ماذا يقول أعضاؤنا",
-        faq_title: "الأسئلة الشائعة",
-        faq1_q: "كيف يمكنني التسجيل؟",
-        faq1_a: "يمكنك التسجيل عبر الإنترنت من خلال نموذج الاتصال الخاص بنا أو زيارتنا في الصالة على طريق لافران.",
-        faq2_q: "هل هناك التزام؟",
-        faq2_a: "اشتراكاتنا بدون التزام. يمكنك الإلغاء في أي وقت مع إشعار لمدة 15 يومًا.",
-        faq3_q: "هل تقدمون دروسًا للمبتدئين؟",
-        faq3_a: "نعم، جميع دروسنا مناسبة للمبتدئين. مدربونا سيرشدونك خطوة بخطوة.",
-        hours_title: "ساعات العمل",
-        map_title: "اعثر علينا",
-        address_full: "طريق لافران، صفاقس، تونس",
-        open_maps: "عرض جميع التقييمات ←",
-        mon_fri: "الإثنين - الجمعة",
-        sat_sun: "السبت - الأحد",
-        holidays: "العطل الرسمية",
-        plan_basic: "أساسي",
-        plan_premium: "بريميوم",
-        plan_annual: "سنوي",
-        choose_btn: "اختر",
-        training_title: "جلسات تدريب شخصي.",
-        training_desc: "أينما تريد.",
-        news_title: "اشترك اليوم",
-        news_desc: "احصل على عروضنا ونصائح اللياقة البدنية مباشرة في بريدك الوارد.",
-        news_btn: "اشترك",
-        contact_title: "تواصل معنا",
-        address: "طريق لافران، صفاقس، تونس",
-        copyright: "جميع الحقوق محفوظة.",
-        subscribe_success: "شكراً! تم استلام اشتراكك.",
-        subscribe_error: "عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-        stat_members: "أعضاء نشطون",
-        stat_coaches: "مدربون معتمدون",
-        stat_classes: "حصص أسبوعية",
-        stat_days: "أيام العمل",
-        imc_title: "احسب مؤشر كتلة الجسم",
-        imc_weight: "الوزن (كجم)",
-        imc_height: "الطول (سم)",
-        imc_btn: "احسب",
-        imc_underweight: "نقص الوزن",
-        imc_normal: "وزن طبيعي",
-        imc_overweight: "زيادة الوزن",
-        imc_obesity: "سمنة",
-        shop_title: "متجر إم كلوب",
-        shop_subtitle: "تجهز بمنتجاتنا الحصرية",
-        product1_name: "تي شيرت إم كلوب",
-        product1_desc: "قطن عضوي، طباعة الشعار، مقاس رياضي",
-        product2_name: "زجاجة معزولة",
-        product2_desc: "ستانلس ستيل، 750 مل، أسود/ذهبي",
-        product3_name: "عصابة رأس",
-        product3_desc: "ألياف دقيقة قابلة للتنفس، ماصة",
-        add_to_cart: "أضف إلى السلة",
-        cart_empty: "سلة التسوق فارغة",
-        cart_total: "المجموع",
-        checkout: "إتمام الشراء",
-        login_tab: "تسجيل الدخول",
-        register_tab: "إنشاء حساب",
-        email_label: "البريد الإلكتروني",
-        password_label: "كلمة المرور",
-        name_label: "الاسم الكامل",
-        confirm_label: "تأكيد كلمة المرور",
-        login_btn: "تسجيل الدخول",
-        register_btn: "إنشاء حساب",
-        profile_btn: "ملفي الشخصي",
-        logout_btn: "تسجيل الخروج",
-        profile_title: "ملفي الشخصي",
-        change_avatar: "تغيير الصورة",
-        age_label: "العمر",
-        weight_label: "الوزن (كجم)",
-        height_label: "الطول (سم)",
-        goal_label: "الهدف",
-        goal_muscle: "بناء العضلات",
-        goal_weight: "إنقاص الوزن",
-        goal_stamina: "تحسين التحمل",
-        goal_health: "العافية العامة",
-        save_btn: "حفظ"
-    }
-};
-
-// ========== GLOBAL VARIABLES ==========
-let currentLang = 'fr';
-let cart = [];
-let currentUser = null;
-
-// ========== INITIALIZE AOS (SCROLL ANIMATIONS) ==========
-AOS.init({ duration: 800, once: true, offset: 100 });
-
-// ========== COUNTER ANIMATION FOR STATS ==========
-function animateCounter(element, target) {
-    let current = 0;
-    const increment = target / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 30);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                animateCounter(counter, target);
-            });
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stats-section').forEach(section => {
-    observer.observe(section);
-});
-
-// ========== STICKY HEADER ON SCROLL ==========
-window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// ========== BACK TO TOP BUTTON ==========
-const backToTop = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// ========== MOBILE MENU TOGGLE ==========
-const mobileToggle = document.querySelector('.mobile-menu-toggle');
-const nav = document.querySelector('nav');
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        // Prevent body scroll when menu is open (mobile UX improvement)
-        if (nav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-            mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
-        } else {
-            document.body.style.overflow = '';
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
 }
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        document.body.style.overflow = '';
-        if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    });
-});
+/* ========== DARK MODE ========== */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
 
-// ========== DARK MODE TOGGLE ==========
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const icon = darkModeToggle.querySelector('i');
-    if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        localStorage.setItem('darkMode', 'enabled');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        localStorage.setItem('darkMode', 'disabled');
+body.dark-mode .health-first,
+body.dark-mode .training-newsletter,
+body.dark-mode .testimonials-section,
+body.dark-mode .faq-section,
+body.dark-mode .shop-section,
+body.dark-mode .imc-section,
+body.dark-mode .coaches-section,
+body.dark-mode .classes-section,
+body.dark-mode .pricing-section,
+body.dark-mode .gallery-section,
+body.dark-mode .hours-map-section {
+    background: #222;
+}
+
+body.dark-mode .stats-section {
+    background: #f0b90b;
+    color: #000;
+}
+
+body.dark-mode .card,
+body.dark-mode .pricing-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .hours-card,
+body.dark-mode .map-card,
+body.dark-mode .class-card,
+body.dark-mode .coach-card,
+body.dark-mode .faq-item,
+body.dark-mode .imc-form,
+body.dark-mode .product-card,
+body.dark-mode .auth-modal-content,
+body.dark-mode .profile-modal-content {
+    background: #2a2a2a;
+    color: #f0f0f0;
+}
+
+body.dark-mode .health-text h2,
+body.dark-mode .pricing-section h2,
+body.dark-mode .gallery-section h2,
+body.dark-mode .testimonials-section h2,
+body.dark-mode .classes-section h2,
+body.dark-mode .coaches-section h2,
+body.dark-mode .faq-section h2,
+body.dark-mode .imc-section h2,
+body.dark-mode .shop-section h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .btn-secondary {
+    border-color: #f0b90b;
+    color: #f0b90b;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #f0b90b;
+    color: #f0b90b;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+body.dark-mode .shop-subtitle {
+    color: #ccc;
+}
+
+body.dark-mode .product-info h3 {
+    color: #f0b90b;
+}
+
+body.dark-mode .product-info p {
+    color: #ccc;
+}
+
+body.dark-mode .product-price {
+    color: #f0b90b;
+}
+
+body.dark-mode .hours-table td {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .faq-question:hover {
+    background: rgba(240, 185, 11, 0.2);
+}
+
+body.dark-mode .faq-item.active .faq-answer {
+    border-top-color: #444;
+}
+
+body.dark-mode .google-rating {
+    border-top-color: #444;
+}
+
+body.dark-mode .user-dropdown {
+    background: #2a2a2a;
+}
+
+body.dark-mode .user-dropdown span,
+body.dark-mode .user-dropdown button {
+    color: #fff;
+}
+
+body.dark-mode .user-dropdown button:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+body.dark-mode .cart-sidebar {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+body.dark-mode .cart-item {
+    border-bottom-color: #444;
+}
+
+body.dark-mode .cart-header,
+body.dark-mode .cart-total {
+    border-color: #444;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group select,
+body.dark-mode .auth-form .input-group input,
+body.dark-mode .profile-grid .input-group input,
+body.dark-mode .profile-grid .input-group select {
+    background: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .input-group input::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode footer {
+    background: #111;
+}
+
+body.dark-mode .footer-info p {
+    color: #ccc;
+}
+
+body.dark-mode .coach-social a {
+    color: #ccc;
+}
+
+body.dark-mode .coach-social a:hover {
+    color: #f0b90b;
+}
+
+/* Validation messages dark mode */
+body.dark-mode .validation-message {
+    color: #ff9999;
+}
+
+/* ========== BUTTONS ========== */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f0b90b;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: #f0b90b;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* Fix for button overlaps on small screens */
+@media (max-width: 480px) {
+    .dark-mode-toggle {
+        bottom: 80px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
-});
-
-// Load dark mode preference
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-    const icon = darkModeToggle.querySelector('i');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-}
-
-// ========== LIGHTBOX GALLERY ==========
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scroll when lightbox is open
-    });
-});
-document.querySelector('.close-lightbox').addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = '';
-});
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-});
-
-// ========== FAQ ACCORDION ==========
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        faqItem.classList.toggle('active');
-    });
-});
-
-// ========== BMI (IMC) CALCULATOR ==========
-function calculateIMC() {
-    const weight = parseFloat(document.getElementById('weight')?.value);
-    const heightCm = parseFloat(document.getElementById('height')?.value);
     
-    if (!weight || !heightCm || isNaN(weight) || isNaN(heightCm) || weight <= 0 || heightCm <= 0) {
-        document.getElementById('imc-value').textContent = '--';
-        document.getElementById('imc-status').textContent = 'Veuillez entrer des valeurs valides';
-        return;
+    .back-to-top {
+        bottom: 140px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
     }
     
-    const heightM = heightCm / 100;
-    const imc = weight / (heightM * heightM);
-    const imcValue = imc.toFixed(1);
-    
-    document.getElementById('imc-value').textContent = imcValue;
-    
-    let status = '';
-    let color = '';
-    
-    if (imc < 18.5) {
-        status = translations[currentLang].imc_underweight;
-        color = '#2196F3';
-    } else if (imc < 25) {
-        status = translations[currentLang].imc_normal;
-        color = '#4CAF50';
-    } else if (imc < 30) {
-        status = translations[currentLang].imc_overweight;
-        color = '#FF9800';
-    } else {
-        status = translations[currentLang].imc_obesity;
-        color = '#f44336';
+    .cart-icon {
+        bottom: 200px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
     }
     
-    const statusEl = document.getElementById('imc-status');
-    statusEl.textContent = status;
-    statusEl.style.color = color;
-}
-
-const calculateBtn = document.getElementById('calculate-imc');
-if (calculateBtn) {
-    calculateBtn.addEventListener('click', calculateIMC);
-    const weightInput = document.getElementById('weight');
-    const heightInput = document.getElementById('height');
-    if (weightInput) weightInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') calculateIMC(); });
-    if (heightInput) heightInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') calculateIMC(); });
-}
-
-// ========== SHOPPING CART SYSTEM ==========
-function loadCart() {
-    const savedCart = localStorage.getItem('mclub_cart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
+    .cart-icon i {
+        font-size: 1.2rem;
     }
-    updateCartDisplay();
 }
 
-function saveCart() {
-    localStorage.setItem('mclub_cart', JSON.stringify(cart));
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
-function addToCart(productName, price) {
-    const existingItem = cart.find(item => item.name === productName);
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({ name: productName, price: price, quantity: 1 });
+.btn-primary {
+    background: #f0b90b;
+    color: #000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #d4a00a;
+    transform: scale(1.05);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.btn-secondary:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #000;
+    border: 2px solid #f0b90b;
+}
+
+.btn-outline:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+.btn-dark {
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+.btn-dark:hover {
+    background: #f0b90b;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.btn-small {
+    background: #f0b90b;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(240, 185, 11, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(240, 185, 11, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(240, 185, 11, 0); }
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid #f0b90b;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+.loading-spinner.dark {
+    border: 2px solid #000;
+    border-top: 2px solid #f0b90b;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== CART SIDEBAR ========== */
+.cart-icon {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    background: #f0b90b;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-icon i {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: right 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.close-cart {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #f0b90b;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-total {
+    padding: 1rem 0;
+    text-align: right;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+}
+
+#checkout-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.cart-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    z-index: 3000;
+    font-weight: bold;
+    animation: slideUpFade 0.3s ease;
+}
+
+.cart-notification.error {
+    background: #f44336;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
     }
-    saveCart();
-    updateCartDisplay();
-    showNotification(`${productName} ajouté au panier !`);
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    saveCart();
-    updateCartDisplay();
+/* ========== CONTAINER ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-function updateCartDisplay() {
-    const cartContainer = document.getElementById('cart-items');
-    const cartCount = document.getElementById('cart-count');
-    const cartTotal = document.getElementById('cart-total');
-    
-    if (!cartContainer) return;
-    
-    if (cart.length === 0) {
-        cartContainer.innerHTML = `<p>${translations[currentLang].cart_empty}</p>`;
-        if (cartCount) cartCount.textContent = '0';
-        if (cartTotal) cartTotal.textContent = '0 DT';
-        return;
+/* ========== HEADER ========== */
+header {
+    background: #000;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #fff, #f0b90b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ========== NAVIGATION ========== */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #f0b90b;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #f0b90b;
+}
+
+/* ========== HEADER RIGHT ========== */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ========== LANGUAGE SWITCHER ========== */
+.language-switcher {
+    display: flex;
+    gap: 0.3rem;
+    background: rgba(255,255,255,0.15);
+    padding: 0.25rem;
+    border-radius: 60px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.lang-btn .flag-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.lang-btn .lang-code {
+    font-weight: 600;
+}
+
+.lang-btn.active {
+    background: #f0b90b;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(240,185,11,0.4);
+}
+
+.lang-btn.active .lang-code {
+    color: #000;
+}
+
+.lang-btn:hover:not(.active) {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* ========== USER MENU ========== */
+.user-menu {
+    position: relative;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.user-icon i {
+    font-size: 1.3rem;
+    color: #f0b90b;
+}
+
+.user-icon:hover {
+    background: rgba(240,185,11,0.3);
+    transform: scale(1.05);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 0.5rem 0;
+    min-width: 160px;
+    display: none;
+    z-index: 1001;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown span {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.user-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #333;
+}
+
+.user-dropdown button:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ========== AUTH MODAL ========== */
+.auth-modal, .profile-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2002;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-modal-content, .profile-modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 2rem;
+    animation: fadeInUp 0.3s ease;
+}
+
+.profile-modal-content {
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-auth, .close-profile {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.auth-tab {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.auth-tab.active {
+    color: #f0b90b;
+    border-bottom: 2px solid #f0b90b;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.auth-form .input-group {
+    margin-bottom: 1rem;
+}
+
+.auth-form .input-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.auth-form .input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.auth-error {
+    color: #e74c3c;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ========== PROFILE MODAL ========== */
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border: 3px solid #f0b90b;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-grid .input-group {
+    margin-bottom: 0;
+}
+
+.profile-grid .input-group input,
+.profile-grid .input-group select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.validation-message {
+    display: block;
+    font-size: 0.7rem;
+    color: #e74c3c;
+    margin-top: 4px;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* Fix for mobile - remove fixed background attachment */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 60px;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== STATS SECTION ========== */
+.stats-section {
+    padding: 4rem 0;
+    background: #f0b90b;
+    color: #000;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* ========== HEALTH SECTION ========== */
+.health-first {
+    padding: 5rem 0;
+    background: #f9f9f9;
+}
+
+.health-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.health-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.health-text p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.health-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #f0b90b;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.card:hover i {
+    transform: scale(1.2);
+}
+
+/* ========== CLASSES SECTION ========== */
+.classes-section {
+    padding: 5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.classes-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.class-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.class-card i {
+    font-size: 2.5rem;
+    color: #f0b90b;
+    margin-bottom: 1rem;
+}
+
+/* ========== COACHES SECTION ========== */
+.coaches-section {
+    padding: 5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.coaches-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.coach-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.coach-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.coach-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.coach-card p {
+    color: #f0b90b;
+    font-weight: bold;
+}
+
+.coach-social {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.coach-social a {
+    color: #333;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.coach-social a:hover {
+    color: #f0b90b;
+    transform: scale(1.2);
+}
+
+/* ========== PRICING SECTION ========== */
+.pricing-section {
+    padding: 5rem 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.pricing-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.pricing-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid #f0b90b;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f0b90b;
+    color: #000;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.pricing-card ul li {
+    margin: 0.8rem 0;
+}
+
+.pricing-card ul li i {
+    margin-right: 0.5rem;
+}
+
+.pricing-card ul li .fa-check {
+    color: #28a745;
+}
+
+.pricing-card ul li .fa-times {
+    color: #dc3545;
+}
+
+/* ========== IMC CALCULATOR ========== */
+.imc-section {
+    padding: 5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.imc-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.imc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.imc-form {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.imc-result {
+    text-align: center;
+}
+
+.imc-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f0b90b;
+    margin-bottom: 1rem;
+}
+
+.imc-status {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.imc-scale {
+    width: 100%;
+}
+
+.scale-bar {
+    display: flex;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.scale-segment {
+    flex: 1;
+}
+
+.underweight { background: #2196F3; }
+.normal { background: #4CAF50; }
+.overweight { background: #FF9800; }
+.obesity { background: #f44336; }
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+}
+
+/* ========== SHOP SECTION ========== */
+.shop-section {
+    padding: 5rem 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.shop-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.shop-subtitle {
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0b90b;
+    margin-bottom: 1rem;
+}
+
+.product-card .btn-outline {
+    width: 100%;
+    text-align: center;
+}
+
+/* ========== GALLERY SECTION ========== */
+.gallery-section {
+    padding: 5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* ========== LIGHTBOX ========== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ========== TESTIMONIALS SECTION ========== */
+.testimonials-section {
+    padding: 5rem 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.testimonial-card i {
+    color: #f0b90b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.stars {
+    color: #f0b90b;
+    margin-top: 0.5rem;
+}
+
+/* ========== FAQ SECTION ========== */
+.faq-section {
+    padding: 5rem 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.faq-question:hover {
+    background: rgba(240,185,11,0.1);
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1.5rem;
+    text-align: left;
+    border-top: 1px solid transparent;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1rem 1.5rem;
+    border-top-color: #eee;
+}
+
+/* ========== HOURS & MAP SECTION ========== */
+.hours-map-section {
+    padding: 5rem 0;
+    background: #fff;
+}
+
+.hours-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.hours-card, .map-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hours-card h3, .map-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.hours-table {
+    width: 100%;
+}
+
+.hours-table td {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.map-card p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.google-rating {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.stars-display {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    color: #f0b90b;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #f0b90b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: #111;
+    color: #ccc;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 0.5rem 0;
+}
+
+.footer-info i {
+    margin-right: 0.5rem;
+    color: #f0b90b;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #333;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-btn.facebook { background: #1877f2; }
+.social-btn.instagram { background: #e4405f; }
+.social-btn:hover { transform: translateY(-3px); }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+    nav ul {
+        gap: 0.8rem;
+    }
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .health-grid, .training-grid, .pricing-grid, .testimonials-grid, .hours-map-grid, .imc-grid {
+        grid-template-columns: 1fr;
+    }
+    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
     }
     
-    let total = 0;
-    let itemCount = 0;
-    cartContainer.innerHTML = '';
-    
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        itemCount += item.quantity;
-        
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">${item.price} DT x ${item.quantity}</div>
-            </div>
-            <button class="remove-item" data-index="${index}" aria-label="Remove item">
-                <i class="fas fa-trash"></i>
-            </button>
-        `;
-        cartContainer.appendChild(cartItem);
-    });
-    
-    if (cartCount) cartCount.textContent = itemCount;
-    if (cartTotal) cartTotal.textContent = `${total} DT`;
-    
-    document.querySelectorAll('.remove-item').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const index = parseInt(btn.getAttribute('data-index'));
-            removeFromCart(index);
-        });
-    });
-}
-
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'cart-notification';
-    notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
-    notification.style.cssText = `
+    nav {
         position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #4CAF50;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 30px;
-        z-index: 3000;
-        font-weight: bold;
-        animation: fadeInUp 0.3s ease;
-    `;
-    document.body.appendChild(notification);
-    setTimeout(() => { notification.remove(); }, 3000);
-}
-
-document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const productName = btn.getAttribute('data-product');
-        const price = parseInt(btn.getAttribute('data-price'));
-        addToCart(productName, price);
-    });
-});
-
-const cartIcon = document.getElementById('cart-icon');
-const cartSidebar = document.getElementById('cart-sidebar');
-const closeCart = document.querySelector('.close-cart');
-
-if (cartIcon) {
-    cartIcon.addEventListener('click', () => {
-        cartSidebar.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Prevent scroll when cart is open
-    });
-}
-
-if (closeCart) {
-    closeCart.addEventListener('click', () => {
-        cartSidebar.classList.remove('open');
-        document.body.style.overflow = '';
-    });
-}
-
-// Close cart when clicking outside (mobile improvement)
-document.addEventListener('click', (e) => {
-    if (cartSidebar && cartSidebar.classList.contains('open')) {
-        if (!cartSidebar.contains(e.target) && !cartIcon.contains(e.target)) {
-            cartSidebar.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-    }
-});
-
-const checkoutBtn = document.getElementById('checkout-btn');
-if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) {
-            showNotification('Votre panier est vide');
-            return;
-        }
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        showNotification(`Merci ! Votre commande de ${total} DT a été enregistrée. Nous vous contacterons.`);
-        cart = [];
-        saveCart();
-        updateCartDisplay();
-        cartSidebar.classList.remove('open');
-        document.body.style.overflow = '';
-    });
-}
-
-loadCart();
-
-// ========== USER AUTHENTICATION SYSTEM ==========
-function loadUsers() {
-    const users = localStorage.getItem('mclub_users');
-    return users ? JSON.parse(users) : [];
-}
-
-function saveUsers(users) {
-    localStorage.setItem('mclub_users', JSON.stringify(users));
-}
-
-function saveCurrentUser(user) {
-    localStorage.setItem('mclub_current_user', JSON.stringify(user));
-    currentUser = user;
-}
-
-function loadCurrentUser() {
-    const user = localStorage.getItem('mclub_current_user');
-    if (user) {
-        currentUser = JSON.parse(user);
-        updateUserUI();
-    }
-}
-
-function updateUserUI() {
-    const userNameDisplay = document.getElementById('user-name-display');
-    const userIconDiv = document.getElementById('user-icon');
-    
-    if (currentUser) {
-        if (userNameDisplay) userNameDisplay.textContent = currentUser.name;
-        if (userIconDiv) {
-            if (currentUser.avatar) {
-                userIconDiv.innerHTML = `<img src="${currentUser.avatar}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;" alt="User avatar">`;
-            } else {
-                userIconDiv.innerHTML = `<i class="fas fa-user-circle"></i>`;
-            }
-        }
-    } else {
-        if (userNameDisplay) userNameDisplay.textContent = '';
-        if (userIconDiv) userIconDiv.innerHTML = `<i class="fas fa-user-circle"></i>`;
-    }
-}
-
-function registerUser(name, email, password) {
-    const users = loadUsers();
-    if (users.find(u => u.email === email)) {
-        return { success: false, message: "Cet email est déjà utilisé" };
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: #000;
+        transition: left 0.3s;
+        z-index: 999;
+        overflow-y: auto;
     }
     
-    const newUser = {
-        id: Date.now(),
-        name: name,
-        email: email,
-        password: password,
-        avatar: null,
-        age: '',
-        weight: '',
-        height: '',
-        goal: 'health',
-        createdAt: new Date().toISOString()
-    };
-    
-    users.push(newUser);
-    saveUsers(users);
-    saveCurrentUser(newUser);
-    updateUserUI();
-    return { success: true };
-}
-
-function loginUser(email, password) {
-    const users = loadUsers();
-    const user = users.find(u => u.email === email && u.password === password);
-    if (user) {
-        saveCurrentUser(user);
-        updateUserUI();
-        return { success: true };
-    }
-    return { success: false, message: "Email ou mot de passe incorrect" };
-}
-
-function logoutUser() {
-    localStorage.removeItem('mclub_current_user');
-    currentUser = null;
-    updateUserUI();
-}
-
-function updateUserProfile(updates) {
-    if (!currentUser) return;
-    const users = loadUsers();
-    const index = users.findIndex(u => u.id === currentUser.id);
-    if (index !== -1) {
-        users[index] = { ...users[index], ...updates };
-        saveUsers(users);
-        saveCurrentUser(users[index]);
-        updateUserUI();
-    }
-}
-
-const authModal = document.getElementById('auth-modal');
-const profileModal = document.getElementById('profile-modal');
-const userIconElement = document.getElementById('user-icon');
-const userDropdown = document.getElementById('user-dropdown');
-const profileBtn = document.getElementById('profile-btn');
-const logoutBtn = document.getElementById('logout-btn');
-
-if (userIconElement) {
-    userIconElement.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentUser) {
-            userDropdown.classList.toggle('show');
-        } else {
-            authModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-    });
-}
-
-document.addEventListener('click', () => {
-    if (userDropdown) userDropdown.classList.remove('show');
-});
-
-if (profileBtn) {
-    profileBtn.addEventListener('click', () => {
-        userDropdown.classList.remove('show');
-        openProfileModal();
-    });
-}
-
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-        logoutUser();
-        userDropdown.classList.remove('show');
-        showNotification('Vous avez été déconnecté');
-    });
-}
-
-document.querySelectorAll('.auth-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
-        tab.classList.add('active');
-        const tabName = tab.getAttribute('data-tab');
-        document.getElementById(`${tabName}-form`).classList.add('active');
-    });
-});
-
-const loginForm = document.getElementById('login-form');
-if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        const result = loginUser(email, password);
-        if (result.success) {
-            authModal.style.display = 'none';
-            document.body.style.overflow = '';
-            document.getElementById('login-form').reset();
-            showNotification('Connexion réussie ! Bienvenue ' + currentUser.name);
-        } else {
-            document.getElementById('login-error').textContent = result.message;
-        }
-    });
-}
-
-const registerForm = document.getElementById('register-form');
-if (registerForm) {
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('register-name').value;
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
-        const confirm = document.getElementById('register-confirm').value;
-        
-        if (password !== confirm) {
-            document.getElementById('register-error').textContent = "Les mots de passe ne correspondent pas";
-            return;
-        }
-        
-        const result = registerUser(name, email, password);
-        if (result.success) {
-            authModal.style.display = 'none';
-            document.body.style.overflow = '';
-            document.getElementById('register-form').reset();
-            showNotification('Inscription réussie ! Bienvenue ' + name);
-        } else {
-            document.getElementById('register-error').textContent = result.message;
-        }
-    });
-}
-
-const closeAuth = document.querySelector('.close-auth');
-const closeProfile = document.querySelector('.close-profile');
-if (closeAuth) {
-    closeAuth.addEventListener('click', () => {
-        authModal.style.display = 'none';
-        document.body.style.overflow = '';
-    });
-}
-if (closeProfile) {
-    closeProfile.addEventListener('click', () => {
-        profileModal.style.display = 'none';
-        document.body.style.overflow = '';
-    });
-}
-
-function openProfileModal() {
-    if (!currentUser) return;
-    document.getElementById('profile-name').value = currentUser.name || '';
-    document.getElementById('profile-email').value = currentUser.email || '';
-    document.getElementById('profile-age').value = currentUser.age || '';
-    document.getElementById('profile-weight').value = currentUser.weight || '';
-    document.getElementById('profile-height').value = currentUser.height || '';
-    document.getElementById('profile-goal').value = currentUser.goal || 'health';
-    if (currentUser.avatar) {
-        document.getElementById('profile-avatar-img').src = currentUser.avatar;
-    }
-    profileModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-
-const profileForm = document.getElementById('profile-form');
-if (profileForm) {
-    profileForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const updates = {
-            name: document.getElementById('profile-name').value,
-            age: document.getElementById('profile-age').value,
-            weight: document.getElementById('profile-weight').value,
-            height: document.getElementById('profile-height').value,
-            goal: document.getElementById('profile-goal').value
-        };
-        updateUserProfile(updates);
-        profileModal.style.display = 'none';
-        document.body.style.overflow = '';
-        showNotification('Profil mis à jour !');
-    });
-}
-
-const changeAvatarBtn = document.getElementById('change-avatar-btn');
-const avatarUpload = document.getElementById('avatar-upload');
-if (changeAvatarBtn && avatarUpload) {
-    changeAvatarBtn.addEventListener('click', () => {
-        avatarUpload.click();
-    });
-    avatarUpload.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const avatarUrl = event.target.result;
-                updateUserProfile({ avatar: avatarUrl });
-                document.getElementById('profile-avatar-img').src = avatarUrl;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-}
-
-loadCurrentUser();
-
-// ========== NEWSLETTER FORM ==========
-const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email').value.trim();
-        const messageDiv = document.getElementById('form-message');
-        if (email && email.includes('@') && email.includes('.')) {
-            messageDiv.innerHTML = `<span style="color: green;">${translations[currentLang].subscribe_success}</span>`;
-            document.getElementById('email').value = '';
-            setTimeout(() => messageDiv.innerHTML = '', 5000);
-        } else {
-            messageDiv.innerHTML = `<span style="color: red;">${translations[currentLang].subscribe_error}</span>`;
-            setTimeout(() => messageDiv.innerHTML = '', 5000);
-        }
-    });
-}
-
-// ========== LANGUAGE MANAGEMENT ==========
-function updateLanguage(lang) {
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[lang][key]) {
-            if (element.innerHTML && element.innerHTML.includes('<br>') && (key === 'hero_title' || key === 'health_title')) {
-                element.innerHTML = translations[lang][key];
-            } else {
-                element.innerText = translations[lang][key];
-            }
-        }
-    });
-    
-    if (lang === 'ar') {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.style.textAlign = 'right';
-    } else {
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.style.textAlign = 'left';
+    nav.active {
+        left: 0;
     }
     
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
+    nav ul {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 1rem;
+    }
+    
+    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .language-switcher {
+        margin-left: auto;
+        margin-right: 0.5rem;
+        padding: 0.2rem;
+        gap: 0.2rem;
+    }
+    
+    .lang-btn {
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .lang-btn .lang-code {
+        display: none;
+    }
+    
+    .lang-btn .flag-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .header-right {
+        gap: 0.5rem;
+    }
+    
+    .user-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .hours-table td {
+        display: block;
+        text-align: center;
+    }
+    
+    .hours-table tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
 }
 
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        currentLang = btn.getAttribute('data-lang');
-        updateLanguage(currentLang);
-    });
-});
-
-// ========== SMOOTH SCROLLING ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-        if (nav && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            document.body.style.overflow = '';
-            if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
-});
-
-// ========== ACTIVE NAV LINK ON SCROLL ==========
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-    let current = '';
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
     
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
     
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .popup-content,
+    .auth-modal-content,
+    .profile-modal-content {
+        margin: 0 20px;
+        padding: 1.5rem;
+    }
+    
+    .imc-value {
+        font-size: 2.5rem;
+    }
+}
 
-// ========== INITIALIZE DEFAULT LANGUAGE ==========
-updateLanguage('fr');
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #f0b90b !important;
+    box-shadow: 0 0 0 3px rgba(240, 185, 11, 0.2);
+    transition: all 0.2s ease;
+}
 
-// ========== PREVENT IOS ZOOM ON INPUT FOCUS ==========
-// This is handled by CSS (font-size: 16px on inputs)
+:focus-visible {
+    outline: 2px solid #f0b90b;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+/* Add these styles to your existing styles.css */
+
+/* ========== QUANTITY CONTROLS IN CART ========== */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cart-item-info {
+    flex: 2;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.cart-item-price {
+    color: #f0b90b;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    border-radius: 30px;
+    padding: 4px 8px;
+}
+
+body.dark-mode .cart-item-controls {
+    background: #3a3a3a;
+}
+
+.quantity-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #f0b90b;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+    transform: scale(1.1);
+    background: #d4a00a;
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+.quantity-value {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.remove-item:hover {
+    transform: scale(1.1);
+    color: #c0392b;
+}
+
+/* ========== ORDERS MODAL ========== */
+.orders-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2003;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders-modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    position: relative;
+    padding: 2rem;
+    animation: fadeInUp 0.3s ease;
+    overflow-y: auto;
+}
+
+body.dark-mode .orders-modal-content {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.close-orders {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.orders-list {
+    margin-top: 1rem;
+}
+
+.order-item {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+body.dark-mode .order-item {
+    background: #333;
+}
+
+.order-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.order-date {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+body.dark-mode .order-date {
+    color: #aaa;
+}
+
+.order-total {
+    font-weight: bold;
+    color: #f0b90b;
+}
+
+.order-items-preview {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+body.dark-mode .order-items-preview {
+    color: #aaa;
+    border-top-color: #444;
+}
+
+/* ========== RECEIPT MODAL ========== */
+.receipt-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2004;
+    align-items: center;
+    justify-content: center;
+}
+
+.receipt-modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 85vh;
+    position: relative;
+    padding: 2rem;
+    animation: fadeInUp 0.3s ease;
+    overflow-y: auto;
+}
+
+body.dark-mode .receipt-modal-content {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.close-receipt {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.receipt-content {
+    margin: 1rem 0;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed #ddd;
+}
+
+.receipt-header h3 {
+    color: #f0b90b;
+    margin-bottom: 0.5rem;
+}
+
+.receipt-header p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+body.dark-mode .receipt-header p {
+    color: #aaa;
+}
+
+.receipt-items {
+    margin-bottom: 1.5rem;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .receipt-item {
+    border-bottom-color: #444;
+}
+
+.receipt-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    margin-top: 0.5rem;
+    border-top: 2px solid #ddd;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+body.dark-mode .receipt-total {
+    border-top-color: #444;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #ddd;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+#print-receipt-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Print styles for receipt */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .receipt-modal-content, .receipt-modal-content * {
+        visibility: visible;
+    }
+    .receipt-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: block !important;
+    }
+    .close-receipt, #print-receipt-btn {
+        display: none;
+    }
+    .receipt-modal-content {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* ========== MOBILE FIXES FOR NEW FEATURES ========== */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cart-item-controls {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+    
+    .remove-item {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .cart-item {
+        position: relative;
+        padding-right: 40px;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .orders-modal-content,
+    .receipt-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quantity-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+    
+    .cart-item-name {
+        font-size: 0.9rem;
+    }
+    
+    .receipt-item {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========== USER DROPDOWN ENHANCEMENT ========== */
+#orders-btn {
+    border-top: 1px solid #eee;
+}
+
+body.dark-mode #orders-btn {
+    border-top-color: #444;
+}
+
+/* ========== BUTTON DISABLED STATE ========== */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ========== LOADING SPINNER ========== */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid #f0b90b;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+.loading-spinner.dark {
+    border: 2px solid #000;
+    border-top: 2px solid #f0b90b;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
