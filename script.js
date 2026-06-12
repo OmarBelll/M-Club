@@ -129,7 +129,8 @@ const translations = {
         nutrition_tip5_title: "Écoutez votre corps",
         nutrition_tip5_desc: "Apprenez à reconnaître la faim et la satiété. Mangez lentement et savourez vos repas sans distraction.",
         nutrition_tip6_title: "Préparez vos repas à l'avance",
-        nutrition_tip6_desc: "Le meal prep vous aide à éviter les mauvaises tentations et à rester sur la bonne voie toute la semaine."
+        nutrition_tip6_desc: "Le meal prep vous aide à éviter les mauvaises tentations et à rester sur la bonne voie toute la semaine.",
+        see_more_coaches: "Voir tous nos coachs"
     },
     en: {
         brand: "M CLUB SFAX",
@@ -260,7 +261,8 @@ const translations = {
         nutrition_tip5_title: "Listen to your body",
         nutrition_tip5_desc: "Learn to recognize hunger and fullness. Eat slowly and enjoy your meals without distraction.",
         nutrition_tip6_title: "Prepare your meals in advance",
-        nutrition_tip6_desc: "Meal prep helps you avoid bad temptations and stay on track all week."
+        nutrition_tip6_desc: "Meal prep helps you avoid bad temptations and stay on track all week.",
+        see_more_coaches: "See all our coaches"
     },
     ar: {
         brand: "إم كلوب صفاقس",
@@ -391,7 +393,8 @@ const translations = {
         nutrition_tip5_title: "استمع إلى جسدك",
         nutrition_tip5_desc: "تعلم التعرف على الجوع والشبع. تناول الطعام ببطء واستمتع بوجباتك دون تشتيت.",
         nutrition_tip6_title: "حضر وجباتك مسبقًا",
-        nutrition_tip6_desc: "يساعدك تحضير الوجبات مسبقًا على تجنب الإغراءات والبقاء على المسار الصحيح طوال الأسبوع."
+        nutrition_tip6_desc: "يساعدك تحضير الوجبات مسبقًا على تجنب الإغراءات والبقاء على المسار الصحيح طوال الأسبوع.",
+        see_more_coaches: "عرض جميع المدربين"
     }
 };
 
