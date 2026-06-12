@@ -28,7 +28,8 @@ body.dark-mode .coaches-section,
 body.dark-mode .classes-section,
 body.dark-mode .pricing-section,
 body.dark-mode .gallery-section,
-body.dark-mode .hours-map-section {
+body.dark-mode .hours-map-section,
+body.dark-mode .nutrition-section {
     background: #222;
 }
 
@@ -48,7 +49,10 @@ body.dark-mode .faq-item,
 body.dark-mode .imc-form,
 body.dark-mode .product-card,
 body.dark-mode .auth-modal-content,
-body.dark-mode .profile-modal-content {
+body.dark-mode .profile-modal-content,
+body.dark-mode .orders-modal-content,
+body.dark-mode .forgot-password-modal-content,
+body.dark-mode .nutrition-card {
     background: #2a2a2a;
     color: #f0f0f0;
 }
@@ -61,7 +65,8 @@ body.dark-mode .classes-section h2,
 body.dark-mode .coaches-section h2,
 body.dark-mode .faq-section h2,
 body.dark-mode .imc-section h2,
-body.dark-mode .shop-section h2 {
+body.dark-mode .shop-section h2,
+body.dark-mode .nutrition-section h2 {
     color: #f0f0f0;
 }
 
@@ -85,26 +90,19 @@ body.dark-mode .btn-outline:hover {
     color: #000;
 }
 
-body.dark-mode .popup-content {
-    background: #2a2a2a;
-    color: #fff;
-}
-
-body.dark-mode .popup-content input {
-    background: #1a1a1a;
-    border-color: #444;
-    color: #fff;
-}
-
-body.dark-mode .shop-subtitle {
+body.dark-mode .shop-subtitle,
+body.dark-mode .nutrition-subtitle {
     color: #ccc;
 }
 
-body.dark-mode .product-info h3 {
+body.dark-mode .product-info h3,
+body.dark-mode .nutrition-card h3 {
     color: #f0b90b;
 }
 
-body.dark-mode .product-info p {
+body.dark-mode .product-info p,
+body.dark-mode .nutrition-card p,
+body.dark-mode .coach-bio {
     color: #ccc;
 }
 
@@ -186,14 +184,25 @@ body.dark-mode .coach-social a:hover {
     color: #f0b90b;
 }
 
-body.dark-mode .newsletter {
-    background: #f0b90b;
-    color: #000;
+body.dark-mode .validation-message {
+    color: #ff9999;
 }
 
-body.dark-mode .newsletter input {
-    background: #fff;
-    color: #000;
+body.dark-mode .order-item {
+    background: #333;
+}
+
+body.dark-mode .order-items-preview {
+    border-top-color: #555;
+    color: #aaa;
+}
+
+body.dark-mode .remember-me {
+    color: #ccc;
+}
+
+body.dark-mode .forgot-password-modal-content p {
+    color: #aaa;
 }
 
 /* ========== BUTTONS ========== */
@@ -237,6 +246,34 @@ body.dark-mode .newsletter input {
     transform: scale(1.1);
 }
 
+@media (max-width: 480px) {
+    .dark-mode-toggle {
+        bottom: 80px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .back-to-top {
+        bottom: 140px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cart-icon {
+        bottom: 200px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .cart-icon i {
+        font-size: 1.2rem;
+    }
+}
+
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -256,6 +293,12 @@ body.dark-mode .newsletter input {
 .btn-primary:hover {
     background: #d4a00a;
     transform: scale(1.05);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .btn-secondary {
@@ -312,77 +355,115 @@ body.dark-mode .newsletter input {
     100% { box-shadow: 0 0 0 0 rgba(240, 185, 11, 0); }
 }
 
-/* ========== NEWSLETTER POPUP ========== */
-.newsletter-popup {
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid #f0b90b;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== LOGIN OPTIONS (Remember Me & Forgot Password) ========== */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.forgot-password {
+    font-size: 0.85rem;
+    color: #f0b90b;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* ========== FORGOT PASSWORD MODAL ========== */
+.forgot-password-modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: 2001;
+    background: rgba(0,0,0,0.8);
+    z-index: 2005;
     align-items: center;
     justify-content: center;
 }
 
-.popup-content {
+.forgot-password-modal-content {
     background: #fff;
-    padding: 2rem;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 400px;
+    border-radius: 16px;
     width: 90%;
+    max-width: 400px;
     position: relative;
-    animation: fadeInUp 0.4s ease;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    padding: 2rem;
+    animation: fadeInUp 0.3s ease;
 }
 
-.close-popup {
+.close-forgot {
     position: absolute;
-    top: 12px;
-    right: 18px;
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    color: #999;
-}
-
-.close-popup:hover {
-    color: #f0b90b;
-}
-
-.popup-content i {
-    margin-bottom: 1rem;
-}
-
-.popup-content h3 {
+    top: 15px;
+    right: 20px;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #f0b90b;
+    cursor: pointer;
 }
 
-.popup-content p {
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.popup-content input {
-    width: 100%;
-    padding: 0.8rem 1rem;
+.forgot-password-modal-content h2 {
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 50px;
-    font-size: 1rem;
+    text-align: center;
 }
 
-.popup-content input:focus {
-    outline: none;
-    border-color: #f0b90b;
+.forgot-password-modal-content p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.popup-content .btn-primary {
-    width: 100%;
+.reset-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.reset-message.success {
+    color: #4CAF50;
+}
+
+.reset-message.error {
+    color: #f44336;
 }
 
 /* ========== CART SIDEBAR ========== */
@@ -469,20 +550,67 @@ body.dark-mode .newsletter input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 12px 0;
     border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
 }
 
 .cart-item-info {
-    flex: 1;
+    flex: 2;
 }
 
 .cart-item-name {
     font-weight: bold;
+    font-size: 0.95rem;
 }
 
 .cart-item-price {
     color: #f0b90b;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    border-radius: 30px;
+    padding: 4px 8px;
+}
+
+body.dark-mode .cart-item-controls {
+    background: #3a3a3a;
+}
+
+.quantity-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #f0b90b;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+    transform: scale(1.1);
+    background: #d4a00a;
+}
+
+.quantity-value {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .remove-item {
@@ -491,6 +619,13 @@ body.dark-mode .newsletter input {
     color: #e74c3c;
     cursor: pointer;
     font-size: 1rem;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.remove-item:hover {
+    transform: scale(1.1);
+    color: #c0392b;
 }
 
 .cart-total {
@@ -519,6 +654,10 @@ body.dark-mode .newsletter input {
     animation: slideUpFade 0.3s ease;
 }
 
+.cart-notification.error {
+    background: #f44336;
+}
+
 @keyframes slideUpFade {
     from {
         opacity: 0;
@@ -528,6 +667,271 @@ body.dark-mode .newsletter input {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
     }
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 40px;
+    }
+    
+    .cart-item-controls {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+    
+    .remove-item {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* ========== ORDERS MODAL ========== */
+.orders-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2003;
+    align-items: center;
+    justify-content: center;
+}
+
+.orders-modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    position: relative;
+    padding: 2rem;
+    animation: fadeInUp 0.3s ease;
+    overflow-y: auto;
+}
+
+.close-orders {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.orders-list {
+    margin-top: 1rem;
+}
+
+.order-item {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.order-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.order-date {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.order-total {
+    font-weight: bold;
+    color: #f0b90b;
+}
+
+.order-items-preview {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .orders-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .login-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .forgot-password-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+/* ========== NUTRITION SECTION ========== */
+.nutrition-section {
+    padding: 5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.nutrition-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.nutrition-subtitle {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nutrition-card {
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.nutrition-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.nutrition-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(240, 185, 11, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.nutrition-icon i {
+    font-size: 2rem;
+    color: #f0b90b;
+}
+
+.nutrition-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.nutrition-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nutrition-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .nutrition-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .nutrition-card {
+        padding: 1.5rem;
+    }
+    
+    .nutrition-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nutrition-icon i {
+        font-size: 1.6rem;
+    }
+    
+    .nutrition-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .nutrition-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== COACHES SECTION "VOIR PLUS" BUTTON ========== */
+.coaches-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+}
+
+.see-more-btn i:last-child {
+    transition: transform 0.3s ease;
+}
+
+.see-more-btn:hover i:last-child {
+    transform: translateX(8px);
+}
+
+/* ========== COACH BIO (for coaches page) ========== */
+.coach-bio {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.8rem 0;
+    line-height: 1.4;
 }
 
 /* ========== CONTAINER ========== */
@@ -886,6 +1290,13 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
+.validation-message {
+    display: block;
+    font-size: 0.7rem;
+    color: #e74c3c;
+    margin-top: 4px;
+}
+
 /* ========== HERO SECTION ========== */
 .hero {
     position: relative;
@@ -895,7 +1306,15 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     color: #fff;
-    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 60px;
+    }
 }
 
 .hero-overlay {
@@ -925,6 +1344,21 @@ nav ul li a:hover {
     max-width: 700px;
     margin: 0 auto 2rem;
     animation: fadeInUp 1s ease 0.2s both;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
 }
 
 /* ========== STATS SECTION ========== */
@@ -1616,49 +2050,6 @@ nav ul li a:hover {
     transform: translateX(5px);
 }
 
-/* ========== NEWSLETTER SECTION ========== */
-.training-newsletter {
-    padding: 5rem 0;
-    background: #fff;
-}
-
-.training-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.training-text h3 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.newsletter {
-    background: #f0b90b;
-    padding: 2rem;
-    border-radius: 12px;
-    color: #000;
-    transition: all 0.3s;
-}
-
-.newsletter:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.newsletter input {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 1rem 0;
-    border: none;
-    border-radius: 30px;
-}
-
-.form-message {
-    margin-top: 0.5rem;
-}
-
 /* ========== FOOTER ========== */
 footer {
     background: #111;
@@ -1771,18 +2162,6 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-    }
-    
-    .hero {
-        background-attachment: scroll;
-    }
-    
     .language-switcher {
         margin-left: auto;
         margin-right: 0.5rem;
@@ -1840,17 +2219,14 @@ footer {
         padding: 10px 0;
     }
     
-    .dark-mode-toggle, .back-to-top, .cart-icon {
-        width: 44px;
-        height: 44px;
+    .coaches-more {
+        margin-top: 2rem;
     }
     
-    .cart-icon {
-        bottom: 100px;
-    }
-    
-    .back-to-top {
-        bottom: 150px;
+    .see-more-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        gap: 8px;
     }
 }
 
@@ -1863,10 +2239,6 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .hero {
-        background-attachment: scroll;
-    }
-    
     .logo-text {
         font-size: 1rem;
     }
@@ -1875,18 +2247,15 @@ footer {
         height: 30px;
     }
     
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-    
     .btn {
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
     }
     
-    .popup-content,
     .auth-modal-content,
-    .profile-modal-content {
+    .profile-modal-content,
+    .orders-modal-content,
+    .forgot-password-modal-content {
         margin: 0 20px;
         padding: 1.5rem;
     }
@@ -1921,42 +2290,4 @@ img {
 
 [data-aos].aos-animate {
     opacity: 1;
-}
-
-/* ========== PRICING CARDS ICON FIX - ENSURE CHECK/ICONS DISPLAY PROPERLY ========== */
-.pricing-card ul {
-    list-style: none !important;
-    margin: 1.5rem 0 !important;
-    text-align: left !important;
-    padding: 0 !important;
-}
-
-.pricing-card ul li {
-    margin: 0.8rem 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-}
-
-.pricing-card ul li i {
-    width: 20px !important;
-    font-size: 1rem !important;
-    display: inline-block !important;
-    margin-right: 0 !important;
-}
-
-.pricing-card ul li .fa-check {
-    color: #28a745 !important;
-}
-
-.pricing-card ul li .fa-times {
-    color: #dc3545 !important;
-}
-
-body.dark-mode .pricing-card ul li .fa-check {
-    color: #4CAF50 !important;
-}
-
-body.dark-mode .pricing-card ul li .fa-times {
-    color: #f44336 !important;
 }
