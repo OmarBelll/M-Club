@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23f0b90b'%3E💪%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23f0b90b'%3E💪%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Dark mode toggle">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Floating Buttons Container (Fixed alignment & size) -->
+    <div class="floating-buttons">
+        <button id="dark-mode-toggle" class="floating-btn" aria-label="Dark mode toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div id="cart-icon" class="floating-btn cart-icon-floating" aria-label="Shopping cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <button id="back-to-top" class="floating-btn" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
 
     <!-- Cart Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
@@ -35,17 +42,11 @@
         <button id="checkout-btn" class="btn btn-primary" data-key="checkout">Commander</button>
     </div>
 
-    <!-- Cart Icon -->
-    <div id="cart-icon" class="cart-icon" aria-label="Shopping cart">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count">0</span>
-    </div>
-
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="M Club Logo" class="logo-img">
+                <img src="logo.png" alt="M Club Logo" class="logo-img" loading="lazy">
                 <span class="logo-text" data-key="brand">M CLUB SFAX</span>
             </div>
             <nav>
@@ -64,15 +65,15 @@
             <div class="header-right">
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="fr" aria-label="French">
-                        <img src="fr.png" alt="Français" class="flag-icon">
+                        <img src="fr.png" alt="Français" class="flag-icon" loading="lazy">
                         <span class="lang-code">FR</span>
                     </button>
                     <button class="lang-btn" data-lang="en" aria-label="English">
-                        <img src="en.png" alt="English" class="flag-icon">
+                        <img src="en.png" alt="English" class="flag-icon" loading="lazy">
                         <span class="lang-code">EN</span>
                     </button>
                     <button class="lang-btn" data-lang="ar" aria-label="Arabic">
-                        <img src="ar.png" alt="العربية" class="flag-icon">
+                        <img src="ar.png" alt="العربية" class="flag-icon" loading="lazy">
                         <span class="lang-code">AR</span>
                     </button>
                 </div>
@@ -171,7 +172,7 @@
             <h2 data-key="profile_title">Mon Profil</h2>
             <form id="profile-form">
                 <div class="profile-avatar">
-                    <img id="profile-avatar-img" src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Avatar">
+                    <img id="profile-avatar-img" src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Avatar" loading="lazy">
                     <button type="button" id="change-avatar-btn" class="btn-small" data-key="change_avatar">Changer la photo</button>
                     <input type="file" id="avatar-upload" accept="image/*" style="display:none" aria-label="Upload avatar">
                 </div>
@@ -340,13 +341,13 @@
         </div>
     </section>
 
-    <!-- Coaches Section with "Voir plus" button -->
+    <!-- Coaches Section -->
     <section id="coaches" class="coaches-section">
         <div class="container">
             <h2 data-key="coaches_title" data-aos="fade-up">NOS COACHS</h2>
             <div class="coaches-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Karim Ben Ali" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=K'">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Karim Ben Ali" loading="lazy" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=K'">
                     <h3>Karim Ben Ali</h3>
                     <p>Coach musculation & CrossFit</p>
                     <div class="coach-social">
@@ -355,7 +356,7 @@
                     </div>
                 </div>
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Coach Sonia Makhlouf" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=S'">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Coach Sonia Makhlouf" loading="lazy" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=S'">
                     <h3>Sonia Makhlouf</h3>
                     <p>Coach Yoga & Bien-être</p>
                     <div class="coach-social">
@@ -364,7 +365,7 @@
                     </div>
                 </div>
                 <div class="coach-card">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Coach Mehdi Trabelsi" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=M'">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Coach Mehdi Trabelsi" loading="lazy" onerror="this.src='https://placehold.co/150x150/f0b90b/000000?text=M'">
                     <h3>Mehdi Trabelsi</h3>
                     <p>Coach Boxe & Cardio</p>
                     <div class="coach-social">
@@ -373,7 +374,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Voir plus button -->
             <div class="coaches-more" data-aos="fade-up" data-aos-delay="300">
                 <a href="coachs.html" class="btn btn-primary see-more-btn" data-key="see_more_coaches">
                     <i class="fas fa-users"></i> <span data-key="see_more_coaches">Voir tous nos coachs</span> <i class="fas fa-arrow-right"></i>
@@ -557,7 +557,16 @@
             </div>
             <div class="map-card" data-aos="fade-left">
                 <h3><i class="fas fa-map-marker-alt"></i> <span data-key="map_title">NOUS TROUVER</span></h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1308.543208750843!2d10.7377806!3d34.7362069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8b6b6c1d9e7d%3A0xa7f4b3c2d1e0a9b8!2sM%20club!5e0!3m2!1sfr!2stn!4v1710000000000!5m2!1sfr!2stn" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="M Club Sfax location map"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5!2d10.7377806!3d34.7362069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8b6b6c1d9e7d%3A0xa7f4b3c2d1e0a9b8!2sM%20Club%20Sfax!5e0!3m2!1sen!2stn!4v1700000000000!5m2!1sen!2stn" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    title="M Club Sfax location map">
+                </iframe>
                 <p><strong>QPM4+5R, Sfax, Tunisie</strong></p>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=M+club+Sfax&destination_place_id=ChIJ7Z0cbGtriw0RuKkA4LHC86M" target="_blank" class="map-link" style="display: inline-block; margin-top: 10px;"><i class="fas fa-directions"></i> Obtenir l'itinéraire</a>
                 <div class="google-rating"><div class="stars-display">★★★★☆</div><p><strong>4.0</strong> / 5 - Basé sur 128 avis Google</p><a href="https://maps.app.goo.gl/Vs2QPywGVHCwZmrh6" target="_blank" class="map-link" data-key="open_maps">Voir tous les avis →</a></div>
