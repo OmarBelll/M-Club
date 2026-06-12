@@ -101,7 +101,8 @@ body.dark-mode .nutrition-card h3 {
 }
 
 body.dark-mode .product-info p,
-body.dark-mode .nutrition-card p {
+body.dark-mode .nutrition-card p,
+body.dark-mode .coach-bio {
     color: #ccc;
 }
 
@@ -901,6 +902,36 @@ body.dark-mode .cart-item-controls {
     .nutrition-card p {
         font-size: 0.9rem;
     }
+}
+
+/* ========== COACHES SECTION "VOIR PLUS" BUTTON ========== */
+.coaches-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+}
+
+.see-more-btn i:last-child {
+    transition: transform 0.3s ease;
+}
+
+.see-more-btn:hover i:last-child {
+    transform: translateX(8px);
+}
+
+/* ========== COACH BIO (for coaches page) ========== */
+.coach-bio {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.8rem 0;
+    line-height: 1.4;
 }
 
 /* ========== CONTAINER ========== */
@@ -2186,6 +2217,16 @@ footer {
         display: flex;
         flex-direction: column;
         padding: 10px 0;
+    }
+    
+    .coaches-more {
+        margin-top: 2rem;
+    }
+    
+    .see-more-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        gap: 8px;
     }
 }
 
