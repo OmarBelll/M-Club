@@ -4,12 +4,31 @@
     box-sizing: border-box;
 }
 
+/* ========== FIX HORIZONTAL SCROLL ========== */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
+}
+
+/* ========== LOGO PLACEHOLDER ========== */
+.logo-placeholder {
+    font-size: 2rem;
+    display: inline-block;
+}
+
+/* ========== FLAG EMOJI STYLES ========== */
+.flag-emoji {
+    font-size: 1.1rem;
 }
 
 /* ========== DARK MODE ========== */
@@ -204,7 +223,7 @@ body.dark-mode .forgot-password-modal-content p {
     color: #aaa;
 }
 
-/* ========== FLOATING BUTTONS - FIXED ========== */
+/* ========== FLOATING BUTTONS ========== */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
@@ -241,7 +260,6 @@ body.dark-mode .forgot-password-modal-content p {
     font-size: 1.3rem;
 }
 
-/* Cart button specific - has the counter badge */
 .cart-icon-floating {
     position: relative;
 }
@@ -263,7 +281,6 @@ body.dark-mode .forgot-password-modal-content p {
     font-family: monospace;
 }
 
-/* Dark mode button specific - NO counter */
 #dark-mode-toggle {
     background: #f0b90b;
 }
@@ -272,7 +289,6 @@ body.dark-mode #dark-mode-toggle {
     background: #f0b90b;
 }
 
-/* Back to top button specific - NO counter */
 #back-to-top {
     background: #f0b90b;
 }
@@ -302,7 +318,31 @@ body.dark-mode #dark-mode-toggle {
     }
 }
 
-/* ========== CART SIDEBAR - SMALLER WINDOW ========== */
+/* ========== CART NOTIFICATION TOAST ========== */
+.cart-notification {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 2001;
+    animation: slideInRight 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+}
+
+.cart-notification.error {
+    background: #f44336;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ========== CART SIDEBAR ========== */
 .cart-sidebar {
     position: fixed;
     top: 0;
@@ -464,7 +504,6 @@ body.dark-mode #dark-mode-toggle {
     font-size: 0.9rem;
 }
 
-/* Dark mode for smaller cart */
 body.dark-mode .cart-sidebar {
     background: #2a2a2a;
     color: #fff;
@@ -968,13 +1007,6 @@ nav ul li a:hover {
     gap: 0.5rem;
     font-size: 0.85rem;
     color: #fff;
-}
-
-.lang-btn .flag-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-    border-radius: 2px;
 }
 
 .lang-btn .lang-code {
@@ -2183,9 +2215,8 @@ footer {
         display: none;
     }
     
-    .lang-btn .flag-icon {
-        width: 20px;
-        height: 20px;
+    .flag-emoji {
+        font-size: 1rem;
     }
     
     .header-right {
@@ -2229,6 +2260,34 @@ footer {
         font-size: 0.9rem;
         gap: 8px;
     }
+
+    /* Fix horizontal scroll on mobile */
+    .container {
+        overflow-x: hidden;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero-content h1 {
+        word-wrap: break-word;
+    }
+    
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .hours-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2242,10 +2301,6 @@ footer {
     
     .logo-text {
         font-size: 1rem;
-    }
-    
-    .logo-img {
-        height: 30px;
     }
     
     .btn {
@@ -2266,6 +2321,7 @@ footer {
     }
 }
 
+/* ========== FOCUS STYLES ========== */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #f0b90b !important;
