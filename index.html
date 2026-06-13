@@ -46,7 +46,8 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-placeholder">💪</div>
+                <img src="logo.png" alt="M Club Logo" class="logo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">💪</div>
                 <span class="logo-text" data-key="brand">M CLUB SFAX</span>
             </div>
             <nav>
@@ -65,16 +66,19 @@
             <div class="header-right">
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="fr" aria-label="French">
-                        <span class="flag-emoji">🇫🇷</span>
-                        <span class="lang-code">FR</span>
+                        <img src="fr.png" alt="Français" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">FR</span>
+                        <span class="lang-code-fallback">FR</span>
                     </button>
                     <button class="lang-btn" data-lang="en" aria-label="English">
-                        <span class="flag-emoji">🇬🇧</span>
-                        <span class="lang-code">EN</span>
+                        <img src="en.png" alt="English" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">EN</span>
+                        <span class="lang-code-fallback">EN</span>
                     </button>
                     <button class="lang-btn" data-lang="ar" aria-label="Arabic">
-                        <span class="flag-emoji">🇸🇦</span>
-                        <span class="lang-code">AR</span>
+                        <img src="ar.png" alt="العربية" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">AR</span>
+                        <span class="lang-code-fallback">AR</span>
                     </button>
                 </div>
                 <div class="user-menu">
@@ -94,6 +98,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay (for closing menu when clicking outside) -->
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Auth Modal -->
     <div id="auth-modal" class="auth-modal">
@@ -333,7 +340,7 @@
             <div class="classes-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="class-card"><i class="fas fa-yin-yang"></i><h3>Yoga</h3><p>Lundi & Jeudi - 18h</p></div>
                 <div class="class-card"><i class="fas fa-bicycle"></i><h3>Spinning</h3><p>Mardi & Vendredi - 19h</p></div>
-                <div class="class-card"><i class="fas fa-fist-raised"></i><h3>Boxe</h3><p>Mercredi & Samedi - 17h</p></div>
+                <div class="class-card"><i class="fas-fist-raised"></i><h3>Boxe</h3><p>Mercredi & Samedi - 17h</p></div>
                 <div class="class-card"><i class="fas fa-dumbbell"></i><h3>CrossFit</h3><p>Lundi au Samedi - 20h</p></div>
                 <div class="class-card"><i class="fas fa-music"></i><h3>Zumba</h3><p>Mardi & Jeudi - 17h</p></div>
                 <div class="class-card"><i class="fas fa-swimmer"></i><h3>Aquagym</h3><p>Mercredi & Vendredi - 15h</p></div>
