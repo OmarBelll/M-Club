@@ -1,2350 +1,321 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ========== FIX HORIZONTAL SCROLL ========== */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* ========== LOGO PLACEHOLDER ========== */
-.logo-placeholder {
-    font-size: 2rem;
-    display: inline-block;
-}
-
-/* ========== FLAG EMOJI STYLES ========== */
-.flag-emoji {
-    font-size: 1.1rem;
-}
-
-/* ========== DARK MODE ========== */
-body.dark-mode {
-    background: #1a1a1a;
-    color: #f0f0f0;
-}
-
-body.dark-mode .health-first,
-body.dark-mode .testimonials-section,
-body.dark-mode .faq-section,
-body.dark-mode .shop-section,
-body.dark-mode .imc-section,
-body.dark-mode .coaches-section,
-body.dark-mode .classes-section,
-body.dark-mode .pricing-section,
-body.dark-mode .gallery-section,
-body.dark-mode .hours-map-section,
-body.dark-mode .nutrition-section {
-    background: #222;
-}
-
-body.dark-mode .stats-section {
-    background: #f0b90b;
-    color: #000;
-}
-
-body.dark-mode .card,
-body.dark-mode .pricing-card,
-body.dark-mode .testimonial-card,
-body.dark-mode .hours-card,
-body.dark-mode .map-card,
-body.dark-mode .class-card,
-body.dark-mode .coach-card,
-body.dark-mode .faq-item,
-body.dark-mode .imc-form,
-body.dark-mode .product-card,
-body.dark-mode .auth-modal-content,
-body.dark-mode .profile-modal-content,
-body.dark-mode .orders-modal-content,
-body.dark-mode .forgot-password-modal-content,
-body.dark-mode .nutrition-card {
-    background: #2a2a2a;
-    color: #f0f0f0;
-}
-
-body.dark-mode .health-text h2,
-body.dark-mode .pricing-section h2,
-body.dark-mode .gallery-section h2,
-body.dark-mode .testimonials-section h2,
-body.dark-mode .classes-section h2,
-body.dark-mode .coaches-section h2,
-body.dark-mode .faq-section h2,
-body.dark-mode .imc-section h2,
-body.dark-mode .shop-section h2,
-body.dark-mode .nutrition-section h2 {
-    color: #f0f0f0;
-}
-
-body.dark-mode .btn-secondary {
-    border-color: #f0b90b;
-    color: #f0b90b;
-}
-
-body.dark-mode .btn-secondary:hover {
-    background: #f0b90b;
-    color: #000;
-}
-
-body.dark-mode .btn-outline {
-    border-color: #f0b90b;
-    color: #f0b90b;
-}
-
-body.dark-mode .btn-outline:hover {
-    background: #f0b90b;
-    color: #000;
-}
-
-body.dark-mode .shop-subtitle,
-body.dark-mode .nutrition-subtitle {
-    color: #ccc;
-}
-
-body.dark-mode .product-info h3,
-body.dark-mode .nutrition-card h3 {
-    color: #f0b90b;
-}
-
-body.dark-mode .product-info p,
-body.dark-mode .nutrition-card p,
-body.dark-mode .coach-bio {
-    color: #ccc;
-}
-
-body.dark-mode .product-price {
-    color: #f0b90b;
-}
-
-body.dark-mode .hours-table td {
-    border-bottom-color: #444;
-}
-
-body.dark-mode .faq-question:hover {
-    background: rgba(240, 185, 11, 0.2);
-}
-
-body.dark-mode .faq-item.active .faq-answer {
-    border-top-color: #444;
-}
-
-body.dark-mode .google-rating {
-    border-top-color: #444;
-}
-
-body.dark-mode .user-dropdown {
-    background: #2a2a2a;
-}
-
-body.dark-mode .user-dropdown span,
-body.dark-mode .user-dropdown button {
-    color: #fff;
-}
-
-body.dark-mode .user-dropdown button:hover {
-    background: #f0b90b;
-    color: #000;
-}
-
-body.dark-mode .cart-sidebar {
-    background: #2a2a2a;
-    color: #fff;
-}
-
-body.dark-mode .cart-item {
-    border-bottom-color: #444;
-}
-
-body.dark-mode .cart-header,
-body.dark-mode .cart-total {
-    border-color: #444;
-}
-
-body.dark-mode .input-group input,
-body.dark-mode .input-group select,
-body.dark-mode .auth-form .input-group input,
-body.dark-mode .profile-grid .input-group input,
-body.dark-mode .profile-grid .input-group select {
-    background: #333;
-    border-color: #555;
-    color: #fff;
-}
-
-body.dark-mode .input-group input::placeholder {
-    color: #aaa;
-}
-
-body.dark-mode footer {
-    background: #111;
-}
-
-body.dark-mode .footer-info p {
-    color: #ccc;
-}
-
-body.dark-mode .coach-social a {
-    color: #ccc;
-}
-
-body.dark-mode .coach-social a:hover {
-    color: #f0b90b;
-}
-
-body.dark-mode .validation-message {
-    color: #ff9999;
-}
-
-body.dark-mode .order-item {
-    background: #333;
-}
-
-body.dark-mode .order-items-preview {
-    border-top-color: #555;
-    color: #aaa;
-}
-
-body.dark-mode .remember-me {
-    color: #ccc;
-}
-
-body.dark-mode .forgot-password-modal-content p {
-    color: #aaa;
-}
-
-/* ========== FLOATING BUTTONS ========== */
-.floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 1000;
-}
-
-.floating-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #f0b90b;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    color: #000;
-    position: relative;
-}
-
-.floating-btn:hover {
-    transform: scale(1.1);
-    background: #d4a00a;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.floating-btn i {
-    font-size: 1.3rem;
-}
-
-.cart-icon-floating {
-    position: relative;
-}
-
-.cart-icon-floating #cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: monospace;
-}
-
-#dark-mode-toggle {
-    background: #f0b90b;
-}
-
-body.dark-mode #dark-mode-toggle {
-    background: #f0b90b;
-}
-
-#back-to-top {
-    background: #f0b90b;
-}
-
-@media (max-width: 480px) {
-    .floating-buttons {
-        bottom: 15px;
-        right: 15px;
-        gap: 10px;
-    }
-    
-    .floating-btn {
-        width: 42px;
-        height: 42px;
-    }
-    
-    .floating-btn i {
-        font-size: 1.1rem;
-    }
-    
-    .cart-icon-floating #cart-count {
-        width: 18px;
-        height: 18px;
-        font-size: 0.65rem;
-        top: -4px;
-        right: -4px;
-    }
-}
-
-/* ========== CART NOTIFICATION TOAST ========== */
-.cart-notification {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    z-index: 2001;
-    animation: slideInRight 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    font-size: 0.9rem;
-}
-
-.cart-notification.error {
-    background: #f44336;
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* ========== CART SIDEBAR ========== */
-.cart-sidebar {
-    position: fixed;
-    top: 0;
-    right: -380px;
-    width: 320px;
-    max-width: 85vw;
-    height: 100%;
-    background: #fff;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    z-index: 2000;
-    transition: right 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.cart-sidebar.open {
-    right: 0;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.cart-header h3 {
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-.close-cart {
-    font-size: 1.3rem;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background 0.2s;
-}
-
-.close-cart:hover {
-    background: rgba(0,0,0,0.1);
-}
-
-.cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0.8rem 0;
-    max-height: calc(100vh - 180px);
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    gap: 8px;
-}
-
-.cart-item-info {
-    flex: 2;
-    min-width: 0;
-}
-
-.cart-item-name {
-    font-weight: bold;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.cart-item-price {
-    color: #f0b90b;
-    font-size: 0.75rem;
-    margin-top: 2px;
-}
-
-.cart-item-controls {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background: #f5f5f5;
-    border-radius: 30px;
-    padding: 2px 6px;
-}
-
-.quantity-btn {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: none;
-    background: #f0b90b;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.quantity-btn:hover {
-    transform: scale(1.05);
-    background: #d4a00a;
-}
-
-.quantity-value {
-    min-width: 24px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-}
-
-.remove-item {
-    background: none;
-    border: none;
-    color: #e74c3c;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 5px;
-    transition: all 0.2s;
-}
-
-.remove-item:hover {
-    transform: scale(1.1);
-    color: #c0392b;
-}
-
-.cart-total {
-    padding: 0.8rem 0;
-    text-align: right;
-    font-size: 1rem;
-    border-top: 1px solid #ddd;
-    margin-top: 0.5rem;
-}
-
-.cart-total strong {
-    font-size: 0.9rem;
-}
-
-#cart-total {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #f0b90b;
-}
-
-#checkout-btn {
-    width: 100%;
-    margin-top: 0.8rem;
-    padding: 0.6rem;
-    font-size: 0.9rem;
-}
-
-body.dark-mode .cart-sidebar {
-    background: #2a2a2a;
-    color: #fff;
-}
-
-body.dark-mode .cart-item {
-    border-bottom-color: #444;
-}
-
-body.dark-mode .cart-header,
-body.dark-mode .cart-total {
-    border-color: #444;
-}
-
-body.dark-mode .cart-item-controls {
-    background: #3a3a3a;
-}
-
-@media (max-width: 480px) {
-    .cart-sidebar {
-        width: 300px;
-        right: -300px;
-    }
-    
-    .cart-item {
-        flex-wrap: wrap;
-        padding-right: 30px;
-        position: relative;
-    }
-    
-    .remove-item {
-        position: absolute;
-        right: 5px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-}
-
-/* ========== ORDERS MODAL ========== */
-.orders-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2003;
-    align-items: center;
-    justify-content: center;
-}
-
-.orders-modal-content {
-    background: #fff;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    position: relative;
-    padding: 2rem;
-    animation: fadeInUp 0.3s ease;
-    overflow-y: auto;
-}
-
-.close-orders {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.orders-list {
-    margin-top: 1rem;
-}
-
-.order-item {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.order-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.order-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.order-date {
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.order-total {
-    font-weight: bold;
-    color: #f0b90b;
-}
-
-.order-items-preview {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid #eee;
-}
-
-@media (max-width: 768px) {
-    .order-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .orders-modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
-    
-    .login-options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .forgot-password-modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
-}
-
-/* ========== LOGIN OPTIONS ========== */
-.login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.remember-me input {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    margin: 0;
-}
-
-.forgot-password {
-    font-size: 0.85rem;
-    color: #f0b90b;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* ========== FORGOT PASSWORD MODAL ========== */
-.forgot-password-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2005;
-    align-items: center;
-    justify-content: center;
-}
-
-.forgot-password-modal-content {
-    background: #fff;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    padding: 2rem;
-    animation: fadeInUp 0.3s ease;
-}
-
-.close-forgot {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.forgot-password-modal-content h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.forgot-password-modal-content p {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.reset-message {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.85rem;
-}
-
-.reset-message.success {
-    color: #4CAF50;
-}
-
-.reset-message.error {
-    color: #f44336;
-}
-
-/* ========== NUTRITION SECTION ========== */
-.nutrition-section {
-    padding: 5rem 0;
-    background: #fff;
-    text-align: center;
-}
-
-.nutrition-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-.nutrition-subtitle {
-    max-width: 700px;
-    margin: 0 auto 3rem auto;
-    color: #666;
-    font-size: 1.1rem;
-}
-
-.nutrition-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.nutrition-card {
-    background: #f9f9f9;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.nutrition-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.nutrition-icon {
-    width: 70px;
-    height: 70px;
-    background: rgba(240, 185, 11, 0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem auto;
-}
-
-.nutrition-icon i {
-    font-size: 2rem;
-    color: #f0b90b;
-}
-
-.nutrition-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-.nutrition-card p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-@media (max-width: 992px) {
-    .nutrition-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nutrition-section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .nutrition-subtitle {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
-    
-    .nutrition-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .nutrition-card {
-        padding: 1.5rem;
-    }
-    
-    .nutrition-icon {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .nutrition-icon i {
-        font-size: 1.6rem;
-    }
-    
-    .nutrition-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .nutrition-card p {
-        font-size: 0.9rem;
-    }
-}
-
-/* ========== COACHES SECTION ========== */
-.coaches-more {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.see-more-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-}
-
-.see-more-btn i:last-child {
-    transition: transform 0.3s ease;
-}
-
-.see-more-btn:hover i:last-child {
-    transform: translateX(8px);
-}
-
-.coach-bio {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0.8rem 0;
-    line-height: 1.4;
-}
-
-/* ========== CONTAINER ========== */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ========== HEADER ========== */
-header {
-    background: #000;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-header.scrolled {
-    padding: 0.5rem 0;
-    background: rgba(0,0,0,0.95);
-    backdrop-filter: blur(10px);
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #fff, #f0b90b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* ========== NAVIGATION ========== */
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.2rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-    position: relative;
-    font-size: 0.9rem;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #f0b90b;
-    transition: width 0.3s;
-}
-
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 100%;
-}
-
-nav ul li a:hover {
-    color: #f0b90b;
-}
-
-/* ========== HEADER RIGHT ========== */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* ========== LANGUAGE SWITCHER ========== */
-.language-switcher {
-    display: flex;
-    gap: 0.3rem;
-    background: rgba(255,255,255,0.15);
-    padding: 0.25rem;
-    border-radius: 60px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.lang-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border-radius: 50px;
-    padding: 0.4rem 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: #fff;
-}
-
-.lang-btn .lang-code {
-    font-weight: 600;
-}
-
-.lang-btn.active {
-    background: #f0b90b;
-    color: #000;
-    box-shadow: 0 2px 10px rgba(240,185,11,0.4);
-}
-
-.lang-btn.active .lang-code {
-    color: #000;
-}
-
-.lang-btn:hover:not(.active) {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-}
-
-/* ========== USER MENU ========== */
-.user-menu {
-    position: relative;
-}
-
-.user-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.user-icon i {
-    font-size: 1.3rem;
-    color: #f0b90b;
-}
-
-.user-icon:hover {
-    background: rgba(240,185,11,0.3);
-    transform: scale(1.05);
-}
-
-.user-dropdown {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    padding: 0.5rem 0;
-    min-width: 160px;
-    display: none;
-    z-index: 1001;
-}
-
-.user-dropdown.show {
-    display: block;
-}
-
-.user-dropdown span {
-    display: block;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid #eee;
-    color: #333;
-}
-
-.user-dropdown button {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    transition: background 0.3s;
-    color: #333;
-}
-
-.user-dropdown button:hover {
-    background: #f0b90b;
-    color: #000;
-}
-
-.mobile-menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-}
-
-/* ========== AUTH MODAL ========== */
-.auth-modal, .profile-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2002;
-    align-items: center;
-    justify-content: center;
-}
-
-.auth-modal-content, .profile-modal-content {
-    background: #fff;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 450px;
-    position: relative;
-    padding: 2rem;
-    animation: fadeInUp 0.3s ease;
-}
-
-.profile-modal-content {
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.close-auth, .close-profile {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.auth-tabs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.auth-tab {
-    background: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #666;
-    transition: all 0.3s;
-}
-
-.auth-tab.active {
-    color: #f0b90b;
-    border-bottom: 2px solid #f0b90b;
-}
-
-.auth-form {
-    display: none;
-}
-
-.auth-form.active {
-    display: block;
-}
-
-.auth-form .input-group {
-    margin-bottom: 1rem;
-}
-
-.auth-form .input-group label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: bold;
-}
-
-.auth-form .input-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.auth-error {
-    color: #e74c3c;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-/* ========== PROFILE MODAL ========== */
-.profile-avatar {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.profile-avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-    border: 3px solid #f0b90b;
-}
-
-.profile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.profile-grid .input-group {
-    margin-bottom: 0;
-}
-
-.profile-grid .input-group input,
-.profile-grid .input-group select {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.validation-message {
-    display: block;
-    font-size: 0.7rem;
-    color: #e74c3c;
-    margin-top: 4px;
-}
-
-/* ========== BUTTONS ========== */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: #f0b90b;
-    color: #000;
-    border: none;
-}
-
-.btn-primary:hover {
-    background: #d4a00a;
-    transform: scale(1.05);
-}
-
-.btn-primary:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #000;
-    border: 2px solid #000;
-}
-
-.btn-secondary:hover {
-    background: #000;
-    color: #fff;
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: #000;
-    border: 2px solid #f0b90b;
-}
-
-.btn-outline:hover {
-    background: #f0b90b;
-    color: #000;
-}
-
-.btn-dark {
-    background: #000;
-    color: #fff;
-    border: none;
-}
-
-.btn-dark:hover {
-    background: #f0b90b;
-    color: #000;
-    transform: translateY(-3px);
-}
-
-.btn-small {
-    background: #f0b90b;
-    border: none;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(240, 185, 11, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(240, 185, 11, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(240, 185, 11, 0); }
-}
-
-.loading-spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid #fff;
-    border-top: 2px solid #f0b90b;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-right: 8px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ========== HERO SECTION ========== */
-.hero {
-    position: relative;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        height: auto;
-        min-height: 100vh;
-        padding: 100px 0 60px;
-    }
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    animation: fadeInDown 1s ease;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    animation: fadeInUp 1s ease 0.2s both;
-}
-
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-}
-
-/* ========== STATS SECTION ========== */
-.stats-section {
-    padding: 4rem 0;
-    background: #f0b90b;
-    color: #000;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    text-align: center;
-}
-
-.stat-item .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.stat-item p {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-/* ========== HEALTH SECTION ========== */
-.health-first {
-    padding: 5rem 0;
-    background: #f9f9f9;
-}
-
-.health-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.health-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.health-text p {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.health-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.card {
-    background: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.card i {
-    font-size: 2.5rem;
-    color: #f0b90b;
-    margin-bottom: 1rem;
-    transition: transform 0.3s;
-}
-
-.card:hover i {
-    transform: scale(1.2);
-}
-
-/* ========== CLASSES SECTION ========== */
-.classes-section {
-    padding: 5rem 0;
-    background: #fff;
-    text-align: center;
-}
-
-.classes-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.classes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.class-card {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 12px;
-    transition: all 0.3s;
-}
-
-.class-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.class-card i {
-    font-size: 2.5rem;
-    color: #f0b90b;
-    margin-bottom: 1rem;
-}
-
-/* ========== COACHES SECTION ========== */
-.coaches-section {
-    padding: 5rem 0;
-    background: #fff;
-    text-align: center;
-}
-
-.coaches-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.coaches-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.coach-card {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 12px;
-    transition: all 0.3s;
-}
-
-.coach-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.coach-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-}
-
-.coach-card h3 {
-    margin-bottom: 0.5rem;
-}
-
-.coach-card p {
-    color: #f0b90b;
-    font-weight: bold;
-}
-
-.coach-social {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.coach-social a {
-    color: #333;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-}
-
-.coach-social a:hover {
-    color: #f0b90b;
-    transform: scale(1.2);
-}
-
-/* ========== PRICING SECTION ========== */
-.pricing-section {
-    padding: 5rem 0;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.pricing-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.pricing-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-    position: relative;
-}
-
-.pricing-card.featured {
-    transform: scale(1.05);
-    border: 2px solid #f0b90b;
-}
-
-.popular-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #f0b90b;
-    color: #000;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-}
-
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-5px);
-}
-
-.price {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-}
-
-.price span {
-    font-size: 1rem;
-    font-weight: normal;
-}
-
-.pricing-card ul {
-    list-style: none;
-    margin: 1.5rem 0;
-    text-align: left;
-}
-
-.pricing-card ul li {
-    margin: 0.8rem 0;
-}
-
-.pricing-card ul li i {
-    margin-right: 0.5rem;
-}
-
-.pricing-card ul li .fa-check {
-    color: #28a745;
-}
-
-.pricing-card ul li .fa-times {
-    color: #dc3545;
-}
-
-/* ========== IMC CALCULATOR ========== */
-.imc-section {
-    padding: 5rem 0;
-    background: #fff;
-    text-align: center;
-}
-
-.imc-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.imc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.imc-form {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: left;
-}
-
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.imc-result {
-    text-align: center;
-}
-
-.imc-value {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #f0b90b;
-    margin-bottom: 1rem;
-}
-
-.imc-status {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-}
-
-.imc-scale {
-    width: 100%;
-}
-
-.scale-bar {
-    display: flex;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.scale-segment {
-    flex: 1;
-}
-
-.underweight { background: #2196F3; }
-.normal { background: #4CAF50; }
-.overweight { background: #FF9800; }
-.obesity { background: #f44336; }
-
-.scale-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.7rem;
-}
-
-/* ========== SHOP SECTION ========== */
-.shop-section {
-    padding: 5rem 0;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.shop-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.shop-subtitle {
-    margin-bottom: 3rem;
-    color: #666;
-}
-
-.shop-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.product-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.product-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 1.5rem;
-}
-
-.product-info h3 {
-    margin-bottom: 0.5rem;
-}
-
-.product-info p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.product-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #f0b90b;
-    margin-bottom: 1rem;
-}
-
-.product-card .btn-outline {
-    width: 100%;
-    text-align: center;
-}
-
-/* ========== GALLERY SECTION ========== */
-.gallery-section {
-    padding: 5rem 0;
-    background: #fff;
-    text-align: center;
-}
-
-.gallery-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-overlay i {
-    color: #fff;
-    font-size: 2rem;
-}
-
-/* ========== LIGHTBOX ========== */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 2000;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* ========== TESTIMONIALS SECTION ========== */
-.testimonials-section {
-    padding: 5rem 0;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.testimonials-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: left;
-}
-
-.testimonial-card i {
-    color: #f0b90b;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial-card p {
-    margin-bottom: 1rem;
-    font-style: italic;
-}
-
-.stars {
-    color: #f0b90b;
-    margin-top: 0.5rem;
-}
-
-/* ========== FAQ SECTION ========== */
-.faq-section {
-    padding: 5rem 0;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.faq-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-}
-
-.faq-grid {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: #fff;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-.faq-question:hover {
-    background: rgba(240,185,11,0.1);
-}
-
-.faq-question i {
-    transition: transform 0.3s;
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 1.5rem;
-    text-align: left;
-    border-top: 1px solid transparent;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding: 1rem 1.5rem;
-    border-top-color: #eee;
-}
-
-/* ========== HOURS & MAP SECTION ========== */
-.hours-map-section {
-    padding: 5rem 0;
-    background: #fff;
-}
-
-.hours-map-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.hours-card, .map-card {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.hours-card h3, .map-card h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
-
-.hours-table {
-    width: 100%;
-}
-
-.hours-table td {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.map-card iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
-    border-radius: 8px;
-}
-
-.map-card p {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.google-rating {
-    text-align: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-}
-
-.stars-display {
-    font-size: 1.3rem;
-    letter-spacing: 3px;
-    color: #f0b90b;
-}
-
-.map-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #f0b90b;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-.map-link:hover {
-    text-decoration: underline;
-    transform: translateX(5px);
-}
-
-/* ========== FOOTER ========== */
-footer {
-    background: #111;
-    color: #ccc;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.footer-info p {
-    margin: 0.5rem 0;
-}
-
-.footer-info i {
-    margin-right: 0.5rem;
-    color: #f0b90b;
-}
-
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-}
-
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #333;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 40px;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.social-btn.facebook { background: #1877f2; }
-.social-btn.instagram { background: #e4405f; }
-.social-btn:hover { transform: translateY(-3px); }
-
-/* ========== ANIMATIONS ========== */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1200px) {
-    nav ul {
-        gap: 0.8rem;
-    }
-    nav ul li a {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .health-grid, .pricing-grid, .testimonials-grid, .hours-map-grid, .imc-grid {
-        grid-template-columns: 1fr;
-    }
-    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    nav {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 70px);
-        background: #000;
-        transition: left 0.3s;
-        z-index: 999;
-        overflow-y: auto;
-    }
-    
-    nav.active {
-        left: 0;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-    }
-    
-    nav ul li a {
-        font-size: 1rem;
-    }
-    
-    .classes-grid, .gallery-grid, .coaches-grid, .shop-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .language-switcher {
-        margin-left: auto;
-        margin-right: 0.5rem;
-        padding: 0.2rem;
-        gap: 0.2rem;
-    }
-    
-    .lang-btn {
-        padding: 0.3rem 0.6rem;
-    }
-    
-    .lang-btn .lang-code {
-        display: none;
-    }
-    
-    .flag-emoji {
-        font-size: 1rem;
-    }
-    
-    .header-right {
-        gap: 0.5rem;
-    }
-    
-    .user-icon {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .gallery-item img {
-        height: 180px;
-    }
-    
-    .hours-table td {
-        display: block;
-        text-align: center;
-    }
-    
-    .hours-table tr {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0;
-    }
-    
-    .coaches-more {
-        margin-top: 2rem;
-    }
-    
-    .see-more-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-        gap: 8px;
-    }
-
-    /* Fix horizontal scroll on mobile */
-    .container {
-        overflow-x: hidden;
-    }
-    
-    .hero-content {
-        padding: 0 15px;
-    }
-    
-    .hero-content h1 {
-        word-wrap: break-word;
-    }
-    
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    .pricing-card.featured {
-        transform: scale(1);
-    }
-    
-    .hours-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-    }
-    
-    .btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-    
-    .auth-modal-content,
-    .profile-modal-content,
-    .orders-modal-content,
-    .forgot-password-modal-content {
-        margin: 0 20px;
-        padding: 1.5rem;
-    }
-    
-    .imc-value {
-        font-size: 2.5rem;
-    }
-}
-
-/* ========== FOCUS STYLES ========== */
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #f0b90b !important;
-    box-shadow: 0 0 0 3px rgba(240, 185, 11, 0.2);
-    transition: all 0.2s ease;
-}
-
-:focus-visible {
-    outline: 2px solid #f0b90b;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-[data-aos] {
-    opacity: 0;
-    transition-property: opacity, transform;
-}
-
-[data-aos].aos-animate {
-    opacity: 1;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Nos Coachs | M Club Sfax</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23f0b90b'%3E💪%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23f0b90b'%3E💪%3C/text%3E%3C/svg%3E">
+    <style>
+        /* Additional styles for coaches page */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .coaches-full-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 4rem 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .coach-bio {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0.8rem 0;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 992px) {
+            .coaches-full-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 100px 0 40px;
+                margin-top: 60px;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .coaches-full-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+            .page-header p {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Buttons Container -->
+    <div class="floating-buttons">
+        <button id="dark-mode-toggle" class="floating-btn" aria-label="Dark mode toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div id="cart-icon" class="floating-btn cart-icon-floating" aria-label="Shopping cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <button id="back-to-top" class="floating-btn" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mon panier</h3>
+            <span class="close-cart" aria-label="Close cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p>Votre panier est vide</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total</strong>: <span id="cart-total">0 DT</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-primary">Commander</button>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="M Club Logo" class="logo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display: none;">💪</div>
+                <span class="logo-text">M CLUB SFAX</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="coachs.html" class="active">Coachs</a></li>
+                    <li><a href="index.html#pricing">Tarifs</a></li>
+                    <li><a href="index.html#shop">Boutique</a></li>
+                    <li><a href="index.html#gallery">Galerie</a></li>
+                    <li><a href="index.html#nutrition">Nutrition</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="fr">
+                        <img src="fr.png" alt="Français" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">FR</span>
+                        <span class="lang-code-fallback">FR</span>
+                    </button>
+                    <button class="lang-btn" data-lang="en">
+                        <img src="en.png" alt="English" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">EN</span>
+                        <span class="lang-code-fallback">EN</span>
+                    </button>
+                    <button class="lang-btn" data-lang="ar">
+                        <img src="ar.png" alt="العربية" class="flag-icon" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="lang-code" style="display: none;">AR</span>
+                        <span class="lang-code-fallback">AR</span>
+                    </button>
+                </div>
+                <div class="user-menu">
+                    <div id="user-icon" class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div id="user-dropdown" class="user-dropdown">
+                        <span id="user-name-display"></span>
+                        <button id="profile-btn">Mon Profil</button>
+                        <button id="orders-btn">Mes commandes</button>
+                        <button id="logout-btn">Déconnexion</button>
+                    </div>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos Coachs Experts</h1>
+            <p>Des professionnels passionnés à votre service pour vous aider à atteindre vos objectifs</p>
+        </div>
+    </section>
+
+    <!-- All Coaches Section -->
+    <section class="coaches-section">
+        <div class="container">
+            <div class="coaches-full-grid">
+                <!-- Coach 1 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://ui-avatars.com/api/?name=Karim+Ben+Ali&background=f0b90b&color=000&bold=true&size=150" alt="Coach Karim Ben Ali" loading="lazy">
+                    <h3>Karim Ben Ali</h3>
+                    <p>Coach musculation & CrossFit</p>
+                    <div class="coach-bio">Spécialiste en prise de masse et force fonctionnelle. Plus de 8 ans d'expérience.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 2 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://ui-avatars.com/api/?name=Sonia+Makhlouf&background=f0b90b&color=000&bold=true&size=150" alt="Coach Sonia Makhlouf" loading="lazy">
+                    <h3>Sonia Makhlouf</h3>
+                    <p>Coach Yoga & Bien-être</p>
+                    <div class="coach-bio">Experte en relaxation, stretching et bien-être mental. Certifiée en yoga thérapeutique.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 3 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://ui-avatars.com/api/?name=Mehdi+Trabelsi&background=f0b90b&color=000&bold=true&size=150" alt="Coach Mehdi Trabelsi" loading="lazy">
+                    <h3>Mehdi Trabelsi</h3>
+                    <p>Coach Boxe & Cardio</p>
+                    <div class="coach-bio">Ancien boxeur professionnel, spécialiste en cardio-training et sports de combat.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 4 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="250">
+                    <img src="https://ui-avatars.com/api/?name=Leila+Ben+Mansour&background=f0b90b&color=000&bold=true&size=150" alt="Coach Leila Ben Mansour" loading="lazy">
+                    <h3>Leila Ben Mansour</h3>
+                    <p>Coach Fitness & Zumba</p>
+                    <div class="coach-bio">Spécialiste en cours collectifs et remise en forme. Ambiance et motivation garanties !</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 5 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://ui-avatars.com/api/?name=Nabil+Chaabane&background=f0b90b&color=000&bold=true&size=150" alt="Coach Nabil Chaabane" loading="lazy">
+                    <h3>Nabil Chaabane</h3>
+                    <p>Coach Nutrition & Bodybuilding</p>
+                    <div class="coach-bio">Diplômé en nutrition sportive, il vous aidera à atteindre vos objectifs poids et muscle.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 6 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="350">
+                    <img src="https://ui-avatars.com/api/?name=Amira+Kallel&background=f0b90b&color=000&bold=true&size=150" alt="Coach Amira Kallel" loading="lazy">
+                    <h3>Amira Kallel</h3>
+                    <p>Coach Pilates & Récupération</p>
+                    <div class="coach-bio">Spécialiste en Pilates et récupération active. Idéal pour prévenir les blessures.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 7 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://ui-avatars.com/api/?name=Sami+Bouaziz&background=f0b90b&color=000&bold=true&size=150" alt="Coach Sami Bouaziz" loading="lazy">
+                    <h3>Sami Bouaziz</h3>
+                    <p>Coach CrossFit & HIIT</p>
+                    <div class="coach-bio">Expert en entraînement fractionné et CrossFit. Préparez-vous à repousser vos limites !</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Coach 8 -->
+                <div class="coach-card" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://ui-avatars.com/api/?name=Ines+Hammami&background=f0b90b&color=000&bold=true&size=150" alt="Coach Ines Hammami" loading="lazy">
+                    <h3>Ines Hammami</h3>
+                    <p>Coach Aquagym & Piscine</p>
+                    <div class="coach-bio">Spécialiste des activités aquatiques. Douce et efficace pour tous les âges.</div>
+                    <div class="coach-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>NOUS CONTACTER</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Rte Lafrane, Sfax, Tunisie</p>
+                <p><i class="fas fa-phone-alt"></i> +216 74 217 600</p>
+                <p><i class="fas fa-envelope"></i> contact@mclub.tn</p>
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/MclubFitnessetgym/" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="https://www.instagram.com/mclub.sfax" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 M Club Sfax. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+    </script>
+</body>
+</html>
