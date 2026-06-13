@@ -1031,7 +1031,7 @@ function updateUserUI() {
         if (userNameDisplay) userNameDisplay.textContent = currentUser.name;
         if (userIconDiv) {
             if (currentUser.avatar) {
-                userIconDiv.innerHTML = `<img src="${currentUser.avatar}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;">`;
+                userIconDiv.innerHTML = `<img src="${currentUser.avatar}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;" alt="Avatar">`;
             } else {
                 userIconDiv.innerHTML = `<i class="fas fa-user-circle"></i>`;
             }
@@ -1349,5 +1349,3 @@ window.addEventListener('scroll', () => {
 });
 
 updateLanguage('fr');
-
-console.log('%c🔐 Note: This demo stores data in localStorage. For production, use a proper backend!', 'color: #f0b90b; font-size: 12px;');
