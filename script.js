@@ -449,20 +449,57 @@ if (backToTop) {
 // ========== MOBILE MENU ==========
 const mobileToggle = document.querySelector('.mobile-menu-toggle');
 const nav = document.querySelector('nav');
+const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+
+function closeMobileMenu() {
+    if (nav && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.classList.remove('menu-open');
+        if (mobileOverlay) mobileOverlay.classList.remove('active');
+    }
+}
+
+function openMobileMenu() {
+    if (nav) {
+        nav.classList.add('active');
+        if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.classList.add('menu-open');
+        if (mobileOverlay) mobileOverlay.classList.add('active');
+    }
+}
+
 if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        mobileToggle.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        document.body.classList.toggle('menu-open', nav.classList.contains('active'));
+    mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (nav && nav.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
+}
+
+if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeMobileMenu);
 }
 
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        document.body.classList.remove('menu-open');
+        closeMobileMenu();
     });
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav && nav.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && nav && nav.classList.contains('active')) {
+        closeMobileMenu();
+    }
 });
 
 // ========== DARK MODE TOGGLE ==========
@@ -1320,9 +1357,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({ behavior: 'smooth' });
         }
         if (nav && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            document.body.classList.remove('menu-open');
+            closeMobileMenu();
         }
     });
 });
